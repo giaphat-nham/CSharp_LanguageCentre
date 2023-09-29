@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace CSharp_LanguageCentre
 {
-    public partial class MainMenu : UserControl
+    public partial class function_menu : UserControl
     {
-        public MainMenu()
+        public function_menu()
         {
             InitializeComponent();
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            new LoginForm().Show();
         }
     }
 }

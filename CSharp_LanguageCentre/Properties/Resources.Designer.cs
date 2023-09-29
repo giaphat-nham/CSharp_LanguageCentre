@@ -113,6 +113,26 @@ namespace CSharp_LanguageCentre.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap label_background {
+            get {
+                object obj = ResourceManager.GetObject("label_background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap label_background1 {
+            get {
+                object obj = ResourceManager.GetObject("label_background1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap main_menu_background {
             get {
                 object obj = ResourceManager.GetObject("main_menu_background", resourceCulture);
