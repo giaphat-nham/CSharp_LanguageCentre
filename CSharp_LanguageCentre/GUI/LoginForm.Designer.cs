@@ -107,7 +107,7 @@ namespace CSharp_LanguageCentre
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CSharp_LanguageCentre.Properties.Resources.clipboard_background1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(266, 318);
+            this.ClientSize = new System.Drawing.Size(281, 339);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
