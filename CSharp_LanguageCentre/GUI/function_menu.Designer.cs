@@ -29,33 +29,33 @@ namespace CSharp_LanguageCentre
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblLoginedUser = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSignOut = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lblLoginedUser
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(232)))), ((int)(((byte)(218)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(27)))), ((int)(((byte)(16)))));
-            this.label1.Location = new System.Drawing.Point(13, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(196, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tên người dùng";
+            this.lblLoginedUser.AutoSize = true;
+            this.lblLoginedUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(232)))), ((int)(((byte)(218)))));
+            this.lblLoginedUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoginedUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(27)))), ((int)(((byte)(16)))));
+            this.lblLoginedUser.Location = new System.Drawing.Point(13, 25);
+            this.lblLoginedUser.Name = "lblLoginedUser";
+            this.lblLoginedUser.Size = new System.Drawing.Size(196, 29);
+            this.lblLoginedUser.TabIndex = 0;
+            this.lblLoginedUser.Text = "Tên người dùng";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(232)))), ((int)(((byte)(218)))));
             this.panel1.BackgroundImage = global::CSharp_LanguageCentre.Properties.Resources.label_background1;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblLoginedUser);
             this.panel1.Location = new System.Drawing.Point(21, 23);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(222, 69);
@@ -71,30 +71,30 @@ namespace CSharp_LanguageCentre
             this.panel2.Size = new System.Drawing.Size(149, 180);
             this.panel2.TabIndex = 2;
             // 
+            // btnSignOut
+            // 
+            this.btnSignOut.BackgroundImage = global::CSharp_LanguageCentre.Properties.Resources.button_background;
+            this.btnSignOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSignOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(27)))), ((int)(((byte)(16)))));
+            this.btnSignOut.Location = new System.Drawing.Point(854, 23);
+            this.btnSignOut.Name = "btnSignOut";
+            this.btnSignOut.Size = new System.Drawing.Size(140, 42);
+            this.btnSignOut.TabIndex = 3;
+            this.btnSignOut.Text = "Đăng xuất";
+            this.btnSignOut.UseVisualStyleBackColor = true;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(222)))), ((int)(((byte)(149)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(27)))), ((int)(((byte)(16)))));
-            this.label2.Location = new System.Drawing.Point(14, 77);
+            this.label2.Location = new System.Drawing.Point(14, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 22);
             this.label2.TabIndex = 3;
             this.label2.Text = "Chức năng 1";
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::CSharp_LanguageCentre.Properties.Resources.button_background;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(27)))), ((int)(((byte)(16)))));
-            this.button1.Location = new System.Drawing.Point(854, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 42);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Đăng xuất";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // function_menu
             // 
@@ -102,7 +102,7 @@ namespace CSharp_LanguageCentre
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CSharp_LanguageCentre.Properties.Resources.general_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSignOut);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
@@ -118,10 +118,10 @@ namespace CSharp_LanguageCentre
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblLoginedUser;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnSignOut;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
     }
 }

@@ -30,7 +30,7 @@ namespace CSharp_LanguageCentre
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnOpenLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -45,21 +45,21 @@ namespace CSharp_LanguageCentre
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên trung tâm";
             // 
-            // btnLogin
+            // btnOpenLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.White;
-            this.btnLogin.BackgroundImage = global::CSharp_LanguageCentre.Properties.Resources.button_background;
-            this.btnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(27)))), ((int)(((byte)(16)))));
-            this.btnLogin.Location = new System.Drawing.Point(396, 326);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(249, 56);
-            this.btnLogin.TabIndex = 1;
-            this.btnLogin.Text = "Đăng Nhập";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnOpenLogin.BackColor = System.Drawing.Color.White;
+            this.btnOpenLogin.BackgroundImage = global::CSharp_LanguageCentre.Properties.Resources.button_background;
+            this.btnOpenLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOpenLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOpenLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpenLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(27)))), ((int)(((byte)(16)))));
+            this.btnOpenLogin.Location = new System.Drawing.Point(396, 326);
+            this.btnOpenLogin.Name = "btnOpenLogin";
+            this.btnOpenLogin.Size = new System.Drawing.Size(249, 56);
+            this.btnOpenLogin.TabIndex = 1;
+            this.btnOpenLogin.Text = "Đăng Nhập";
+            this.btnOpenLogin.UseVisualStyleBackColor = false;
+            this.btnOpenLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // MainMenu
             // 
@@ -67,7 +67,7 @@ namespace CSharp_LanguageCentre
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CSharp_LanguageCentre.Properties.Resources.main_menu_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.btnOpenLogin);
             this.Controls.Add(this.label1);
             this.Name = "MainMenu";
             this.Size = new System.Drawing.Size(1024, 576);
@@ -79,6 +79,6 @@ namespace CSharp_LanguageCentre
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnOpenLogin;
     }
 }
