@@ -68,7 +68,7 @@ namespace CSharp_LanguageCentre
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(39, 118);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(151, 180);
+            this.panel2.Size = new System.Drawing.Size(149, 180);
             this.panel2.TabIndex = 2;
             // 
             // label2
@@ -93,7 +93,7 @@ namespace CSharp_LanguageCentre
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(140, 42);
             this.button1.TabIndex = 3;
-            this.button1.Text = "Quay về";
+            this.button1.Text = "Đăng xuất";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // function_menu
