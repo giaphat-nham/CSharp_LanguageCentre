@@ -46,23 +46,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\CTHoaDonDTO.cs" />
+    <Compile Include="DTO\HoaDonDTO.cs" />
+    <Compile Include="DTO\HocVienDTO.cs" />
+    <Compile Include="DTO\PhongHocDTO.cs" />
+    <Compile Include="DTO\TaiKhoanDTO.cs" />
+    <Compile Include="DTO\ThoiKhoaBieuDTO.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\function_menu.cs">
+    <Compile Include="GUI\FunctionMenu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\function_menu.Designer.cs">
-      <DependentUpon>function_menu.cs</DependentUpon>
+    <Compile Include="GUI\FunctionMenu.Designer.cs">
+      <DependentUpon>FunctionMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ViewTimeTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ViewTimeTable.Designer.cs">
+      <DependentUpon>ViewTimeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ViewTuition.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ViewTuition.Designer.cs">
+      <DependentUpon>ViewTuition.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,14 +93,20 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\function_menu.resx">
-      <DependentUpon>function_menu.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\FunctionMenu.resx">
+      <DependentUpon>FunctionMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ViewTimeTable.resx">
+      <DependentUpon>ViewTimeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ViewTuition.resx">
+      <DependentUpon>ViewTuition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -131,5 +155,6 @@
   <ItemGroup>
     <None Include="Resources\label_background1.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -41,5 +41,10 @@ namespace CSharp_LanguageCentre
         {
 
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

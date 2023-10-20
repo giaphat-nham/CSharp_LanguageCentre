@@ -31,6 +31,7 @@ namespace CSharp_LanguageCentre
         {
             this.label1 = new System.Windows.Forms.Label();
             this.btnOpenLogin = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -61,12 +62,28 @@ namespace CSharp_LanguageCentre
             this.btnOpenLogin.UseVisualStyleBackColor = false;
             this.btnOpenLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackgroundImage = global::CSharp_LanguageCentre.Properties.Resources.button_background;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(27)))), ((int)(((byte)(16)))));
+            this.button1.Location = new System.Drawing.Point(454, 388);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(131, 40);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Thoát";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CSharp_LanguageCentre.Properties.Resources.main_menu_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnOpenLogin);
             this.Controls.Add(this.label1);
             this.Name = "MainMenu";
@@ -80,5 +97,6 @@ namespace CSharp_LanguageCentre
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnOpenLogin;
+        private System.Windows.Forms.Button button1;
     }
 }
