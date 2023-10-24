@@ -121,6 +121,9 @@
   <data name="button_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="label_background1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\label_background1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="clipboard_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clipboard_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,7 +142,7 @@
   <data name="general_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\general_background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="label_background1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\label_background1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="C Sharp Project GUI1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\C Sharp Project GUI.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

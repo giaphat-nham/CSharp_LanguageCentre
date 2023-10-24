@@ -83,6 +83,16 @@ namespace CSharp_LanguageCentre.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap C_Sharp_Project_GUI1 {
+            get {
+                object obj = ResourceManager.GetObject("C Sharp Project GUI1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap clipboard_background {
             get {
                 object obj = ResourceManager.GetObject("clipboard_background", resourceCulture);
