@@ -47,8 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\CTHoaDonDTO.cs" />
+    <Compile Include="DTO\DangKyKHDTO.cs" />
     <Compile Include="DTO\HoaDonDTO.cs" />
     <Compile Include="DTO\HocVienDTO.cs" />
+    <Compile Include="DTO\KhoaHocDTO.cs" />
     <Compile Include="DTO\PhongHocDTO.cs" />
     <Compile Include="DTO\TaiKhoanDTO.cs" />
     <Compile Include="DTO\ThoiKhoaBieuDTO.cs" />
