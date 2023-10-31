@@ -89,6 +89,7 @@ namespace CSharp_LanguageCentre.GUI
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox1.Controls.Add(this.btnTimKiem);
             this.groupBox1.Controls.Add(this.ccbTimKiem);
             this.groupBox1.Controls.Add(this.txtTimKiem);
@@ -146,6 +147,7 @@ namespace CSharp_LanguageCentre.GUI
             // 
             // listView1
             // 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colMaHV,
             this.colHoTen,
@@ -178,6 +180,7 @@ namespace CSharp_LanguageCentre.GUI
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.btnHuy);
             this.groupBox2.Controls.Add(this.btnXacNhan);
             this.groupBox2.Controls.Add(this.btnSua);
@@ -308,7 +311,7 @@ namespace CSharp_LanguageCentre.GUI
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã HV:";
             // 
-            // ViewStudent
+            // Student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -319,7 +322,7 @@ namespace CSharp_LanguageCentre.GUI
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
-            this.Name = "ViewStudent";
+            this.Name = "Student";
             this.Size = new System.Drawing.Size(1024, 576);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

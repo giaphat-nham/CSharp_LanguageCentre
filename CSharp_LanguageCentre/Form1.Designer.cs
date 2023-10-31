@@ -29,15 +29,7 @@ namespace CSharp_LanguageCentre
         /// </summary>
         private void InitializeComponent()
         {
-            this.mainPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
-            // 
-            // mainPanel
-            // 
-            this.mainPanel.Location = new System.Drawing.Point(12, 12);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1024, 576);
-            this.mainPanel.TabIndex = 0;
             // 
             // Form1
             // 
@@ -45,7 +37,6 @@ namespace CSharp_LanguageCentre
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1047, 600);
-            this.Controls.Add(this.mainPanel);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -54,8 +45,6 @@ namespace CSharp_LanguageCentre
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel mainPanel;
         public static int loginedID;
     }
 }

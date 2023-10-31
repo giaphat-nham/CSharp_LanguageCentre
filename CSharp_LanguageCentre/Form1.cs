@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CSharp_LanguageCentre.GUI;
 
 namespace CSharp_LanguageCentre
 {
@@ -15,7 +16,7 @@ namespace CSharp_LanguageCentre
         public Form1()
         {
             InitializeComponent();
-            mainPanel.Controls.Add(new MainMenu());
+            this.Controls.Add(new Student());
         }
 
         private void button1_Click(object sender, EventArgs e)
