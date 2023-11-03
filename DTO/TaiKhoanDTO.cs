@@ -7,12 +7,16 @@ using System.Threading.Tasks;
 namespace CSharp_LanguageCentre.DTO
 {
     
-    class TaiKhoanDTO
+    public class TaiKhoanDTO
     {
         string tenTK;
         string matKhau;
         int maQuyen;
-        
+
+        public TaiKhoanDTO()
+        {
+
+        }
         public TaiKhoanDTO(string tenTK, string matKhau, int maQuyen)
         {
             this.tenTK = tenTK;

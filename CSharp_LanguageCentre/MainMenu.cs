@@ -21,5 +21,10 @@ namespace CSharp_LanguageCentre
         {
             new LoginForm().Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
