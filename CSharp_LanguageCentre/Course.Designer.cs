@@ -37,6 +37,10 @@ namespace CSharp_LanguageCentre.GUI
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateBatDau = new System.Windows.Forms.DateTimePicker();
+            this.dateKetThuc = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnXacNhan = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
@@ -50,18 +54,15 @@ namespace CSharp_LanguageCentre.GUI
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.colMaKH = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colTenKH = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colGia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colCapBac = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dateKetThuc = new System.Windows.Forms.DateTimePicker();
-            this.dateBatDau = new System.Windows.Forms.DateTimePicker();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.colMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCapBac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblLoginedUser
@@ -164,6 +165,40 @@ namespace CSharp_LanguageCentre.GUI
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin khóa học";
+            // 
+            // dateBatDau
+            // 
+            this.dateBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateBatDau.Location = new System.Drawing.Point(139, 174);
+            this.dateBatDau.Name = "dateBatDau";
+            this.dateBatDau.Size = new System.Drawing.Size(166, 26);
+            this.dateBatDau.TabIndex = 18;
+            // 
+            // dateKetThuc
+            // 
+            this.dateKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateKetThuc.Location = new System.Drawing.Point(139, 211);
+            this.dateKetThuc.Name = "dateKetThuc";
+            this.dateKetThuc.Size = new System.Drawing.Size(166, 26);
+            this.dateKetThuc.TabIndex = 17;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(16, 211);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(106, 20);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Ngày kết thúc";
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(16, 179);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(106, 20);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Ngày bắt đầu";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // btnHuy
             // 
@@ -275,91 +310,52 @@ namespace CSharp_LanguageCentre.GUI
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã KH";
             // 
-            // listView1
+            // dataGridView1
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaKH,
             this.colTenKH,
             this.colGia,
             this.colCapBac});
-            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView1.FullRowSelect = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(69, 188);
-            this.listView1.MultiSelect = false;
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(497, 356);
-            this.listView1.TabIndex = 9;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.dataGridView1.Location = new System.Drawing.Point(69, 188);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(528, 356);
+            this.dataGridView1.TabIndex = 11;
             // 
             // colMaKH
             // 
-            this.colMaKH.Text = "Mã KH";
-            this.colMaKH.Width = 72;
+            this.colMaKH.HeaderText = "Mã KH";
+            this.colMaKH.Name = "colMaKH";
             // 
             // colTenKH
             // 
-            this.colTenKH.Text = "Tên";
-            this.colTenKH.Width = 238;
+            this.colTenKH.HeaderText = "Tên KH";
+            this.colTenKH.Name = "colTenKH";
             // 
             // colGia
             // 
-            this.colGia.Text = "Giá";
-            this.colGia.Width = 104;
+            this.colGia.HeaderText = "Giá";
+            this.colGia.Name = "colGia";
             // 
             // colCapBac
             // 
-            this.colCapBac.Text = "Cấp Bậc";
-            this.colCapBac.Width = 79;
+            this.colCapBac.HeaderText = "Cấp Bậc";
+            this.colCapBac.Name = "colCapBac";
             // 
-            // label6
-            // 
-            this.label6.Location = new System.Drawing.Point(16, 179);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 20);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Ngày bắt đầu";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 211);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(106, 20);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Ngày kết thúc";
-            // 
-            // dateKetThuc
-            // 
-            this.dateKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateKetThuc.Location = new System.Drawing.Point(139, 211);
-            this.dateKetThuc.Name = "dateKetThuc";
-            this.dateKetThuc.Size = new System.Drawing.Size(166, 26);
-            this.dateKetThuc.TabIndex = 17;
-            // 
-            // dateBatDau
-            // 
-            this.dateBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateBatDau.Location = new System.Drawing.Point(139, 174);
-            this.dateBatDau.Name = "dateBatDau";
-            this.dateBatDau.Size = new System.Drawing.Size(166, 26);
-            this.dateBatDau.TabIndex = 18;
-            // 
-            // CourseView
+            // Course
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CSharp_LanguageCentre.Properties.Resources.C_Sharp_Project_GUI1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Cross;
             this.DoubleBuffered = true;
-            this.Name = "CourseView";
+            this.Name = "Course";
             this.Size = new System.Drawing.Size(1024, 576);
             this.Load += new System.EventHandler(this.CourseView_Load);
             this.panel1.ResumeLayout(false);
@@ -368,6 +364,7 @@ namespace CSharp_LanguageCentre.GUI
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -397,12 +394,12 @@ namespace CSharp_LanguageCentre.GUI
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader colMaKH;
-        private System.Windows.Forms.ColumnHeader colTenKH;
-        private System.Windows.Forms.ColumnHeader colGia;
-        private System.Windows.Forms.ColumnHeader colCapBac;
         private System.Windows.Forms.DateTimePicker dateBatDau;
         private System.Windows.Forms.DateTimePicker dateKetThuc;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTenKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCapBac;
     }
 }
