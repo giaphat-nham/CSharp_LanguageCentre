@@ -57,6 +57,8 @@ namespace CSharp_LanguageCentre.GUI
             this.colMaHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnXepLich = new System.Windows.Forms.Button();
+            this.btnQuayLai = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -306,12 +308,40 @@ namespace CSharp_LanguageCentre.GUI
             this.colSDT.HeaderText = "SĐT";
             this.colSDT.Name = "colSDT";
             // 
+            // btnXepLich
+            // 
+            this.btnXepLich.BackgroundImage = global::CSharp_LanguageCentre.Properties.Resources.button_background;
+            this.btnXepLich.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnXepLich.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXepLich.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(27)))), ((int)(((byte)(16)))));
+            this.btnXepLich.Location = new System.Drawing.Point(644, 28);
+            this.btnXepLich.Name = "btnXepLich";
+            this.btnXepLich.Size = new System.Drawing.Size(192, 42);
+            this.btnXepLich.TabIndex = 15;
+            this.btnXepLich.Text = "Đến trang Xếp lịch";
+            this.btnXepLich.UseVisualStyleBackColor = true;
+            // 
+            // btnQuayLai
+            // 
+            this.btnQuayLai.BackgroundImage = global::CSharp_LanguageCentre.Properties.Resources.button_background;
+            this.btnQuayLai.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnQuayLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuayLai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(27)))), ((int)(((byte)(16)))));
+            this.btnQuayLai.Location = new System.Drawing.Point(857, 28);
+            this.btnQuayLai.Name = "btnQuayLai";
+            this.btnQuayLai.Size = new System.Drawing.Size(140, 42);
+            this.btnQuayLai.TabIndex = 14;
+            this.btnQuayLai.Text = "Quay lại";
+            this.btnQuayLai.UseVisualStyleBackColor = true;
+            // 
             // Student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.btnXepLich);
+            this.Controls.Add(this.btnQuayLai);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -358,5 +388,7 @@ namespace CSharp_LanguageCentre.GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaHV;
         private System.Windows.Forms.DataGridViewTextBoxColumn colHoTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSDT;
+        private System.Windows.Forms.Button btnXepLich;
+        private System.Windows.Forms.Button btnQuayLai;
     }
 }
