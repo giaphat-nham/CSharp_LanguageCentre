@@ -139,6 +139,7 @@ namespace CSharp_LanguageCentre
             this.btnSignOut.TabIndex = 3;
             this.btnSignOut.Text = "Đăng xuất";
             this.btnSignOut.UseVisualStyleBackColor = true;
+            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
             // 
             // flowLayoutPanel1
             // 

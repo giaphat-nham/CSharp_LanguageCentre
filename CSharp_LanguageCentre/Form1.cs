@@ -31,6 +31,11 @@ namespace CSharp_LanguageCentre
             form.Controls.Add(control);
         }
 
+        public static void CloseForm()
+        {
+            form.Close();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
 

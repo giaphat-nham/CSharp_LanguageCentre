@@ -24,7 +24,12 @@ namespace CSharp_LanguageCentre
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            DialogResult result = MessageBox.Show("Chắc chắn thoát?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            if (result == DialogResult.OK)
+            {
+                Form1.CloseForm();
+            }
         }
     }
 }
