@@ -29,7 +29,7 @@ namespace CSharp_LanguageCentre
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblLogedinUser = new System.Windows.Forms.Label();
+            this.lblLoggedInUser = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlTaiKhoan = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,7 +43,7 @@ namespace CSharp_LanguageCentre
             this.label4 = new System.Windows.Forms.Label();
             this.pnlHoaDon = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.pnlDangKyKhoaHoc = new System.Windows.Forms.Panel();
+            this.pnlPhongHoc = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.pnlGiangVien = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -64,7 +64,7 @@ namespace CSharp_LanguageCentre
             this.pnlHocVien.SuspendLayout();
             this.pnlKhoaHoc.SuspendLayout();
             this.pnlHoaDon.SuspendLayout();
-            this.pnlDangKyKhoaHoc.SuspendLayout();
+            this.pnlPhongHoc.SuspendLayout();
             this.pnlGiangVien.SuspendLayout();
             this.pnlLuong.SuspendLayout();
             this.pnlNhanVien.SuspendLayout();
@@ -73,24 +73,27 @@ namespace CSharp_LanguageCentre
             this.pnlHocPhi.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblLogedinUser
+            // lblLoggedInUser
             // 
-            this.lblLogedinUser.AutoSize = true;
-            this.lblLogedinUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(232)))), ((int)(((byte)(218)))));
-            this.lblLogedinUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogedinUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(27)))), ((int)(((byte)(16)))));
-            this.lblLogedinUser.Location = new System.Drawing.Point(13, 25);
-            this.lblLogedinUser.Name = "lblLogedinUser";
-            this.lblLogedinUser.Size = new System.Drawing.Size(196, 29);
-            this.lblLogedinUser.TabIndex = 0;
-            this.lblLogedinUser.Text = "Tên người dùng";
+            this.lblLoggedInUser.AutoSize = true;
+            this.lblLoggedInUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(232)))), ((int)(((byte)(218)))));
+            this.lblLoggedInUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoggedInUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(27)))), ((int)(((byte)(16)))));
+            this.lblLoggedInUser.Location = new System.Drawing.Point(13, 25);
+            this.lblLoggedInUser.MaximumSize = new System.Drawing.Size(196, 29);
+            this.lblLoggedInUser.MinimumSize = new System.Drawing.Size(196, 29);
+            this.lblLoggedInUser.Name = "lblLoggedInUser";
+            this.lblLoggedInUser.Size = new System.Drawing.Size(196, 29);
+            this.lblLoggedInUser.TabIndex = 0;
+            this.lblLoggedInUser.Text = "Tên người dùng";
+            this.lblLoggedInUser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(232)))), ((int)(((byte)(218)))));
             this.panel1.BackgroundImage = global::CSharp_LanguageCentre.Properties.Resources.label_background1;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.lblLogedinUser);
+            this.panel1.Controls.Add(this.lblLoggedInUser);
             this.panel1.Location = new System.Drawing.Point(21, 23);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(222, 69);
@@ -146,7 +149,7 @@ namespace CSharp_LanguageCentre
             this.flowLayoutPanel1.Controls.Add(this.pnlHocVien);
             this.flowLayoutPanel1.Controls.Add(this.pnlKhoaHoc);
             this.flowLayoutPanel1.Controls.Add(this.pnlHoaDon);
-            this.flowLayoutPanel1.Controls.Add(this.pnlDangKyKhoaHoc);
+            this.flowLayoutPanel1.Controls.Add(this.pnlPhongHoc);
             this.flowLayoutPanel1.Controls.Add(this.pnlGiangVien);
             this.flowLayoutPanel1.Controls.Add(this.pnlLuong);
             this.flowLayoutPanel1.Controls.Add(this.pnlNhanVien);
@@ -267,16 +270,16 @@ namespace CSharp_LanguageCentre
             this.label5.Text = "Quản lý hóa đơn";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pnlDangKyKhoaHoc
+            // pnlPhongHoc
             // 
-            this.pnlDangKyKhoaHoc.BackgroundImage = global::CSharp_LanguageCentre.Properties.Resources.clipboard_background1;
-            this.pnlDangKyKhoaHoc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlDangKyKhoaHoc.Controls.Add(this.label6);
-            this.pnlDangKyKhoaHoc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pnlDangKyKhoaHoc.Location = new System.Drawing.Point(778, 3);
-            this.pnlDangKyKhoaHoc.Name = "pnlDangKyKhoaHoc";
-            this.pnlDangKyKhoaHoc.Size = new System.Drawing.Size(149, 180);
-            this.pnlDangKyKhoaHoc.TabIndex = 8;
+            this.pnlPhongHoc.BackgroundImage = global::CSharp_LanguageCentre.Properties.Resources.clipboard_background1;
+            this.pnlPhongHoc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlPhongHoc.Controls.Add(this.label6);
+            this.pnlPhongHoc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pnlPhongHoc.Location = new System.Drawing.Point(778, 3);
+            this.pnlPhongHoc.Name = "pnlPhongHoc";
+            this.pnlPhongHoc.Size = new System.Drawing.Size(149, 180);
+            this.pnlPhongHoc.TabIndex = 8;
             // 
             // label6
             // 
@@ -481,8 +484,8 @@ namespace CSharp_LanguageCentre
             this.pnlKhoaHoc.PerformLayout();
             this.pnlHoaDon.ResumeLayout(false);
             this.pnlHoaDon.PerformLayout();
-            this.pnlDangKyKhoaHoc.ResumeLayout(false);
-            this.pnlDangKyKhoaHoc.PerformLayout();
+            this.pnlPhongHoc.ResumeLayout(false);
+            this.pnlPhongHoc.PerformLayout();
             this.pnlGiangVien.ResumeLayout(false);
             this.pnlGiangVien.PerformLayout();
             this.pnlLuong.ResumeLayout(false);
@@ -501,7 +504,7 @@ namespace CSharp_LanguageCentre
 
         #endregion
 
-        private System.Windows.Forms.Label lblLogedinUser;
+        private System.Windows.Forms.Label lblLoggedInUser;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnlTaiKhoan;
         private System.Windows.Forms.Button btnSignOut;
@@ -515,7 +518,7 @@ namespace CSharp_LanguageCentre
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel pnlHoaDon;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel pnlDangKyKhoaHoc;
+        private System.Windows.Forms.Panel pnlPhongHoc;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel pnlGiangVien;
         private System.Windows.Forms.Label label7;
