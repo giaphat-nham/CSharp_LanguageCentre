@@ -71,6 +71,7 @@ namespace CSharp_LanguageCentre
         private void btnSignOut_Click(object sender, EventArgs e)
         {
             tkDaDangNhap = null;
+            Form1.TKDaDangNhap = null;
             
             DialogResult result = MessageBox.Show("Quay trở lại màn hình đăng nhập?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
