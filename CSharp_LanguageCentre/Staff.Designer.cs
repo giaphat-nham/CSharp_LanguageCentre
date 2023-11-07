@@ -28,7 +28,6 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Staff));
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.lblNhanVien = new System.Windows.Forms.Label();
@@ -51,6 +50,7 @@
 			this.btnSua = new System.Windows.Forms.Button();
 			this.btnThem = new System.Windows.Forms.Button();
 			this.cbbMaLuong = new System.Windows.Forms.ComboBox();
+			this.txtTenTK = new System.Windows.Forms.TextBox();
 			this.txtSdt = new System.Windows.Forms.TextBox();
 			this.label8 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
@@ -59,8 +59,6 @@
 			this.txtTenNV = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
-			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-			this.txtTenTK = new System.Windows.Forms.TextBox();
 			this.panel1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -288,6 +286,14 @@
 			this.cbbMaLuong.Size = new System.Drawing.Size(275, 34);
 			this.cbbMaLuong.TabIndex = 12;
 			// 
+			// txtTenTK
+			// 
+			this.txtTenTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtTenTK.Location = new System.Drawing.Point(182, 294);
+			this.txtTenTK.Name = "txtTenTK";
+			this.txtTenTK.Size = new System.Drawing.Size(275, 32);
+			this.txtTenTK.TabIndex = 10;
+			// 
 			// txtSdt
 			// 
 			this.txtSdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -357,20 +363,6 @@
 			this.label3.TabIndex = 0;
 			this.label3.Text = "Mã NV:";
 			// 
-			// contextMenuStrip1
-			// 
-			this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-			this.contextMenuStrip1.Name = "contextMenuStrip1";
-			this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-			// 
-			// txtTenTK
-			// 
-			this.txtTenTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtTenTK.Location = new System.Drawing.Point(182, 294);
-			this.txtTenTK.Name = "txtTenTK";
-			this.txtTenTK.Size = new System.Drawing.Size(275, 32);
-			this.txtTenTK.TabIndex = 10;
-			// 
 			// Staff
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -428,6 +420,5 @@
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.TextBox txtTenTK;
-		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
 	}
 }

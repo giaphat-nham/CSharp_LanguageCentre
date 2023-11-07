@@ -28,7 +28,6 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Teacher));
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.lblGiangVien = new System.Windows.Forms.Label();
@@ -63,7 +62,6 @@
 			this.txtTenGV = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
-			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.btnQuayLai = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
@@ -402,12 +400,6 @@
 			this.label3.TabIndex = 0;
 			this.label3.Text = "Mã GV:";
 			// 
-			// contextMenuStrip1
-			// 
-			this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-			this.contextMenuStrip1.Name = "contextMenuStrip1";
-			this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-			// 
 			// btnQuayLai
 			// 
 			this.btnQuayLai.BackgroundImage = global::CSharp_LanguageCentre.Properties.Resources.button_background;
@@ -469,7 +461,6 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.TextBox txtTenGV;
-		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.TextBox txtMaGV;
