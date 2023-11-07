@@ -77,11 +77,35 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Luong.Designer.cs">
+      <DependentUpon>Luong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Staff.Designer.cs">
+      <DependentUpon>Staff.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Student.Designer.cs">
       <DependentUpon>Student.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Teacher.designer.cs">
+      <DependentUpon>Teacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClassRoom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ClassRoom.Designer.cs">
+      <DependentUpon>ClassRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewTimeTable.cs">
       <SubType>UserControl</SubType>
@@ -124,11 +148,23 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Luong.resx">
+      <DependentUpon>Luong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Staff.resx">
+      <DependentUpon>Staff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Student.resx">
       <DependentUpon>Student.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher.resx">
+      <DependentUpon>Teacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClassRoom.resx">
+      <DependentUpon>ClassRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewTimeTable.resx">
       <DependentUpon>ViewTimeTable.cs</DependentUpon>
