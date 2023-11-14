@@ -33,11 +33,7 @@ namespace CSharp_LanguageCentre
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblLoginedUser = new System.Windows.Forms.Label();
             this.dgvQuyen = new System.Windows.Forms.DataGridView();
-            this.colMaQuyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenQuyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvChucNang = new System.Windows.Forms.DataGridView();
-            this.colMaChucNang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenChucNang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblSelectedPer = new System.Windows.Forms.Label();
@@ -61,6 +57,7 @@ namespace CSharp_LanguageCentre
             this.btnHuyCN = new System.Windows.Forms.Button();
             this.btnXoaCN = new System.Windows.Forms.Button();
             this.btnThemCN = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuyen)).BeginInit();
@@ -75,7 +72,7 @@ namespace CSharp_LanguageCentre
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(235)))), ((int)(((byte)(222)))));
             this.groupBox1.Controls.Add(this.dgvQuyen);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(33, 182);
+            this.groupBox1.Location = new System.Drawing.Point(28, 114);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(327, 225);
             this.groupBox1.TabIndex = 0;
@@ -88,7 +85,7 @@ namespace CSharp_LanguageCentre
             this.panel1.BackgroundImage = global::CSharp_LanguageCentre.Properties.Resources.label_background1;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.lblLoginedUser);
-            this.panel1.Location = new System.Drawing.Point(33, 97);
+            this.panel1.Location = new System.Drawing.Point(28, 29);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(183, 69);
             this.panel1.TabIndex = 5;
@@ -108,52 +105,18 @@ namespace CSharp_LanguageCentre
             // dgvQuyen
             // 
             this.dgvQuyen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvQuyen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaQuyen,
-            this.colTenQuyen});
             this.dgvQuyen.Location = new System.Drawing.Point(6, 25);
             this.dgvQuyen.Name = "dgvQuyen";
             this.dgvQuyen.Size = new System.Drawing.Size(315, 194);
             this.dgvQuyen.TabIndex = 0;
             // 
-            // colMaQuyen
-            // 
-            this.colMaQuyen.HeaderText = "Mã quyền";
-            this.colMaQuyen.Name = "colMaQuyen";
-            this.colMaQuyen.ReadOnly = true;
-            this.colMaQuyen.Width = 120;
-            // 
-            // colTenQuyen
-            // 
-            this.colTenQuyen.HeaderText = "Tên quyền";
-            this.colTenQuyen.Name = "colTenQuyen";
-            this.colTenQuyen.ReadOnly = true;
-            this.colTenQuyen.Width = 150;
-            // 
             // dgvChucNang
             // 
             this.dgvChucNang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvChucNang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaChucNang,
-            this.colTenChucNang});
             this.dgvChucNang.Location = new System.Drawing.Point(24, 78);
             this.dgvChucNang.Name = "dgvChucNang";
             this.dgvChucNang.Size = new System.Drawing.Size(335, 141);
             this.dgvChucNang.TabIndex = 0;
-            // 
-            // colMaChucNang
-            // 
-            this.colMaChucNang.HeaderText = "Mã chức năng";
-            this.colMaChucNang.Name = "colMaChucNang";
-            this.colMaChucNang.ReadOnly = true;
-            this.colMaChucNang.Width = 140;
-            // 
-            // colTenChucNang
-            // 
-            this.colTenChucNang.HeaderText = "Tên chức năng";
-            this.colTenChucNang.Name = "colTenChucNang";
-            this.colTenChucNang.ReadOnly = true;
-            this.colTenChucNang.Width = 150;
             // 
             // groupBox3
             // 
@@ -163,7 +126,7 @@ namespace CSharp_LanguageCentre
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.dgvChucNang);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(486, 182);
+            this.groupBox3.Location = new System.Drawing.Point(481, 114);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(387, 225);
             this.groupBox3.TabIndex = 1;
@@ -213,9 +176,9 @@ namespace CSharp_LanguageCentre
             this.groupBox2.Controls.Add(this.txtMaQuyen);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(33, 413);
+            this.groupBox2.Location = new System.Drawing.Point(28, 345);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(327, 144);
+            this.groupBox2.Size = new System.Drawing.Size(327, 156);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thao tác quyền";
@@ -232,9 +195,9 @@ namespace CSharp_LanguageCentre
             this.groupBox4.Controls.Add(this.txtMaCN);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(486, 413);
+            this.groupBox4.Location = new System.Drawing.Point(481, 345);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(387, 144);
+            this.groupBox4.Size = new System.Drawing.Size(387, 156);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thao tác chức năng";
@@ -264,6 +227,7 @@ namespace CSharp_LanguageCentre
             this.btnThemQuyen.TabIndex = 6;
             this.btnThemQuyen.Text = "Thêm";
             this.btnThemQuyen.UseVisualStyleBackColor = true;
+            this.btnThemQuyen.Click += new System.EventHandler(this.btnThemQuyen_Click);
             // 
             // btnXoaQuyen
             // 
@@ -273,6 +237,7 @@ namespace CSharp_LanguageCentre
             this.btnXoaQuyen.TabIndex = 7;
             this.btnXoaQuyen.Text = "Xóa";
             this.btnXoaQuyen.UseVisualStyleBackColor = true;
+            this.btnXoaQuyen.Click += new System.EventHandler(this.btnXoaQuyen_Click);
             // 
             // btnSuaQuyen
             // 
@@ -307,6 +272,7 @@ namespace CSharp_LanguageCentre
             this.btnHuyQuyen.TabIndex = 11;
             this.btnHuyQuyen.Text = "Hủy";
             this.btnHuyQuyen.UseVisualStyleBackColor = true;
+            this.btnHuyQuyen.Visible = false;
             // 
             // btnXacNhanQuyen
             // 
@@ -316,6 +282,7 @@ namespace CSharp_LanguageCentre
             this.btnXacNhanQuyen.TabIndex = 12;
             this.btnXacNhanQuyen.Text = "Xác nhận";
             this.btnXacNhanQuyen.UseVisualStyleBackColor = true;
+            this.btnXacNhanQuyen.Visible = false;
             this.btnXacNhanQuyen.Click += new System.EventHandler(this.button4_Click);
             // 
             // txtMaCN
@@ -388,12 +355,27 @@ namespace CSharp_LanguageCentre
             this.btnThemCN.Text = "Thêm";
             this.btnThemCN.UseVisualStyleBackColor = true;
             // 
+            // btnReturn
+            // 
+            this.btnReturn.BackgroundImage = global::CSharp_LanguageCentre.Properties.Resources.button_background;
+            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(27)))), ((int)(((byte)(16)))));
+            this.btnReturn.Location = new System.Drawing.Point(728, 56);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(140, 42);
+            this.btnReturn.TabIndex = 6;
+            this.btnReturn.Text = "Quay lại";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnSignOut_Click);
+            // 
             // Permission
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CSharp_LanguageCentre.Properties.Resources.general_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
@@ -422,11 +404,7 @@ namespace CSharp_LanguageCentre
         private System.Windows.Forms.DataGridView dgvQuyen;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblLoginedUser;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaQuyen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTenQuyen;
         private System.Windows.Forms.DataGridView dgvChucNang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaChucNang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTenChucNang;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblSelectedPer;
@@ -450,5 +428,6 @@ namespace CSharp_LanguageCentre
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtMaCN;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnReturn;
     }
 }

@@ -31,8 +31,10 @@ namespace BUS
 
         public string Insert(QuyenDTO quyen)
         {
+            quyen.MaQuyen = nextID();
             if (dao.Insert(quyen))
             {
+                danhSach = dao.getAll();
                 return "Thêm thành công!";
             }
             return "Đã có lỗi xảy ra!";
@@ -42,6 +44,7 @@ namespace BUS
         {
             if (dao.Delete(maQuyen))
             {
+                danhSach = dao.getAll();
                 return "Xóa thành công!";
             }
             return "Đã có lỗi xảy ra!";
@@ -50,6 +53,7 @@ namespace BUS
         {
             if (dao.Update(quyen))
             {
+                danhSach = dao.getAll();
                 return "Cập nhật thành công!";
             }
             return "Đã có lỗi xảy ra!";
