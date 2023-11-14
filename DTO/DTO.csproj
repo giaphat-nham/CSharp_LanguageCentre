@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChiTietPhanQuyenDTO.cs" />
+    <Compile Include="ChucNangDTO.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="CTHoaDonDTO.cs" />
     <Compile Include="DangKyKHDTO.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="KhoaHocDTO.cs" />
     <Compile Include="PhongHocDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuyenDTO.cs" />
     <Compile Include="TaiKhoanDTO.cs" />
     <Compile Include="ThoiKhoaBieuDTO.cs" />
   </ItemGroup>

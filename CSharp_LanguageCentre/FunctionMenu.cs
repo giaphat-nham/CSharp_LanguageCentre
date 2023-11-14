@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CSharp_LanguageCentre.DTO;
+using CSharp_LanguageCentre.GUI;
 using DTO;
 using BUS;
 
@@ -79,6 +80,56 @@ namespace CSharp_LanguageCentre
             {
                 Form1.ChangeControlTo(new MainMenu());
             }
+        }
+
+        private void pnlPhanQuyen_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnlPhanQuyen_Click(object sender, EventArgs e)
+        {
+            Form1.ChangeControlTo(new Permission());
+        }
+
+        private void pnlHocVien_Click(object sender, EventArgs e)
+        {
+            Form1.ChangeControlTo(new Student());
+        }
+
+        private void pnlKhoaHoc_Click(object sender, EventArgs e)
+        {
+            Form1.ChangeControlTo(new Course());
+        }
+
+        private void pnlPhongHoc_Click(object sender, EventArgs e)
+        {
+            Form1.ChangeControlTo(new ClassRoom());
+        }
+
+        private void pnlGiangVien_Click(object sender, EventArgs e)
+        {
+            Form1.ChangeControlTo(new Teacher());
+        }
+
+        private void pnlLuong_Click(object sender, EventArgs e)
+        {
+            Form1.ChangeControlTo(new Luong());
+        }
+
+        private void pnlNhanVien_Click(object sender, EventArgs e)
+        {
+            Form1.ChangeControlTo(new Staff());
+        }
+
+        private void pnlThoiKhoaBieu_Click(object sender, EventArgs e)
+        {
+            Form1.ChangeControlTo(new ViewTimeTable());
+        }
+
+        private void pnlHocPhi_Click(object sender, EventArgs e)
+        {
+            Form1.ChangeControlTo(new ViewTuition());
         }
     }
 }

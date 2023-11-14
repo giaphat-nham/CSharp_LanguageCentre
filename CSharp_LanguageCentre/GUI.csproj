@@ -83,6 +83,12 @@
     <Compile Include="Luong.Designer.cs">
       <DependentUpon>Luong.cs</DependentUpon>
     </Compile>
+    <Compile Include="Permission.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Permission.Designer.cs">
+      <DependentUpon>Permission.cs</DependentUpon>
+    </Compile>
     <Compile Include="Staff.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Permission.resx">
+      <DependentUpon>Permission.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>

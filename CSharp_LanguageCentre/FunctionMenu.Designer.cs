@@ -144,7 +144,7 @@ namespace CSharp_LanguageCentre
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(231)))), ((int)(((byte)(218)))));
             this.flowLayoutPanel1.Controls.Add(this.pnlTaiKhoan);
             this.flowLayoutPanel1.Controls.Add(this.pnlPhanQuyen);
             this.flowLayoutPanel1.Controls.Add(this.pnlHocVien);
@@ -173,6 +173,8 @@ namespace CSharp_LanguageCentre
             this.pnlPhanQuyen.Name = "pnlPhanQuyen";
             this.pnlPhanQuyen.Size = new System.Drawing.Size(149, 180);
             this.pnlPhanQuyen.TabIndex = 4;
+            this.pnlPhanQuyen.Click += new System.EventHandler(this.pnlPhanQuyen_Click);
+            this.pnlPhanQuyen.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPhanQuyen_Paint);
             // 
             // label1
             // 
@@ -200,6 +202,7 @@ namespace CSharp_LanguageCentre
             this.pnlHocVien.Name = "pnlHocVien";
             this.pnlHocVien.Size = new System.Drawing.Size(149, 180);
             this.pnlHocVien.TabIndex = 5;
+            this.pnlHocVien.Click += new System.EventHandler(this.pnlHocVien_Click);
             // 
             // label3
             // 
@@ -227,6 +230,7 @@ namespace CSharp_LanguageCentre
             this.pnlKhoaHoc.Name = "pnlKhoaHoc";
             this.pnlKhoaHoc.Size = new System.Drawing.Size(149, 180);
             this.pnlKhoaHoc.TabIndex = 6;
+            this.pnlKhoaHoc.Click += new System.EventHandler(this.pnlKhoaHoc_Click);
             // 
             // label4
             // 
@@ -281,6 +285,7 @@ namespace CSharp_LanguageCentre
             this.pnlPhongHoc.Name = "pnlPhongHoc";
             this.pnlPhongHoc.Size = new System.Drawing.Size(149, 180);
             this.pnlPhongHoc.TabIndex = 8;
+            this.pnlPhongHoc.Click += new System.EventHandler(this.pnlPhongHoc_Click);
             // 
             // label6
             // 
@@ -308,6 +313,7 @@ namespace CSharp_LanguageCentre
             this.pnlGiangVien.Name = "pnlGiangVien";
             this.pnlGiangVien.Size = new System.Drawing.Size(149, 180);
             this.pnlGiangVien.TabIndex = 9;
+            this.pnlGiangVien.Click += new System.EventHandler(this.pnlGiangVien_Click);
             // 
             // label7
             // 
@@ -335,6 +341,7 @@ namespace CSharp_LanguageCentre
             this.pnlLuong.Name = "pnlLuong";
             this.pnlLuong.Size = new System.Drawing.Size(149, 180);
             this.pnlLuong.TabIndex = 10;
+            this.pnlLuong.Click += new System.EventHandler(this.pnlLuong_Click);
             // 
             // label8
             // 
@@ -362,6 +369,7 @@ namespace CSharp_LanguageCentre
             this.pnlNhanVien.Name = "pnlNhanVien";
             this.pnlNhanVien.Size = new System.Drawing.Size(149, 180);
             this.pnlNhanVien.TabIndex = 11;
+            this.pnlNhanVien.Click += new System.EventHandler(this.pnlNhanVien_Click);
             // 
             // label9
             // 
@@ -416,6 +424,7 @@ namespace CSharp_LanguageCentre
             this.pnlThoiKhoaBieu.Name = "pnlThoiKhoaBieu";
             this.pnlThoiKhoaBieu.Size = new System.Drawing.Size(149, 180);
             this.pnlThoiKhoaBieu.TabIndex = 13;
+            this.pnlThoiKhoaBieu.Click += new System.EventHandler(this.pnlThoiKhoaBieu_Click);
             // 
             // label11
             // 
@@ -443,6 +452,7 @@ namespace CSharp_LanguageCentre
             this.pnlHocPhi.Name = "pnlHocPhi";
             this.pnlHocPhi.Size = new System.Drawing.Size(149, 180);
             this.pnlHocPhi.TabIndex = 14;
+            this.pnlHocPhi.Click += new System.EventHandler(this.pnlHocPhi_Click);
             // 
             // label12
             // 
