@@ -55,10 +55,6 @@ namespace CSharp_LanguageCentre.GUI
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.colMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCapBac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnQuayLai = new System.Windows.Forms.Button();
             this.btnXepLich = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -315,35 +311,10 @@ namespace CSharp_LanguageCentre.GUI
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaKH,
-            this.colTenKH,
-            this.colGia,
-            this.colCapBac});
             this.dataGridView1.Location = new System.Drawing.Point(69, 188);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(528, 356);
             this.dataGridView1.TabIndex = 11;
-            // 
-            // colMaKH
-            // 
-            this.colMaKH.HeaderText = "Mã KH";
-            this.colMaKH.Name = "colMaKH";
-            // 
-            // colTenKH
-            // 
-            this.colTenKH.HeaderText = "Tên KH";
-            this.colTenKH.Name = "colTenKH";
-            // 
-            // colGia
-            // 
-            this.colGia.HeaderText = "Giá";
-            this.colGia.Name = "colGia";
-            // 
-            // colCapBac
-            // 
-            this.colCapBac.HeaderText = "Cấp Bậc";
-            this.colCapBac.Name = "colCapBac";
             // 
             // btnQuayLai
             // 
@@ -427,10 +398,6 @@ namespace CSharp_LanguageCentre.GUI
         private System.Windows.Forms.DateTimePicker dateBatDau;
         private System.Windows.Forms.DateTimePicker dateKetThuc;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTenKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colGia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCapBac;
         private System.Windows.Forms.Button btnQuayLai;
         private System.Windows.Forms.Button btnXepLich;
     }

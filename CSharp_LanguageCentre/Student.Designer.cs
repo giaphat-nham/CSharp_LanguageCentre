@@ -54,9 +54,6 @@ namespace CSharp_LanguageCentre.GUI
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.colMaHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnXepLich = new System.Windows.Forms.Button();
             this.btnQuayLai = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -174,7 +171,8 @@ namespace CSharp_LanguageCentre.GUI
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(120, 295);
+            this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.Location = new System.Drawing.Point(65, 295);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(99, 32);
             this.btnHuy.TabIndex = 12;
@@ -183,7 +181,8 @@ namespace CSharp_LanguageCentre.GUI
             // 
             // btnXacNhan
             // 
-            this.btnXacNhan.Location = new System.Drawing.Point(224, 295);
+            this.btnXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXacNhan.Location = new System.Drawing.Point(183, 295);
             this.btnXacNhan.Name = "btnXacNhan";
             this.btnXacNhan.Size = new System.Drawing.Size(99, 32);
             this.btnXacNhan.TabIndex = 11;
@@ -192,7 +191,8 @@ namespace CSharp_LanguageCentre.GUI
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(16, 295);
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Location = new System.Drawing.Point(121, 245);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(98, 32);
             this.btnSua.TabIndex = 10;
@@ -201,7 +201,8 @@ namespace CSharp_LanguageCentre.GUI
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(175, 245);
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Location = new System.Drawing.Point(224, 245);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(93, 32);
             this.btnXoa.TabIndex = 9;
@@ -210,7 +211,8 @@ namespace CSharp_LanguageCentre.GUI
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(73, 245);
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Location = new System.Drawing.Point(21, 245);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(93, 32);
             this.btnThem.TabIndex = 8;
@@ -284,29 +286,10 @@ namespace CSharp_LanguageCentre.GUI
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaHV,
-            this.colHoTen,
-            this.colSDT});
             this.dataGridView1.Location = new System.Drawing.Point(75, 199);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(531, 356);
             this.dataGridView1.TabIndex = 9;
-            // 
-            // colMaHV
-            // 
-            this.colMaHV.HeaderText = "Mã HV";
-            this.colMaHV.Name = "colMaHV";
-            // 
-            // colHoTen
-            // 
-            this.colHoTen.HeaderText = "Họ tên";
-            this.colHoTen.Name = "colHoTen";
-            // 
-            // colSDT
-            // 
-            this.colSDT.HeaderText = "SĐT";
-            this.colSDT.Name = "colSDT";
             // 
             // btnXepLich
             // 
@@ -385,9 +368,6 @@ namespace CSharp_LanguageCentre.GUI
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaHV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHoTen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSDT;
         private System.Windows.Forms.Button btnXepLich;
         private System.Windows.Forms.Button btnQuayLai;
     }
