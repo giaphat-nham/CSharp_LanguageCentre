@@ -35,7 +35,7 @@ namespace BUS
             if (dao.Insert(quyen))
             {
                 danhSach = dao.getAll();
-                return "Thêm thành công!";
+                return "Thêm thành công!"+quyen.TenQuyen;
             }
             return "Đã có lỗi xảy ra!";
         }
@@ -57,6 +57,11 @@ namespace BUS
                 return "Cập nhật thành công!";
             }
             return "Đã có lỗi xảy ra!";
+        }
+
+        public bool TrungMa(int maQuyen)
+        {
+            return dao.TrungMa(maQuyen);
         }
     }
 }

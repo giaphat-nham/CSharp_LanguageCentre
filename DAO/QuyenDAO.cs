@@ -51,7 +51,16 @@ namespace DAO
 
         public bool Delete(int maQuyen)
         {
-            string sql = "SELECT * FROM quyen";
+            string sql = "SELECT * FROM chi_tiet_phan_quyen";
+            dataTable = dataServices.RunQuery(sql);
+            foreach(DataRow row in dataTable.Rows)
+            {
+                if (row["ma_quyen"].Equals(maQuyen))
+                    row.Delete();
+            }
+            dataServices.Update(dataTable);
+
+            sql = "SELECT * FROM quyen";
             dataTable = dataServices.RunQuery(sql);
             dataTable.Rows.Find(maQuyen).Delete();
             dataServices.Update(dataTable);

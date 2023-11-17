@@ -30,37 +30,37 @@ namespace CSharp_LanguageCentre
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvQuyen = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblLoginedUser = new System.Windows.Forms.Label();
-            this.dgvQuyen = new System.Windows.Forms.DataGridView();
             this.dgvChucNang = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblSelectedPer = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblSelectedPer = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtMaQuyen = new System.Windows.Forms.TextBox();
-            this.btnThemQuyen = new System.Windows.Forms.Button();
-            this.btnXoaQuyen = new System.Windows.Forms.Button();
-            this.btnSuaQuyen = new System.Windows.Forms.Button();
+            this.btnXacNhanQuyen = new System.Windows.Forms.Button();
+            this.btnHuyQuyen = new System.Windows.Forms.Button();
             this.txtTenQuyen = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnHuyQuyen = new System.Windows.Forms.Button();
-            this.btnXacNhanQuyen = new System.Windows.Forms.Button();
-            this.txtMaCN = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbbChonCN = new System.Windows.Forms.ComboBox();
+            this.btnSuaQuyen = new System.Windows.Forms.Button();
+            this.btnXoaQuyen = new System.Windows.Forms.Button();
+            this.btnThemQuyen = new System.Windows.Forms.Button();
+            this.txtMaQuyen = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnXacNhanCN = new System.Windows.Forms.Button();
             this.btnHuyCN = new System.Windows.Forms.Button();
             this.btnXoaCN = new System.Windows.Forms.Button();
             this.btnThemCN = new System.Windows.Forms.Button();
+            this.cbbChonCN = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtMaCN = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.btnReturn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuyen)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChucNang)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -78,6 +78,14 @@ namespace CSharp_LanguageCentre
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách quyền";
+            // 
+            // dgvQuyen
+            // 
+            this.dgvQuyen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvQuyen.Location = new System.Drawing.Point(6, 25);
+            this.dgvQuyen.Name = "dgvQuyen";
+            this.dgvQuyen.Size = new System.Drawing.Size(315, 194);
+            this.dgvQuyen.TabIndex = 0;
             // 
             // panel1
             // 
@@ -102,14 +110,6 @@ namespace CSharp_LanguageCentre
             this.lblLoginedUser.TabIndex = 0;
             this.lblLoginedUser.Text = "Phân quyền";
             // 
-            // dgvQuyen
-            // 
-            this.dgvQuyen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvQuyen.Location = new System.Drawing.Point(6, 25);
-            this.dgvQuyen.Name = "dgvQuyen";
-            this.dgvQuyen.Size = new System.Drawing.Size(315, 194);
-            this.dgvQuyen.TabIndex = 0;
-            // 
             // dgvChucNang
             // 
             this.dgvChucNang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -133,14 +133,14 @@ namespace CSharp_LanguageCentre
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Quyền đã chọn";
             // 
-            // label1
+            // label2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Mã quyền:";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(168, 20);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Danh sách chức năng:";
             // 
             // lblSelectedPer
             // 
@@ -154,14 +154,14 @@ namespace CSharp_LanguageCentre
             this.lblSelectedPer.Text = "0";
             this.lblSelectedPer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label2
+            // label1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Danh sách chức năng:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Mã quyền:";
             // 
             // groupBox2
             // 
@@ -183,6 +183,91 @@ namespace CSharp_LanguageCentre
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thao tác quyền";
             // 
+            // btnXacNhanQuyen
+            // 
+            this.btnXacNhanQuyen.Enabled = false;
+            this.btnXacNhanQuyen.Location = new System.Drawing.Point(140, 118);
+            this.btnXacNhanQuyen.Name = "btnXacNhanQuyen";
+            this.btnXacNhanQuyen.Size = new System.Drawing.Size(100, 26);
+            this.btnXacNhanQuyen.TabIndex = 12;
+            this.btnXacNhanQuyen.Text = "Xác nhận";
+            this.btnXacNhanQuyen.UseVisualStyleBackColor = true;
+            this.btnXacNhanQuyen.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnHuyQuyen
+            // 
+            this.btnHuyQuyen.Enabled = false;
+            this.btnHuyQuyen.Location = new System.Drawing.Point(246, 118);
+            this.btnHuyQuyen.Name = "btnHuyQuyen";
+            this.btnHuyQuyen.Size = new System.Drawing.Size(75, 26);
+            this.btnHuyQuyen.TabIndex = 11;
+            this.btnHuyQuyen.Text = "Hủy";
+            this.btnHuyQuyen.UseVisualStyleBackColor = true;
+            this.btnHuyQuyen.Click += new System.EventHandler(this.btnHuyQuyen_Click);
+            // 
+            // txtTenQuyen
+            // 
+            this.txtTenQuyen.Location = new System.Drawing.Point(140, 51);
+            this.txtTenQuyen.Name = "txtTenQuyen";
+            this.txtTenQuyen.Size = new System.Drawing.Size(181, 26);
+            this.txtTenQuyen.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 54);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 20);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Tên quyền";
+            // 
+            // btnSuaQuyen
+            // 
+            this.btnSuaQuyen.Location = new System.Drawing.Point(221, 86);
+            this.btnSuaQuyen.Name = "btnSuaQuyen";
+            this.btnSuaQuyen.Size = new System.Drawing.Size(100, 26);
+            this.btnSuaQuyen.TabIndex = 8;
+            this.btnSuaQuyen.Text = "Cập nhật";
+            this.btnSuaQuyen.UseVisualStyleBackColor = true;
+            this.btnSuaQuyen.Click += new System.EventHandler(this.btnSuaQuyen_Click);
+            // 
+            // btnXoaQuyen
+            // 
+            this.btnXoaQuyen.Location = new System.Drawing.Point(140, 86);
+            this.btnXoaQuyen.Name = "btnXoaQuyen";
+            this.btnXoaQuyen.Size = new System.Drawing.Size(75, 26);
+            this.btnXoaQuyen.TabIndex = 7;
+            this.btnXoaQuyen.Text = "Xóa";
+            this.btnXoaQuyen.UseVisualStyleBackColor = true;
+            this.btnXoaQuyen.Click += new System.EventHandler(this.btnXoaQuyen_Click);
+            // 
+            // btnThemQuyen
+            // 
+            this.btnThemQuyen.Location = new System.Drawing.Point(59, 86);
+            this.btnThemQuyen.Name = "btnThemQuyen";
+            this.btnThemQuyen.Size = new System.Drawing.Size(75, 26);
+            this.btnThemQuyen.TabIndex = 6;
+            this.btnThemQuyen.Text = "Thêm";
+            this.btnThemQuyen.UseVisualStyleBackColor = true;
+            this.btnThemQuyen.Click += new System.EventHandler(this.btnThemQuyen_Click);
+            // 
+            // txtMaQuyen
+            // 
+            this.txtMaQuyen.Enabled = false;
+            this.txtMaQuyen.Location = new System.Drawing.Point(140, 19);
+            this.txtMaQuyen.Name = "txtMaQuyen";
+            this.txtMaQuyen.Size = new System.Drawing.Size(181, 26);
+            this.txtMaQuyen.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 20);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Mã quyền";
+            // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(235)))), ((int)(((byte)(222)))));
@@ -201,123 +286,6 @@ namespace CSharp_LanguageCentre
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thao tác chức năng";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Mã quyền";
-            // 
-            // txtMaQuyen
-            // 
-            this.txtMaQuyen.Enabled = false;
-            this.txtMaQuyen.Location = new System.Drawing.Point(140, 19);
-            this.txtMaQuyen.Name = "txtMaQuyen";
-            this.txtMaQuyen.Size = new System.Drawing.Size(181, 26);
-            this.txtMaQuyen.TabIndex = 5;
-            // 
-            // btnThemQuyen
-            // 
-            this.btnThemQuyen.Location = new System.Drawing.Point(59, 86);
-            this.btnThemQuyen.Name = "btnThemQuyen";
-            this.btnThemQuyen.Size = new System.Drawing.Size(75, 26);
-            this.btnThemQuyen.TabIndex = 6;
-            this.btnThemQuyen.Text = "Thêm";
-            this.btnThemQuyen.UseVisualStyleBackColor = true;
-            this.btnThemQuyen.Click += new System.EventHandler(this.btnThemQuyen_Click);
-            // 
-            // btnXoaQuyen
-            // 
-            this.btnXoaQuyen.Location = new System.Drawing.Point(140, 86);
-            this.btnXoaQuyen.Name = "btnXoaQuyen";
-            this.btnXoaQuyen.Size = new System.Drawing.Size(75, 26);
-            this.btnXoaQuyen.TabIndex = 7;
-            this.btnXoaQuyen.Text = "Xóa";
-            this.btnXoaQuyen.UseVisualStyleBackColor = true;
-            this.btnXoaQuyen.Click += new System.EventHandler(this.btnXoaQuyen_Click);
-            // 
-            // btnSuaQuyen
-            // 
-            this.btnSuaQuyen.Location = new System.Drawing.Point(221, 86);
-            this.btnSuaQuyen.Name = "btnSuaQuyen";
-            this.btnSuaQuyen.Size = new System.Drawing.Size(100, 26);
-            this.btnSuaQuyen.TabIndex = 8;
-            this.btnSuaQuyen.Text = "Cập nhật";
-            this.btnSuaQuyen.UseVisualStyleBackColor = true;
-            // 
-            // txtTenQuyen
-            // 
-            this.txtTenQuyen.Location = new System.Drawing.Point(140, 51);
-            this.txtTenQuyen.Name = "txtTenQuyen";
-            this.txtTenQuyen.Size = new System.Drawing.Size(181, 26);
-            this.txtTenQuyen.TabIndex = 10;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 54);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 20);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Tên quyền";
-            // 
-            // btnHuyQuyen
-            // 
-            this.btnHuyQuyen.Location = new System.Drawing.Point(246, 118);
-            this.btnHuyQuyen.Name = "btnHuyQuyen";
-            this.btnHuyQuyen.Size = new System.Drawing.Size(75, 26);
-            this.btnHuyQuyen.TabIndex = 11;
-            this.btnHuyQuyen.Text = "Hủy";
-            this.btnHuyQuyen.UseVisualStyleBackColor = true;
-            this.btnHuyQuyen.Visible = false;
-            // 
-            // btnXacNhanQuyen
-            // 
-            this.btnXacNhanQuyen.Location = new System.Drawing.Point(140, 118);
-            this.btnXacNhanQuyen.Name = "btnXacNhanQuyen";
-            this.btnXacNhanQuyen.Size = new System.Drawing.Size(100, 26);
-            this.btnXacNhanQuyen.TabIndex = 12;
-            this.btnXacNhanQuyen.Text = "Xác nhận";
-            this.btnXacNhanQuyen.UseVisualStyleBackColor = true;
-            this.btnXacNhanQuyen.Visible = false;
-            this.btnXacNhanQuyen.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // txtMaCN
-            // 
-            this.txtMaCN.Enabled = false;
-            this.txtMaCN.Location = new System.Drawing.Point(153, 22);
-            this.txtMaCN.Name = "txtMaCN";
-            this.txtMaCN.Size = new System.Drawing.Size(206, 26);
-            this.txtMaCN.TabIndex = 14;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 20);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Mã chức năng";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 57);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 20);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Chọn chức năng";
-            // 
-            // cbbChonCN
-            // 
-            this.cbbChonCN.FormattingEnabled = true;
-            this.cbbChonCN.Location = new System.Drawing.Point(153, 54);
-            this.cbbChonCN.Name = "cbbChonCN";
-            this.cbbChonCN.Size = new System.Drawing.Size(206, 28);
-            this.cbbChonCN.TabIndex = 16;
             // 
             // btnXacNhanCN
             // 
@@ -355,6 +323,40 @@ namespace CSharp_LanguageCentre
             this.btnThemCN.Text = "Thêm";
             this.btnThemCN.UseVisualStyleBackColor = true;
             // 
+            // cbbChonCN
+            // 
+            this.cbbChonCN.FormattingEnabled = true;
+            this.cbbChonCN.Location = new System.Drawing.Point(153, 54);
+            this.cbbChonCN.Name = "cbbChonCN";
+            this.cbbChonCN.Size = new System.Drawing.Size(206, 28);
+            this.cbbChonCN.TabIndex = 16;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(16, 57);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(125, 20);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Chọn chức năng";
+            // 
+            // txtMaCN
+            // 
+            this.txtMaCN.Enabled = false;
+            this.txtMaCN.Location = new System.Drawing.Point(153, 22);
+            this.txtMaCN.Name = "txtMaCN";
+            this.txtMaCN.Size = new System.Drawing.Size(206, 26);
+            this.txtMaCN.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(16, 25);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(109, 20);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Mã chức năng";
+            // 
             // btnReturn
             // 
             this.btnReturn.BackgroundImage = global::CSharp_LanguageCentre.Properties.Resources.button_background;
@@ -384,9 +386,9 @@ namespace CSharp_LanguageCentre
             this.Name = "Permission";
             this.Size = new System.Drawing.Size(1024, 576);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQuyen)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvQuyen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChucNang)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

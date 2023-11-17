@@ -22,8 +22,8 @@ namespace DTO
             this.tenQuyen = tenQuyen;
         }
 
-        public int MaQuyen { get; set; }
-        public string TenQuyen { get; set; }
+        public int MaQuyen { get { return maQuyen; } set { maQuyen = value; } }
+        public string TenQuyen { get { return tenQuyen; } set { tenQuyen = value; } }
 
     }
 }

@@ -38,6 +38,7 @@ namespace CSharp_LanguageCentre
 
         public void LoadDanhSachChucNang()
         {
+            danhSachCN.Clear();
             danhSachCN.Add(pnlTaiKhoan);
             danhSachCN.Add(pnlPhanQuyen);
             danhSachCN.Add(pnlHocVien);

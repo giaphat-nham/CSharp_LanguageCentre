@@ -16,6 +16,7 @@ namespace CSharp_LanguageCentre
     {
         QuyenBUS busQuyen = new QuyenBUS();
         List<QuyenDTO> listQuyen;
+        static bool isDeleting = false, isUpdating = false;
         public Permission()
         {
             InitializeComponent();
@@ -24,7 +25,17 @@ namespace CSharp_LanguageCentre
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (isDeleting)
+            {
+                if (String.IsNullOrWhiteSpace(txtMaQuyen.Text))
+                {
+                    MessageBox.Show("Không được để trống thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else if (isUpdating)
+            {
 
+            }
         }
         private void LoadQuyen()
         {
@@ -39,24 +50,77 @@ namespace CSharp_LanguageCentre
 
         private void btnThemQuyen_Click(object sender, EventArgs e)
         {
-           if (String.IsNullOrWhiteSpace(txtTenQuyen.Text))
+            if (String.IsNullOrWhiteSpace(txtTenQuyen.Text))
             {
-                MessageBox.Show("Không được để trống thông tin!", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Không được để trống thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-           else
+            else
             {
-                MessageBox.Show(busQuyen.Insert(new QuyenDTO(-1,txtTenQuyen.Text)), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                QuyenDTO quyen = new QuyenDTO(-1, txtTenQuyen.Text);
+                MessageBox.Show(busQuyen.Insert(quyen), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadQuyen();
             }
         }
 
-        private void ToggleButtonQuyen(bool enterMode)
+        private void ToggleButtonQuyen()
         {
-            btnXacNhanQuyen.Enabled = enterMode;
+            if (isDeleting || isUpdating)
+            {
+                btnXacNhanQuyen.Enabled = true;
+                btnHuyQuyen.Enabled = true;
+                btnThemQuyen.Enabled = false;
+                btnSuaQuyen.Enabled = false;
+                btnXoaQuyen.Enabled = false;
+            }
+
+        }
+
+        private void btnHuyQuyen_Click(object sender, EventArgs e)
+        {
+            if (isDeleting)
+            {
+                isDeleting = false;
+                btnXacNhanQuyen.Enabled = false;
+                btnHuyQuyen.Enabled = false;
+                btnThemQuyen.Enabled = true;
+                btnSuaQuyen.Enabled = true;
+                btnXoaQuyen.Enabled = true;
+
+                btnXoaQuyen.ForeColor = Color.Black;
+                txtMaQuyen.Enabled = false;
+                txtTenQuyen.Enabled = true;
+            }
+            else if (isUpdating)
+            {
+                isUpdating = false;
+                btnXacNhanQuyen.Enabled = false;
+                btnHuyQuyen.Enabled = false;
+                btnThemQuyen.Enabled = true;
+                btnSuaQuyen.Enabled = true;
+                btnXoaQuyen.Enabled = true;
+
+                btnSuaQuyen.ForeColor = Color.Black;
+                txtMaQuyen.Enabled = false;
+                txtTenQuyen.Enabled = true;
+            }
+        }
+
+        private void btnSuaQuyen_Click(object sender, EventArgs e)
+        {
+            isUpdating = true;
+            btnSuaQuyen.ForeColor = Color.FromArgb(1, 226, 91, 69);
+            txtMaQuyen.Enabled = true;
+            txtTenQuyen.Enabled = true;
+            ToggleButtonQuyen();
         }
 
         private void btnXoaQuyen_Click(object sender, EventArgs e)
         {
-
+            isDeleting = true;
+            btnXoaQuyen.ForeColor = Color.FromArgb(1, 226, 91, 69);
+            txtMaQuyen.Enabled = true;
+            txtTenQuyen.Enabled = false;
+            ToggleButtonQuyen();
         }
     }
 }

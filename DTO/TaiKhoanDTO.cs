@@ -24,8 +24,8 @@ namespace CSharp_LanguageCentre.DTO
             this.maQuyen = maQuyen;
         }
 
-        public string TenTK { get; set; }
-        public string MatKhau { get; set; }
-        public int MaQuyen { get; set; }
+        public string TenTK { get { return tenTK; } set { tenTK = value; } }
+        public string MatKhau { get { return matKhau; } set { matKhau = value; } }
+        public int MaQuyen { get { return maQuyen; } set { maQuyen = value; } }
     }
 }

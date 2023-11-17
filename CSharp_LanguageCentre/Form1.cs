@@ -23,7 +23,7 @@ namespace CSharp_LanguageCentre
             form = this;
         }
 
-        public static TaiKhoanDTO TKDaDangNhap { get; set; }
+        public static TaiKhoanDTO TKDaDangNhap { get { return tkDaDangNhap; } set { tkDaDangNhap = value; } }
 
         public static void ChangeControlTo(UserControl control)
         {
