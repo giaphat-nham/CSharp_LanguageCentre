@@ -21,9 +21,9 @@ namespace CSharp_LanguageCentre.DTO
             this.diemCK = diemCK;
         }
 
-        public int MaKH { get; set; }
-        public int MaHV { get; set; }
-        public float DiemGK { get; set; }
-        public float DiemCK { get; set; }
+        public int MaKH { get { return MaKH; } set { MaKH = value; } }
+        public int MaHV { get { return maHV; } set { maHV = value; } }
+        public float DiemGK { get { return diemGK; } set { diemGK = value; } }
+        public float DiemCK { get { return diemCK; } set { diemCK = value; } }
     }
 }

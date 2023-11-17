@@ -21,9 +21,9 @@ namespace CSharp_LanguageCentre.DTO
             this.trinhDo = trinhDo;
         }
 
-        public int MaHV { get; set; }
-        public string HoTen { get; set; }
-        public string SoDienThoai { get; set; }
-        public int TrinhDo { get; set; }
+        public int MaHV { get { return maHV; } set { maHV = value; } }
+        public string HoTen { get { return hoTen; } set { hoTen = value; } }
+        public string SoDienThoai { get { return soDienThoai; } set { soDienThoai = value; } }
+        public int TrinhDo { get { return trinhDo; } set { trinhDo = value; } }
     }
 }

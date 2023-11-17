@@ -25,11 +25,11 @@ namespace CSharp_LanguageCentre.DTO
             this.ngayKT = ngayKT;
         }
         
-        public int MaKH { get; set; }
-        public string TenKH { get; set; }
-        public int Gia { get; set; }
-        public string CapBac { get; set; }
-        public DateTime NgayBD{ get; set; }
-        public DateTime NgayKT{ get; set; }
+        public int MaKH { get { return maKH; } set { maKH = value; } }
+        public string TenKH { get { return tenKH; } set { tenKH = value; } }
+        public int Gia { get { return gia; } set { gia = value; } }
+        public string CapBac { get { return capBac; } set { capBac = value; } }
+        public DateTime NgayBD{ get { return ngayBD; } set { ngayBD = value; } }
+        public DateTime NgayKT{ get { return ngayKT; } set { ngayKT = value; } }
     }
 }

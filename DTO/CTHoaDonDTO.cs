@@ -19,8 +19,8 @@ namespace CSharp_LanguageCentre.DTO
             this.gia = gia;
         }
 
-        public int MaHD { get; set; }
-        public int MaKH { get; set; }
-        public int Gia { get; set; }
+        public int MaHD { get { return maHD; } set { maHD = value; } }
+        public int MaKH { get { return maKH; } set { maKH = value; } }
+        public int Gia { get { return gia; } set { gia = value; } }
     }
 }
