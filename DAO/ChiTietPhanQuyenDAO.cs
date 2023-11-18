@@ -35,5 +35,37 @@ namespace DAO
 
             return dsQuyen;
         }
+
+        public bool Insert(ChiTietPhanQuyenDTO quyen)
+        {
+            string sql = "SELECT * FROM chi_tiet_phan_quyen";
+            dataTable = dataServices.RunQuery(sql);
+            dataTable.PrimaryKey = new DataColumn[] { dataTable.Columns["ma_quyen"], dataTable.Columns["ma_cn"] };
+            DataRow row = dataTable.NewRow();
+            row["ma_quyen"] = quyen.MaQuyen;
+            row["ma_cn"] = quyen.MaCN;
+            dataTable.Rows.Add(row);
+            dataServices.Update(dataTable);
+            return true;
+
+        }
+
+        public bool Delete(ChiTietPhanQuyenDTO quyen)
+        {
+            string sql = "SELECT * FROM chi_tiet_phan_quyen";
+            dataTable = dataServices.RunQuery(sql);
+            dataTable.PrimaryKey = new DataColumn[] { dataTable.Columns["ma_quyen"], dataTable.Columns["ma_cn"] };
+            dataTable.Rows.Find(new object[] { quyen.MaQuyen, quyen.MaCN }).Delete();
+            dataServices.Update(dataTable);
+            return true;
+        }
+
+        public bool TrungMa(ChiTietPhanQuyenDTO quyen)
+        {
+            string sql = $"SELECT * FROM chi_tiet_phan_quyen WHERE ma_quyen = {quyen.MaQuyen} AND ma_cn='{quyen.MaCN}'";
+            dataTable = dataServices.RunQuery(sql);
+            if (dataTable.Rows.Count == 0) return false;
+            return true;
+        }
     }
 }

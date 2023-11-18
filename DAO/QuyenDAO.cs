@@ -62,6 +62,7 @@ namespace DAO
 
             sql = "SELECT * FROM quyen";
             dataTable = dataServices.RunQuery(sql);
+            dataTable.PrimaryKey = new DataColumn[] { dataTable.Columns["ma_quyen"] };
             dataTable.Rows.Find(maQuyen).Delete();
             dataServices.Update(dataTable);
             return true;
@@ -71,6 +72,7 @@ namespace DAO
         {
             string sql = "SELECT * FROM quyen";
             dataTable = dataServices.RunQuery(sql);
+            dataTable.PrimaryKey = new DataColumn[] { dataTable.Columns["ma_quyen"] };
             DataRow row = dataTable.Rows.Find(quyen.MaQuyen);
             row["ma_quyen"] = quyen.MaQuyen;
             row["ten_quyen"] = quyen.TenQuyen;

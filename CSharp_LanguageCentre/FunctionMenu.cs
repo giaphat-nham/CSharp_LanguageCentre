@@ -132,5 +132,15 @@ namespace CSharp_LanguageCentre
         {
             Form1.ChangeControlTo(new ViewTuition());
         }
+
+        private void pnlHoaDon_Click(object sender, EventArgs e)
+        {
+            Form1.ChangeControlTo(new Invoice());
+        }
+
+        private void pnlTaiKhoan_Click(object sender, EventArgs e)
+        {
+            Form1.ChangeControlTo(new Account());
+        }
     }
 }

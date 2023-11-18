@@ -109,6 +109,7 @@ namespace CSharp_LanguageCentre
             this.pnlTaiKhoan.Name = "pnlTaiKhoan";
             this.pnlTaiKhoan.Size = new System.Drawing.Size(149, 180);
             this.pnlTaiKhoan.TabIndex = 2;
+            this.pnlTaiKhoan.Click += new System.EventHandler(this.pnlTaiKhoan_Click);
             // 
             // label2
             // 
@@ -258,6 +259,7 @@ namespace CSharp_LanguageCentre
             this.pnlHoaDon.Name = "pnlHoaDon";
             this.pnlHoaDon.Size = new System.Drawing.Size(149, 180);
             this.pnlHoaDon.TabIndex = 7;
+            this.pnlHoaDon.Click += new System.EventHandler(this.pnlHoaDon_Click);
             // 
             // label5
             // 

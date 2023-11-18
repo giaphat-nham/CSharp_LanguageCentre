@@ -35,7 +35,7 @@ namespace BUS
             if (dao.Insert(quyen))
             {
                 danhSach = dao.getAll();
-                return "Thêm thành công!"+quyen.TenQuyen;
+                return "Thêm thành công!";
             }
             return "Đã có lỗi xảy ra!";
         }
