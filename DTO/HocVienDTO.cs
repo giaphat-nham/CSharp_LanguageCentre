@@ -6,14 +6,19 @@ using System.Threading.Tasks;
 
 namespace CSharp_LanguageCentre.DTO
 {
-    class HocVienDTO
+    public class HocVienDTO
     {
         int maHV;
         string hoTen;
         string soDienThoai;
-        int trinhDo;
+        string trinhDo;
 
-        public HocVienDTO(int maHV, string hoTen, string soDienThoai, int trinhDo)
+        public HocVienDTO()
+        {
+
+        }
+
+        public HocVienDTO(int maHV, string hoTen, string soDienThoai, string trinhDo)
         {
             this.maHV = maHV;
             this.hoTen = hoTen;
@@ -24,6 +29,6 @@ namespace CSharp_LanguageCentre.DTO
         public int MaHV { get { return maHV; } set { maHV = value; } }
         public string HoTen { get { return hoTen; } set { hoTen = value; } }
         public string SoDienThoai { get { return soDienThoai; } set { soDienThoai = value; } }
-        public int TrinhDo { get { return trinhDo; } set { trinhDo = value; } }
+        public string TrinhDo { get { return trinhDo; } set { trinhDo = value; } }
     }
 }

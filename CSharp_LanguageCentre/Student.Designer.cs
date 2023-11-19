@@ -29,7 +29,6 @@ namespace CSharp_LanguageCentre.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Student));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblLoginedUser = new System.Windows.Forms.Label();
@@ -38,7 +37,6 @@ namespace CSharp_LanguageCentre.GUI
             this.ccbTimKiem = new System.Windows.Forms.ComboBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnXacNhan = new System.Windows.Forms.Button();
@@ -139,11 +137,6 @@ namespace CSharp_LanguageCentre.GUI
             this.label1.Size = new System.Drawing.Size(120, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tìm kiếm theo";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // groupBox2
             // 
@@ -350,7 +343,6 @@ namespace CSharp_LanguageCentre.GUI
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTimKiem;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.ComboBox ccbTimKiem;
         private System.Windows.Forms.GroupBox groupBox2;
