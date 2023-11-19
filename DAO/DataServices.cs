@@ -67,5 +67,18 @@ namespace DAO
                 Console.WriteLine($"Error: {ex.Number}");
             }
         }
+
+        public void ExecuteNonQuery(string sql)
+        {
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"Error: {ex.Number}");
+            }
+        }
     }
 }

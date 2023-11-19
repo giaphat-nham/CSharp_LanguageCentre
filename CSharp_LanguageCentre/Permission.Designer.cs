@@ -35,6 +35,7 @@ namespace CSharp_LanguageCentre
             this.lblLoginedUser = new System.Windows.Forms.Label();
             this.dgvChucNang = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cbbMaQuyen = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -57,7 +58,6 @@ namespace CSharp_LanguageCentre
             this.txtMaCN = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnReturn = new System.Windows.Forms.Button();
-            this.cbbMaQuyen = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuyen)).BeginInit();
             this.panel1.SuspendLayout();
@@ -132,6 +132,15 @@ namespace CSharp_LanguageCentre
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Chi tiết quyền";
+            // 
+            // cbbMaQuyen
+            // 
+            this.cbbMaQuyen.FormattingEnabled = true;
+            this.cbbMaQuyen.Location = new System.Drawing.Point(238, 22);
+            this.cbbMaQuyen.Name = "cbbMaQuyen";
+            this.cbbMaQuyen.Size = new System.Drawing.Size(121, 28);
+            this.cbbMaQuyen.TabIndex = 4;
+            this.cbbMaQuyen.SelectionChangeCommitted += new System.EventHandler(this.cbbMaQuyen_SelectionChangeCommitted);
             // 
             // label2
             // 
@@ -284,6 +293,7 @@ namespace CSharp_LanguageCentre
             this.btnXacNhanCN.TabIndex = 20;
             this.btnXacNhanCN.Text = "Xác nhận";
             this.btnXacNhanCN.UseVisualStyleBackColor = true;
+            this.btnXacNhanCN.Click += new System.EventHandler(this.btnXacNhanCN_Click);
             // 
             // btnHuyCN
             // 
@@ -367,15 +377,6 @@ namespace CSharp_LanguageCentre
             this.btnReturn.Text = "Quay lại";
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnSignOut_Click);
-            // 
-            // cbbMaQuyen
-            // 
-            this.cbbMaQuyen.FormattingEnabled = true;
-            this.cbbMaQuyen.Location = new System.Drawing.Point(238, 22);
-            this.cbbMaQuyen.Name = "cbbMaQuyen";
-            this.cbbMaQuyen.Size = new System.Drawing.Size(121, 28);
-            this.cbbMaQuyen.TabIndex = 4;
-            this.cbbMaQuyen.SelectionChangeCommitted += new System.EventHandler(this.cbbMaQuyen_SelectionChangeCommitted);
             // 
             // Permission
             // 

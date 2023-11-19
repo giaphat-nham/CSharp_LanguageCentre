@@ -22,7 +22,7 @@ namespace DTO
             this.maCN = maCN;
         }
 
-        public int MaQuyen { get; set; }
-        public int MaCN { get; set; }
+        public int MaQuyen { get { return maQuyen; } set { maQuyen = value; } }
+        public int MaCN { get { return maCN; } set { maCN = value; } }
     }
 }

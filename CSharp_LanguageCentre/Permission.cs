@@ -73,7 +73,7 @@ namespace CSharp_LanguageCentre
                 }
                 else
                 {
-                    QuyenDTO quyen = new QuyenDTO(Convert.ToInt32(txtMaQuyen.Text),txtTenQuyen.Text);
+                    QuyenDTO quyen = new QuyenDTO(Convert.ToInt32(txtMaQuyen.Text), txtTenQuyen.Text);
                     MessageBox.Show(busQuyen.Update(quyen), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadQuyen();
                 }
@@ -94,7 +94,7 @@ namespace CSharp_LanguageCentre
         private void ClearInputQuyen()
         {
             txtMaQuyen.Text = "";
-            txtTenQuyen.Text =  "";
+            txtTenQuyen.Text = "";
         }
 
         private void btnSignOut_Click(object sender, EventArgs e)
@@ -224,16 +224,41 @@ namespace CSharp_LanguageCentre
             if (String.IsNullOrWhiteSpace(txtMaCN.Text))
             {
                 MessageBox.Show("Không được để trống thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
-            else if (busCTQuyen.TrungMa(new ChiTietPhanQuyenDTO(Convert.ToInt32(cbbMaQuyen.SelectedItem),Convert.ToInt32(txtMaCN.Text))))
+            ChiTietPhanQuyenDTO quyen = new ChiTietPhanQuyenDTO(Convert.ToInt32(cbbMaQuyen.SelectedItem), Convert.ToInt32(txtMaCN.Text));
+            if (busCTQuyen.TrungMa(quyen))
             {
                 MessageBox.Show("Chức năng thêm vào đã tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show(busCTQuyen.Insert(new ChiTietPhanQuyenDTO(Convert.ToInt32(cbbMaQuyen.SelectedItem), Convert.ToInt32(txtMaCN.Text))), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(busCTQuyen.Insert(quyen), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadChiTietQuyen();
-                
+
+            }
+        }
+
+        private void btnXacNhanCN_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(txtMaCN.Text))
+            {
+                MessageBox.Show("Không được để trống thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            ChiTietPhanQuyenDTO quyen = new ChiTietPhanQuyenDTO(Convert.ToInt32(cbbMaQuyen.SelectedItem), Convert.ToInt32(txtMaCN.Text));
+            if (!busCTQuyen.TrungMa(quyen))
+            {
+                MessageBox.Show("Không tìm thấy chức năng cần xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Chắc chắn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    MessageBox.Show(busCTQuyen.Delete(quyen), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadChiTietQuyen();
+                }
             }
         }
 
