@@ -8,7 +8,7 @@ using CSharp_LanguageCentre.DTO;
 
 namespace DAO
 {
-    class HocVienDAO
+    public class HocVienDAO
     {
         DataServices dataServices = new DataServices();
         DataTable dataTable;
@@ -21,7 +21,7 @@ namespace DAO
         public List<HocVienDTO> getAll()
         {
             List<HocVienDTO> list = new List<HocVienDTO>();
-            string sql = "SELECT * FROM hoc_vien";
+            string sql = "SELECT * FROM hoc_vien WHERE ma_hv != 0";
             if (!dataServices.OpenDB()) return null;
             dataTable = dataServices.RunQuery(sql);
             HocVienDTO hocVien;
@@ -54,6 +54,24 @@ namespace DAO
 
         }
 
+        public bool Delete(int maHV)
+        {
+            try
+            {
+                string sql = $"DELETE FROM dang_ky_khoa_hoc WHERE ma_hv = {maHV}";
+                dataServices.ExecuteNonQuery(sql);
+                sql = $"UPDATE hoa_don WHERE ma_hv = {maHV} SET ma_hv = 0";
+                dataServices.ExecuteNonQuery(sql);
+                sql = $"DELETE FROM hoc_vien WHERE ma_hv = {maHV}";
+                dataServices.ExecuteNonQuery(sql);
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            return true;
+        }
+
         public bool Update(HocVienDTO hocVien)
         {
             string sql = "SELECT * FROM hoc_vien";
@@ -64,6 +82,14 @@ namespace DAO
             row["sdt"] = hocVien.SoDienThoai;
             row["trinh_do"] = hocVien.TrinhDo;
             dataServices.Update(dataTable);
+            return true;
+        }
+
+        public bool TrungMa(int maHV)
+        {
+            string sql = $"SELECT * FROM hoc_vien WHERE ma_hv = {maHV}";
+            dataTable = dataServices.RunQuery(sql);
+            if (dataTable.Rows.Count == 0) return false;
             return true;
         }
     }

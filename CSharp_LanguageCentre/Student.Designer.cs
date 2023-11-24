@@ -34,7 +34,7 @@ namespace CSharp_LanguageCentre.GUI
             this.lblLoginedUser = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
-            this.ccbTimKiem = new System.Windows.Forms.ComboBox();
+            this.cbbTimKiem = new System.Windows.Forms.ComboBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -43,7 +43,6 @@ namespace CSharp_LanguageCentre.GUI
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.txtTrinhDo = new System.Windows.Forms.TextBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtTenHV = new System.Windows.Forms.TextBox();
             this.txtMaHV = new System.Windows.Forms.TextBox();
@@ -51,13 +50,15 @@ namespace CSharp_LanguageCentre.GUI
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvHocVien = new System.Windows.Forms.DataGridView();
             this.btnXepLich = new System.Windows.Forms.Button();
             this.btnQuayLai = new System.Windows.Forms.Button();
+            this.cbbTrinhDo = new System.Windows.Forms.ComboBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHocVien)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -88,8 +89,9 @@ namespace CSharp_LanguageCentre.GUI
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox1.Controls.Add(this.btnRefresh);
             this.groupBox1.Controls.Add(this.btnTimKiem);
-            this.groupBox1.Controls.Add(this.ccbTimKiem);
+            this.groupBox1.Controls.Add(this.cbbTimKiem);
             this.groupBox1.Controls.Add(this.txtTimKiem);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
@@ -102,28 +104,28 @@ namespace CSharp_LanguageCentre.GUI
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(673, 34);
+            this.btnTimKiem.Location = new System.Drawing.Point(634, 34);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(148, 28);
+            this.btnTimKiem.Size = new System.Drawing.Size(100, 28);
             this.btnTimKiem.TabIndex = 3;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
             this.btnTimKiem.Click += new System.EventHandler(this.button1_Click);
             // 
-            // ccbTimKiem
+            // cbbTimKiem
             // 
-            this.ccbTimKiem.FormattingEnabled = true;
-            this.ccbTimKiem.Items.AddRange(new object[] {
+            this.cbbTimKiem.FormattingEnabled = true;
+            this.cbbTimKiem.Items.AddRange(new object[] {
             "Mã học viên",
             "Tên học viên"});
-            this.ccbTimKiem.Location = new System.Drawing.Point(194, 35);
-            this.ccbTimKiem.Name = "ccbTimKiem";
-            this.ccbTimKiem.Size = new System.Drawing.Size(190, 28);
-            this.ccbTimKiem.TabIndex = 2;
+            this.cbbTimKiem.Location = new System.Drawing.Point(155, 35);
+            this.cbbTimKiem.Name = "cbbTimKiem";
+            this.cbbTimKiem.Size = new System.Drawing.Size(190, 28);
+            this.cbbTimKiem.TabIndex = 2;
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(403, 36);
+            this.txtTimKiem.Location = new System.Drawing.Point(364, 36);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(264, 26);
             this.txtTimKiem.TabIndex = 1;
@@ -132,7 +134,7 @@ namespace CSharp_LanguageCentre.GUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(59, 40);
+            this.label1.Location = new System.Drawing.Point(20, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 20);
             this.label1.TabIndex = 0;
@@ -141,12 +143,12 @@ namespace CSharp_LanguageCentre.GUI
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.cbbTrinhDo);
             this.groupBox2.Controls.Add(this.btnHuy);
             this.groupBox2.Controls.Add(this.btnXacNhan);
             this.groupBox2.Controls.Add(this.btnSua);
             this.groupBox2.Controls.Add(this.btnXoa);
             this.groupBox2.Controls.Add(this.btnThem);
-            this.groupBox2.Controls.Add(this.txtTrinhDo);
             this.groupBox2.Controls.Add(this.txtSDT);
             this.groupBox2.Controls.Add(this.txtTenHV);
             this.groupBox2.Controls.Add(this.txtMaHV);
@@ -164,6 +166,7 @@ namespace CSharp_LanguageCentre.GUI
             // 
             // btnHuy
             // 
+            this.btnHuy.Enabled = false;
             this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.Location = new System.Drawing.Point(65, 295);
             this.btnHuy.Name = "btnHuy";
@@ -171,9 +174,11 @@ namespace CSharp_LanguageCentre.GUI
             this.btnHuy.TabIndex = 12;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnXacNhan
             // 
+            this.btnXacNhan.Enabled = false;
             this.btnXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXacNhan.Location = new System.Drawing.Point(183, 295);
             this.btnXacNhan.Name = "btnXacNhan";
@@ -181,6 +186,7 @@ namespace CSharp_LanguageCentre.GUI
             this.btnXacNhan.TabIndex = 11;
             this.btnXacNhan.Text = "Xác nhận";
             this.btnXacNhan.UseVisualStyleBackColor = true;
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
             // btnSua
             // 
@@ -191,6 +197,7 @@ namespace CSharp_LanguageCentre.GUI
             this.btnSua.TabIndex = 10;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -201,6 +208,7 @@ namespace CSharp_LanguageCentre.GUI
             this.btnXoa.TabIndex = 9;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -211,33 +219,28 @@ namespace CSharp_LanguageCentre.GUI
             this.btnThem.TabIndex = 8;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
-            // 
-            // txtTrinhDo
-            // 
-            this.txtTrinhDo.Location = new System.Drawing.Point(84, 186);
-            this.txtTrinhDo.Name = "txtTrinhDo";
-            this.txtTrinhDo.Size = new System.Drawing.Size(221, 26);
-            this.txtTrinhDo.TabIndex = 7;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(84, 136);
+            this.txtSDT.Location = new System.Drawing.Point(101, 136);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(221, 26);
+            this.txtSDT.Size = new System.Drawing.Size(204, 26);
             this.txtSDT.TabIndex = 6;
             // 
             // txtTenHV
             // 
-            this.txtTenHV.Location = new System.Drawing.Point(84, 93);
+            this.txtTenHV.Location = new System.Drawing.Point(101, 93);
             this.txtTenHV.Name = "txtTenHV";
-            this.txtTenHV.Size = new System.Drawing.Size(221, 26);
+            this.txtTenHV.Size = new System.Drawing.Size(204, 26);
             this.txtTenHV.TabIndex = 5;
             // 
             // txtMaHV
             // 
-            this.txtMaHV.Location = new System.Drawing.Point(84, 45);
+            this.txtMaHV.Enabled = false;
+            this.txtMaHV.Location = new System.Drawing.Point(101, 45);
             this.txtMaHV.Name = "txtMaHV";
-            this.txtMaHV.Size = new System.Drawing.Size(221, 26);
+            this.txtMaHV.Size = new System.Drawing.Size(204, 26);
             this.txtMaHV.TabIndex = 4;
             // 
             // label5
@@ -276,13 +279,13 @@ namespace CSharp_LanguageCentre.GUI
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã HV:";
             // 
-            // dataGridView1
+            // dgvHocVien
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(75, 199);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(531, 356);
-            this.dataGridView1.TabIndex = 9;
+            this.dgvHocVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHocVien.Location = new System.Drawing.Point(75, 199);
+            this.dgvHocVien.Name = "dgvHocVien";
+            this.dgvHocVien.Size = new System.Drawing.Size(531, 356);
+            this.dgvHocVien.TabIndex = 9;
             // 
             // btnXepLich
             // 
@@ -294,8 +297,9 @@ namespace CSharp_LanguageCentre.GUI
             this.btnXepLich.Name = "btnXepLich";
             this.btnXepLich.Size = new System.Drawing.Size(192, 42);
             this.btnXepLich.TabIndex = 15;
-            this.btnXepLich.Text = "Đến trang Xếp lịch";
+            this.btnXepLich.Text = "Đăng ký khóa học";
             this.btnXepLich.UseVisualStyleBackColor = true;
+            this.btnXepLich.Click += new System.EventHandler(this.btnXepLich_Click);
             // 
             // btnQuayLai
             // 
@@ -309,6 +313,29 @@ namespace CSharp_LanguageCentre.GUI
             this.btnQuayLai.TabIndex = 14;
             this.btnQuayLai.Text = "Quay lại";
             this.btnQuayLai.UseVisualStyleBackColor = true;
+            this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
+            // 
+            // cbbTrinhDo
+            // 
+            this.cbbTrinhDo.FormattingEnabled = true;
+            this.cbbTrinhDo.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C"});
+            this.cbbTrinhDo.Location = new System.Drawing.Point(101, 189);
+            this.cbbTrinhDo.Name = "cbbTrinhDo";
+            this.cbbTrinhDo.Size = new System.Drawing.Size(204, 28);
+            this.cbbTrinhDo.TabIndex = 13;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(740, 34);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(100, 28);
+            this.btnRefresh.TabIndex = 4;
+            this.btnRefresh.Text = "Tải lại DS";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // Student
             // 
@@ -318,7 +345,7 @@ namespace CSharp_LanguageCentre.GUI
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.btnXepLich);
             this.Controls.Add(this.btnQuayLai);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvHocVien);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
@@ -331,7 +358,7 @@ namespace CSharp_LanguageCentre.GUI
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHocVien)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -344,9 +371,8 @@ namespace CSharp_LanguageCentre.GUI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.ComboBox ccbTimKiem;
+        private System.Windows.Forms.ComboBox cbbTimKiem;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txtTrinhDo;
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.TextBox txtTenHV;
         private System.Windows.Forms.TextBox txtMaHV;
@@ -359,8 +385,10 @@ namespace CSharp_LanguageCentre.GUI
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnHuy;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvHocVien;
         private System.Windows.Forms.Button btnXepLich;
         private System.Windows.Forms.Button btnQuayLai;
+        private System.Windows.Forms.ComboBox cbbTrinhDo;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
