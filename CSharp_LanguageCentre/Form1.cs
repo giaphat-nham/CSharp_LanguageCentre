@@ -20,6 +20,7 @@ namespace CSharp_LanguageCentre
         {
             InitializeComponent();
             this.Controls.Add(new MainMenu());
+            //this.Controls.Add(new Course());
             form = this;
         }
 

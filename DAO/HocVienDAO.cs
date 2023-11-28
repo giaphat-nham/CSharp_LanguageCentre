@@ -92,5 +92,13 @@ namespace DAO
             if (dataTable.Rows.Count == 0) return false;
             return true;
         }
+
+        public int NextID()
+        {
+            string sql = "SELECT * FROM khoa_hoc ORDER BY ma_kh DESC";
+            dataTable = dataServices.RunQuery(sql);
+            int curId = (int)dataTable.Rows[0]["ma_kh"];
+            return curId + 1;
+        }
     }
 }

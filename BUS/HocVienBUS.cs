@@ -26,7 +26,7 @@ namespace BUS
 
         public int nextID()
         {
-            return danhSach.Count + 1;
+            return dao.NextID();
         }
 
         public string Insert(HocVienDTO hocVien)

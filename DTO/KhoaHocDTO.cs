@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharp_LanguageCentre.DTO
 {
-    class KhoaHocDTO
+    public class KhoaHocDTO
     {
         int maKH;
         string tenKH;
@@ -15,6 +15,10 @@ namespace CSharp_LanguageCentre.DTO
         DateTime ngayBD;
         DateTime ngayKT;
 
+        public KhoaHocDTO()
+        {
+
+        }
         public KhoaHocDTO(int maKH, string tenKH, int gia, string capBac, DateTime ngayBD, DateTime ngayKT)
         {
             this.maKH = maKH;
