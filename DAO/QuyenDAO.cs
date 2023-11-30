@@ -87,5 +87,14 @@ namespace DAO
             if (dataTable.Rows.Count == 0) return false;
             return true;
         }
+
+        public int NextID()
+        {
+            string sql = "SELECT MAX(ma_quyen) as 'max' FROM quyen";
+            dataTable = dataServices.RunQuery(sql);
+            if (dataTable.Rows.Count == 0) return 1;
+            int curId = (int)dataTable.Rows[0]["max"];
+            return curId + 1;
+        }
     }
 }

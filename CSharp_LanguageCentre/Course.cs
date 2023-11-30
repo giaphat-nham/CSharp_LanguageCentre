@@ -205,6 +205,11 @@ namespace CSharp_LanguageCentre.GUI
             btnHuy.Enabled = true;
         }
 
+        private void btnXepLich_Click(object sender, EventArgs e)
+        {
+            Form1.ChangeControlTo(new XepLich());
+        }
+
         private void btnQuayLai_Click(object sender, EventArgs e)
         {
             Form1.ChangeControlTo(new function_menu(Form1.TKDaDangNhap));

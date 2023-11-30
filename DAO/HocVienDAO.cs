@@ -95,9 +95,10 @@ namespace DAO
 
         public int NextID()
         {
-            string sql = "SELECT * FROM khoa_hoc ORDER BY ma_kh DESC";
+            string sql = "SELECT MAX(ma_hv) as 'max' FROM hoc_vien";
             dataTable = dataServices.RunQuery(sql);
-            int curId = (int)dataTable.Rows[0]["ma_kh"];
+            if (dataTable.Rows.Count == 0) return 1;
+            int curId = (int)dataTable.Rows[0]["max"];
             return curId + 1;
         }
     }

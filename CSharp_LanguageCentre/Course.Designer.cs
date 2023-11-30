@@ -348,6 +348,7 @@ namespace CSharp_LanguageCentre.GUI
             // 
             this.btnXepLich.BackgroundImage = global::CSharp_LanguageCentre.Properties.Resources.button_background;
             this.btnXepLich.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnXepLich.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnXepLich.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXepLich.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(27)))), ((int)(((byte)(16)))));
             this.btnXepLich.Location = new System.Drawing.Point(622, 28);
@@ -356,6 +357,7 @@ namespace CSharp_LanguageCentre.GUI
             this.btnXepLich.TabIndex = 13;
             this.btnXepLich.Text = "Đến trang Xếp lịch";
             this.btnXepLich.UseVisualStyleBackColor = true;
+            this.btnXepLich.Click += new System.EventHandler(this.btnXepLich_Click);
             // 
             // Course
             // 
