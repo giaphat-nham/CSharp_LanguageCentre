@@ -110,7 +110,14 @@ namespace CSharp_LanguageCentre.GUI
 
         private void LoadXepLich()
         {
+            dsXL = busXL.getLichKhoaHoc(Convert.ToInt32(cbbMaKH.SelectedItem));
             dgvLichKH.DataSource = dsXL;
+
+            cbbNhomKH.Items.Clear();
+            foreach (XepLichDTO xl in dsXL)
+            {
+                cbbNhomKH.Items.Add(xl.NhomKH);
+            }
         }
 
         private void cbbMaKH_SelectionChangeCommitted(object sender, EventArgs e)
@@ -135,7 +142,6 @@ namespace CSharp_LanguageCentre.GUI
                 btnHuy.Enabled = false;
 
                 cbbNhomKH.Enabled = false;
-                txtTenKH.Enabled = true;
                 cbbGiangVien.Enabled = true;
                 cbbThu.Enabled = true;
                 cbbTietBD.Enabled = true;
@@ -173,7 +179,7 @@ namespace CSharp_LanguageCentre.GUI
 
         private bool InputEmpty()
         {
-            if (String.IsNullOrWhiteSpace(txtTenKH.Text) || String.IsNullOrWhiteSpace(cbbMaKH.SelectedItem.ToString()) || String.IsNullOrWhiteSpace(cbbThu.SelectedItem.ToString()) || String.IsNullOrWhiteSpace(cbbTietBD.SelectedItem.ToString()) || String.IsNullOrWhiteSpace(cbbSoTiet.SelectedItem.ToString()) || String.IsNullOrWhiteSpace(cbbGiangVien.SelectedItem.ToString()) || String.IsNullOrWhiteSpace(cbbPhong.SelectedItem.ToString()))
+            if (String.IsNullOrWhiteSpace(cbbMaKH.Text) || String.IsNullOrWhiteSpace(cbbThu.Text) || String.IsNullOrWhiteSpace(cbbTietBD.Text) || String.IsNullOrWhiteSpace(cbbSoTiet.Text) || String.IsNullOrWhiteSpace(cbbGiangVien.Text) || String.IsNullOrWhiteSpace(cbbPhong.Text))
             {
                 return true;
             }
@@ -182,7 +188,18 @@ namespace CSharp_LanguageCentre.GUI
 
         private bool ThoiGianHopLe()
         {
-            return false;
+            int tietBD = Convert.ToInt32(cbbTietBD.SelectedItem);
+            int soTiet = Convert.ToInt32(cbbSoTiet.SelectedItem);
+
+            if (tietBD <= 5)
+            {
+                if (tietBD + soTiet - 1 > 5) return false;
+            }
+            else
+            {
+                if (tietBD + soTiet - 1 > 10) return false;
+            }
+            return true;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -190,10 +207,64 @@ namespace CSharp_LanguageCentre.GUI
             if (InputEmpty())
             {
                 MessageBox.Show("Không được để trống thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
             else if (!ThoiGianHopLe())
             {
+                MessageBox.Show("Thời gian khóa học không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            XepLichDTO xepLich = new XepLichDTO(Convert.ToInt32(cbbMaKH.SelectedItem), -1, cbbThu.SelectedIndex, Convert.ToInt32(cbbTietBD.SelectedItem), Convert.ToInt32(cbbSoTiet.SelectedItem), Convert.ToInt32(cbbGiangVien.SelectedIndex) + 1, Convert.ToInt32(cbbPhong.SelectedItem));
+            if (busXL.TrungLich(xepLich))
+            {
+                MessageBox.Show("Thời gian đã chọn bị trùng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(busXL.Insert(xepLich), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadXepLich();
+            }
+        }
 
+        private void btnXacNhan_Click(object sender, EventArgs e)
+        {
+            if (isDeleting)
+            {
+                if (string.IsNullOrWhiteSpace(cbbMaKH.Text) || string.IsNullOrWhiteSpace(cbbNhomKH.Text))
+                {
+                    MessageBox.Show("Không được để trống thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (!busXL.TrungMa(Convert.ToInt32(cbbMaKH.SelectedItem), Convert.ToInt32(cbbNhomKH.SelectedItem)))
+                {
+                    MessageBox.Show("Nhóm khóa học không tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    DialogResult rs = MessageBox.Show("Chắc chắn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (rs == DialogResult.Yes)
+                    {
+                        MessageBox.Show(busXL.Delete(Convert.ToInt32(cbbMaKH.SelectedItem), Convert.ToInt32(cbbNhomKH.SelectedItem)), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadXepLich();
+                    }
+                }
+            }
+            else if (isUpdating)
+            {
+                if (InputEmpty() && String.IsNullOrWhiteSpace(cbbNhomKH.Text))
+                {
+                    MessageBox.Show("Không được để trống thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (!busXL.TrungMa(Convert.ToInt32(cbbMaKH.SelectedItem), Convert.ToInt32(cbbNhomKH.SelectedItem)))
+                {
+                    MessageBox.Show("Nhóm khóa học không tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    XepLichDTO xepLich = new XepLichDTO(Convert.ToInt32(cbbMaKH.SelectedItem), -1, cbbThu.SelectedIndex, Convert.ToInt32(cbbTietBD.SelectedItem), Convert.ToInt32(cbbSoTiet.SelectedItem), Convert.ToInt32(cbbGiangVien.SelectedIndex) + 1, Convert.ToInt32(cbbPhong.SelectedItem));
+                    MessageBox.Show(busXL.Update(xepLich), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadXepLich();
+                }
             }
         }
 
@@ -209,7 +280,6 @@ namespace CSharp_LanguageCentre.GUI
             btnHuy.Enabled = true;
 
             cbbNhomKH.Enabled = true;
-            txtTenKH.Enabled = false;
             cbbGiangVien.Enabled = false;
             cbbThu.Enabled = false;
             cbbTietBD.Enabled = false;

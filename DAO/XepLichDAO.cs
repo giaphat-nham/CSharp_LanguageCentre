@@ -61,7 +61,7 @@ namespace DAO
         {
             try
             {
-                string sql = $"DELETE FROM thoi_khoa_bieu WHERE ma_kh = {maKH} AND nhom_kh = {maKH}";
+                string sql = $"DELETE FROM thoi_khoa_bieu WHERE ma_kh = {maKH} AND nhom_kh = {nhomKH}";
                 dataServices.ExecuteNonQuery(sql);
             }
             catch (Exception e)

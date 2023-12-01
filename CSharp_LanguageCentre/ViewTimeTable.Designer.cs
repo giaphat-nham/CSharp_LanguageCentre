@@ -45,21 +45,14 @@ namespace CSharp_LanguageCentre.GUI
             this.txtMaGV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnQuayLai = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.colMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTietBD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSoTiet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayBD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayKT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvTKB = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.timeTableTabs.SuspendLayout();
             this.studentPage.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTKB)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -140,6 +133,7 @@ namespace CSharp_LanguageCentre.GUI
             this.btnXemTKBHV.TabIndex = 2;
             this.btnXemTKBHV.Text = "Xem TKB";
             this.btnXemTKBHV.UseVisualStyleBackColor = true;
+            this.btnXemTKBHV.Click += new System.EventHandler(this.btnXemTKBHV_Click);
             // 
             // txtMaHV
             // 
@@ -235,61 +229,13 @@ namespace CSharp_LanguageCentre.GUI
             this.btnQuayLai.Text = "Quay lại";
             this.btnQuayLai.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvTKB
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaKH,
-            this.colTenKH,
-            this.colThu,
-            this.colTietBD,
-            this.colSoTiet,
-            this.colNgayBD,
-            this.colNgayKT});
-            this.dataGridView1.Location = new System.Drawing.Point(20, 237);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(912, 319);
-            this.dataGridView1.TabIndex = 5;
-            // 
-            // colMaKH
-            // 
-            this.colMaKH.HeaderText = "Mã Khóa Học";
-            this.colMaKH.Name = "colMaKH";
-            // 
-            // colTenKH
-            // 
-            this.colTenKH.HeaderText = "Tên Khóa Học";
-            this.colTenKH.Name = "colTenKH";
-            this.colTenKH.Width = 150;
-            // 
-            // colThu
-            // 
-            this.colThu.HeaderText = "Thứ";
-            this.colThu.Name = "colThu";
-            this.colThu.Width = 50;
-            // 
-            // colTietBD
-            // 
-            this.colTietBD.HeaderText = "Tiết Bắt Đầu";
-            this.colTietBD.Name = "colTietBD";
-            // 
-            // colSoTiet
-            // 
-            this.colSoTiet.HeaderText = "Số Tiết";
-            this.colSoTiet.Name = "colSoTiet";
-            this.colSoTiet.Width = 70;
-            // 
-            // colNgayBD
-            // 
-            this.colNgayBD.HeaderText = "Ngày Bắt Đầu";
-            this.colNgayBD.Name = "colNgayBD";
-            this.colNgayBD.Width = 200;
-            // 
-            // colNgayKT
-            // 
-            this.colNgayKT.HeaderText = "Ngày Kết Thúc";
-            this.colNgayKT.Name = "colNgayKT";
-            this.colNgayKT.Width = 200;
+            this.dgvTKB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTKB.Location = new System.Drawing.Point(20, 237);
+            this.dgvTKB.Name = "dgvTKB";
+            this.dgvTKB.Size = new System.Drawing.Size(912, 319);
+            this.dgvTKB.TabIndex = 5;
             // 
             // ViewTimeTable
             // 
@@ -297,7 +243,7 @@ namespace CSharp_LanguageCentre.GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CSharp_LanguageCentre.Properties.Resources.general_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvTKB);
             this.Controls.Add(this.btnQuayLai);
             this.Controls.Add(this.timeTableTabs);
             this.Controls.Add(this.panel1);
@@ -312,7 +258,7 @@ namespace CSharp_LanguageCentre.GUI
             this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTKB)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -335,13 +281,6 @@ namespace CSharp_LanguageCentre.GUI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnInTKBGV;
         private System.Windows.Forms.Button btnQuayLai;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTenKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colThu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTietBD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSoTiet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNgayBD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNgayKT;
+        private System.Windows.Forms.DataGridView dgvTKB;
     }
 }

@@ -28,5 +28,46 @@ namespace BUS
         {
             return dao.TrungLich(xepLich);
         }
+
+        public bool TrungMa(int maKH, int nhomKH)
+        {
+            return dao.TrungMa(maKH, nhomKH);
+        }
+
+        public int NextNhomKH(int maKH)
+        {
+            return dao.NextNhomKH(maKH);
+        }
+
+        public string Insert(XepLichDTO xepLich)
+        {
+            xepLich.NhomKH = NextNhomKH(xepLich.MaKH);
+            if (dao.Insert(xepLich))
+            {
+                danhSach = dao.getLichKhoaHoc(xepLich.MaKH);
+                return "Thêm thành công!";
+            }
+            return "Đã có lỗi xảy ra!";
+        }
+
+        public string Delete(int maKH, int nhomKH)
+        {
+            if (dao.Delete(maKH, nhomKH))
+            {
+                danhSach = dao.getLichKhoaHoc(maKH);
+                return "Xóa thành công!";
+            }
+            return "Đã có lỗi xảy ra!";
+        }
+
+        public string Update(XepLichDTO xepLich)
+        {
+            if (dao.Update(xepLich))
+            {
+                danhSach = dao.getLichKhoaHoc(xepLich.MaKH);
+                return "Cập nhật thành công!";
+            }
+            return "Đã có lỗi xảy ra!";
+        }
     }
 }

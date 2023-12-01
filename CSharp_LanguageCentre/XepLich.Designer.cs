@@ -33,8 +33,6 @@ namespace CSharp_LanguageCentre.GUI
             this.lblLoginedUser = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbbNhomKH = new System.Windows.Forms.ComboBox();
-            this.txtTenKH = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.cbbMaKH = new System.Windows.Forms.ComboBox();
             this.cbbPhong = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -90,8 +88,6 @@ namespace CSharp_LanguageCentre.GUI
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cbbNhomKH);
-            this.groupBox1.Controls.Add(this.txtTenKH);
-            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.cbbMaKH);
             this.groupBox1.Controls.Add(this.cbbPhong);
             this.groupBox1.Controls.Add(this.label5);
@@ -128,22 +124,6 @@ namespace CSharp_LanguageCentre.GUI
             this.cbbNhomKH.Size = new System.Drawing.Size(198, 28);
             this.cbbNhomKH.TabIndex = 29;
             // 
-            // txtTenKH
-            // 
-            this.txtTenKH.Location = new System.Drawing.Point(107, 109);
-            this.txtTenKH.Name = "txtTenKH";
-            this.txtTenKH.Size = new System.Drawing.Size(198, 26);
-            this.txtTenKH.TabIndex = 28;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(16, 115);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(62, 20);
-            this.label10.TabIndex = 27;
-            this.label10.Text = "Tên KH";
-            // 
             // cbbMaKH
             // 
             this.cbbMaKH.FormattingEnabled = true;
@@ -156,14 +136,14 @@ namespace CSharp_LanguageCentre.GUI
             // cbbPhong
             // 
             this.cbbPhong.FormattingEnabled = true;
-            this.cbbPhong.Location = new System.Drawing.Point(257, 209);
+            this.cbbPhong.Location = new System.Drawing.Point(257, 177);
             this.cbbPhong.Name = "cbbPhong";
             this.cbbPhong.Size = new System.Drawing.Size(48, 28);
             this.cbbPhong.TabIndex = 25;
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(196, 212);
+            this.label5.Location = new System.Drawing.Point(196, 180);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 20);
             this.label5.TabIndex = 24;
@@ -180,14 +160,14 @@ namespace CSharp_LanguageCentre.GUI
             "Sáu",
             "Bảy",
             "CN"});
-            this.cbbThu.Location = new System.Drawing.Point(107, 209);
+            this.cbbThu.Location = new System.Drawing.Point(107, 177);
             this.cbbThu.Name = "cbbThu";
             this.cbbThu.Size = new System.Drawing.Size(83, 28);
             this.cbbThu.TabIndex = 23;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(17, 212);
+            this.label1.Location = new System.Drawing.Point(17, 180);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 20);
             this.label1.TabIndex = 22;
@@ -200,7 +180,7 @@ namespace CSharp_LanguageCentre.GUI
             "1",
             "2",
             "3"});
-            this.cbbSoTiet.Location = new System.Drawing.Point(257, 175);
+            this.cbbSoTiet.Location = new System.Drawing.Point(257, 143);
             this.cbbSoTiet.Name = "cbbSoTiet";
             this.cbbSoTiet.Size = new System.Drawing.Size(48, 28);
             this.cbbSoTiet.TabIndex = 21;
@@ -220,7 +200,7 @@ namespace CSharp_LanguageCentre.GUI
             "8",
             "9",
             "10"});
-            this.cbbTietBD.Location = new System.Drawing.Point(107, 175);
+            this.cbbTietBD.Location = new System.Drawing.Point(107, 143);
             this.cbbTietBD.Name = "cbbTietBD";
             this.cbbTietBD.Size = new System.Drawing.Size(83, 28);
             this.cbbTietBD.TabIndex = 20;
@@ -229,7 +209,7 @@ namespace CSharp_LanguageCentre.GUI
             // cbbGiangVien
             // 
             this.cbbGiangVien.FormattingEnabled = true;
-            this.cbbGiangVien.Location = new System.Drawing.Point(107, 141);
+            this.cbbGiangVien.Location = new System.Drawing.Point(107, 109);
             this.cbbGiangVien.Name = "cbbGiangVien";
             this.cbbGiangVien.Size = new System.Drawing.Size(198, 28);
             this.cbbGiangVien.TabIndex = 19;
@@ -237,7 +217,7 @@ namespace CSharp_LanguageCentre.GUI
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(196, 178);
+            this.label7.Location = new System.Drawing.Point(196, 146);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 20);
             this.label7.TabIndex = 15;
@@ -246,7 +226,7 @@ namespace CSharp_LanguageCentre.GUI
             // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(17, 178);
+            this.label6.Location = new System.Drawing.Point(17, 146);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(85, 20);
             this.label6.TabIndex = 13;
@@ -273,6 +253,7 @@ namespace CSharp_LanguageCentre.GUI
             this.btnXacNhan.TabIndex = 11;
             this.btnXacNhan.Text = "Xác nhận";
             this.btnXacNhan.UseVisualStyleBackColor = true;
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
             // btnSua
             // 
@@ -307,7 +288,7 @@ namespace CSharp_LanguageCentre.GUI
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 144);
+            this.label4.Location = new System.Drawing.Point(17, 112);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 20);
             this.label4.TabIndex = 2;
@@ -438,7 +419,5 @@ namespace CSharp_LanguageCentre.GUI
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbbNhomKH;
-        private System.Windows.Forms.TextBox txtTenKH;
-        private System.Windows.Forms.Label label10;
     }
 }
