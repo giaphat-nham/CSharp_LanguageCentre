@@ -53,6 +53,12 @@
       <DependentUpon>Account.cs</DependentUpon>
     </Compile>
     <Compile Include="ChucNang.cs" />
+    <Compile Include="ClassRoom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ClassRoom.designer.cs">
+      <DependentUpon>ClassRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,7 +98,7 @@
     <Compile Include="Luong.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Luong.Designer.cs">
+    <Compile Include="Luong.designer.cs">
       <DependentUpon>Luong.cs</DependentUpon>
     </Compile>
     <Compile Include="Permission.cs">
@@ -104,7 +110,7 @@
     <Compile Include="Staff.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Staff.Designer.cs">
+    <Compile Include="Staff.designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
     <Compile Include="Student.cs">
@@ -118,12 +124,6 @@
     </Compile>
     <Compile Include="Teacher.designer.cs">
       <DependentUpon>Teacher.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ClassRoom.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ClassRoom.Designer.cs">
-      <DependentUpon>ClassRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewTimeTable.cs">
       <SubType>UserControl</SubType>
@@ -153,6 +153,9 @@
     </Compile>
     <EmbeddedResource Include="Account.resx">
       <DependentUpon>Account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClassRoom.resx">
+      <DependentUpon>ClassRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -189,9 +192,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher.resx">
       <DependentUpon>Teacher.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClassRoom.resx">
-      <DependentUpon>ClassRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewTimeTable.resx">
       <DependentUpon>ViewTimeTable.cs</DependentUpon>

@@ -10,9 +10,10 @@ namespace DAO
 {
     public class DataServices
     {
-        const string CONNECTION_STRING = @"Data Source=DESKTOP-2138EM5\SQLEXPRESS;Initial Catalog=English_Centre;Integrated Security=True"; //connection string của Phát
-        /*const string CONNECTION_STRING = @"Data Source=JOSIE;Initial Catalog=English_Centre;Integrated Security=True";*/ //connection string của TH
-        SqlConnection conn;
+		const string CONNECTION_STRING = @"Data Source=DESKTOP-PT451IS\MSSQLSERVER01;Initial Catalog=English_Centre;Integrated Security=True"; //connection string của Nhi
+		/*const string CONNECTION_STRING = @"Data Source=DESKTOP-2138EM5\SQLEXPRESS;Initial Catalog=English_Centre;Integrated Security=True";*/ //connection string của Phát
+		/*const string CONNECTION_STRING = @"Data Source=JOSIE;Initial Catalog=English_Centre;Integrated Security=True";*/ //connection string của TH
+		SqlConnection conn;
         SqlDataAdapter adapter;
 
         public DataServices()

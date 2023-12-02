@@ -121,7 +121,7 @@
   <data name="panel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAicAAADUCAYAAABHyYNDAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAADt0RVh0Q29tbWVudAB4cjpkOkRBRnYwa3RWZnJnOjMsajoxOTA3Njc4ODY1ODI1
+        vAAADrwBlbxySQAAADt0RVh0Q29tbWVudAB4cjpkOkRBRnYwa3RWZnJnOjMsajoxOTA3Njc4ODY1ODI1
         NjA0OTE3LHQ6MjMwOTI5MTCBLO94AAAo0ElEQVR4Xu3d92MU1d7Hcf+2e6kqXNtViSEhBAgl9Co99N5B
         FNu1XwHxERUFEWxYUFQuiqCIyfZNQ0KHcJ7znWR2d3a/u9lN20l4//B6fC75ZjNzdnbOZ2fOnHNfc/S8
         6W5NgV9M/efvmdh/d5vI5oUmtHiiCVQ/YeoqHjB1Tw0EUIDA+EdMcOpTJrRsionsqDHRN3aa+i8OmqY/
@@ -299,13 +299,4 @@
         AQDoD2zfKH1kaEGV02dK3yl9aP3R/U6f2tV1b3reefP/etKK9jBQHZEAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="MaPH.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="TenPH.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="SucChua.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

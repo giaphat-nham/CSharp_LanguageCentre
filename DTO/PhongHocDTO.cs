@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace CSharp_LanguageCentre.DTO
 {
-    class PhongHocDTO
+    public class PhongHocDTO
     {
         int maPH;
         string tenPH;
         int sucChua;
+        public PhongHocDTO()
+        {
+        }
 
         public PhongHocDTO(int maPH, string tenPH, int sucChua)
         {
@@ -19,8 +22,21 @@ namespace CSharp_LanguageCentre.DTO
             this.sucChua = sucChua;
         }
 
-        public int MaPH { get; set; }
-        public string TenPH { get; set; }
-        public int SucChua { get; set; }
+        public int MaPH
+        {
+            get { return maPH; }
+            set { maPH = value; }
+        }
+        public string TenPH 
+        {
+            get { return tenPH; }
+            set {tenPH = value; } 
+        }
+        public int SucChua 
+        {
+            get { return sucChua; }
+
+            set {sucChua = value; } 
+        }
     }
 }

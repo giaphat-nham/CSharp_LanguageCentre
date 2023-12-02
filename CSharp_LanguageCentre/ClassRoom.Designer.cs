@@ -35,10 +35,7 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.btnTimKiem = new System.Windows.Forms.Button();
 			this.txtTimKiem = new System.Windows.Forms.TextBox();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.MaPH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.TenPH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.SucChua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGVPH = new System.Windows.Forms.DataGridView();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.btnXacNhan = new System.Windows.Forms.Button();
 			this.btnHuy = new System.Windows.Forms.Button();
@@ -52,9 +49,10 @@
 			this.label4 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.btnQuayLai = new System.Windows.Forms.Button();
+			this.bntLoadDS = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGVPH)).BeginInit();
 			this.groupBox2.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -84,6 +82,7 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.bntLoadDS);
 			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Controls.Add(this.btnTimKiem);
 			this.groupBox1.Controls.Add(this.txtTimKiem);
@@ -110,13 +109,14 @@
 			// 
 			// btnTimKiem
 			// 
-			this.btnTimKiem.Location = new System.Drawing.Point(747, 43);
+			this.btnTimKiem.Location = new System.Drawing.Point(726, 44);
 			this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.btnTimKiem.Name = "btnTimKiem";
-			this.btnTimKiem.Size = new System.Drawing.Size(106, 41);
+			this.btnTimKiem.Size = new System.Drawing.Size(82, 41);
 			this.btnTimKiem.TabIndex = 3;
 			this.btnTimKiem.Text = "Tìm kiếm";
 			this.btnTimKiem.UseVisualStyleBackColor = true;
+			this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
 			// 
 			// txtTimKiem
 			// 
@@ -126,40 +126,15 @@
 			this.txtTimKiem.Size = new System.Drawing.Size(426, 32);
 			this.txtTimKiem.TabIndex = 2;
 			// 
-			// dataGridView1
+			// dataGVPH
 			// 
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaPH,
-            this.TenPH,
-            this.SucChua});
-			this.dataGridView1.Location = new System.Drawing.Point(134, 328);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.RowHeadersWidth = 62;
-			this.dataGridView1.RowTemplate.Height = 28;
-			this.dataGridView1.Size = new System.Drawing.Size(911, 528);
-			this.dataGridView1.TabIndex = 7;
-			// 
-			// MaPH
-			// 
-			this.MaPH.HeaderText = "Mã PH";
-			this.MaPH.MinimumWidth = 8;
-			this.MaPH.Name = "MaPH";
-			this.MaPH.Width = 150;
-			// 
-			// TenPH
-			// 
-			this.TenPH.HeaderText = "Tên PH";
-			this.TenPH.MinimumWidth = 8;
-			this.TenPH.Name = "TenPH";
-			this.TenPH.Width = 150;
-			// 
-			// SucChua
-			// 
-			this.SucChua.HeaderText = "Sức chứa";
-			this.SucChua.MinimumWidth = 8;
-			this.SucChua.Name = "SucChua";
-			this.SucChua.Width = 150;
+			this.dataGVPH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGVPH.Location = new System.Drawing.Point(134, 328);
+			this.dataGVPH.Name = "dataGVPH";
+			this.dataGVPH.RowHeadersWidth = 62;
+			this.dataGVPH.RowTemplate.Height = 28;
+			this.dataGVPH.Size = new System.Drawing.Size(911, 528);
+			this.dataGVPH.TabIndex = 7;
 			// 
 			// groupBox2
 			// 
@@ -191,6 +166,7 @@
 			this.btnXacNhan.TabIndex = 17;
 			this.btnXacNhan.Text = "Xác nhận";
 			this.btnXacNhan.UseVisualStyleBackColor = true;
+			this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
 			// 
 			// btnHuy
 			// 
@@ -200,6 +176,7 @@
 			this.btnHuy.TabIndex = 16;
 			this.btnHuy.Text = "Hủy";
 			this.btnHuy.UseVisualStyleBackColor = true;
+			this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
 			// 
 			// btnXoa
 			// 
@@ -209,6 +186,7 @@
 			this.btnXoa.TabIndex = 15;
 			this.btnXoa.Text = "Xóa";
 			this.btnXoa.UseVisualStyleBackColor = true;
+			this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
 			// 
 			// btnSua
 			// 
@@ -218,6 +196,7 @@
 			this.btnSua.TabIndex = 14;
 			this.btnSua.Text = "Sửa";
 			this.btnSua.UseVisualStyleBackColor = true;
+			this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
 			// 
 			// btnThem
 			// 
@@ -227,6 +206,7 @@
 			this.btnThem.TabIndex = 13;
 			this.btnThem.Text = "Thêm";
 			this.btnThem.UseVisualStyleBackColor = true;
+			this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
 			// 
 			// txtSucChua
 			// 
@@ -292,6 +272,18 @@
 			this.btnQuayLai.TabIndex = 15;
 			this.btnQuayLai.Text = "Quay lại";
 			this.btnQuayLai.UseVisualStyleBackColor = true;
+			this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
+			// 
+			// bntLoadDS
+			// 
+			this.bntLoadDS.Location = new System.Drawing.Point(816, 44);
+			this.bntLoadDS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.bntLoadDS.Name = "bntLoadDS";
+			this.bntLoadDS.Size = new System.Drawing.Size(95, 41);
+			this.bntLoadDS.TabIndex = 5;
+			this.bntLoadDS.Text = "Tải DS";
+			this.bntLoadDS.UseVisualStyleBackColor = true;
+			this.bntLoadDS.Click += new System.EventHandler(this.bntLoadDS_Click);
 			// 
 			// ClassRoom
 			// 
@@ -301,7 +293,7 @@
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.Controls.Add(this.btnQuayLai);
 			this.Controls.Add(this.groupBox2);
-			this.Controls.Add(this.dataGridView1);
+			this.Controls.Add(this.dataGVPH);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.panel1);
 			this.DoubleBuffered = true;
@@ -312,7 +304,7 @@
 			this.panel1.PerformLayout();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGVPH)).EndInit();
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
 			this.ResumeLayout(false);
@@ -327,10 +319,7 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Button btnTimKiem;
 		private System.Windows.Forms.TextBox txtTimKiem;
-		private System.Windows.Forms.DataGridView dataGridView1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn MaPH;
-		private System.Windows.Forms.DataGridViewTextBoxColumn TenPH;
-		private System.Windows.Forms.DataGridViewTextBoxColumn SucChua;
+		private System.Windows.Forms.DataGridView dataGVPH;
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.Button btnXacNhan;
 		private System.Windows.Forms.Button btnHuy;
@@ -344,5 +333,6 @@
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Button btnQuayLai;
+		private System.Windows.Forms.Button bntLoadDS;
 	}
 }

@@ -31,11 +31,9 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Luong));
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.lblLuong = new System.Windows.Forms.Label();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.MaLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.LoaiLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.MucLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dataGVLuong = new System.Windows.Forms.DataGridView();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.cbbLoaiLuong = new System.Windows.Forms.ComboBox();
 			this.btnXacNhan = new System.Windows.Forms.Button();
 			this.btnHuy = new System.Windows.Forms.Button();
 			this.btnXoa = new System.Windows.Forms.Button();
@@ -44,12 +42,11 @@
 			this.txtMucLuong = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.txtMaLuong = new System.Windows.Forms.TextBox();
-			this.txtLoaiLuong = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.btnQuayLai = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGVLuong)).BeginInit();
 			this.groupBox2.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -76,46 +73,21 @@
 			this.lblLuong.Size = new System.Drawing.Size(127, 40);
 			this.lblLuong.TabIndex = 0;
 			this.lblLuong.Text = "Lương ";
-			this.lblLuong.Click += new System.EventHandler(this.lblLuong_Click);
 			// 
-			// dataGridView1
+			// dataGVLuong
 			// 
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaLuong,
-            this.LoaiLuong,
-            this.MucLuong});
-			this.dataGridView1.Location = new System.Drawing.Point(126, 210);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.RowHeadersWidth = 62;
-			this.dataGridView1.RowTemplate.Height = 28;
-			this.dataGridView1.Size = new System.Drawing.Size(728, 558);
-			this.dataGridView1.TabIndex = 6;
-			// 
-			// MaLuong
-			// 
-			this.MaLuong.HeaderText = "Mã lương";
-			this.MaLuong.MinimumWidth = 8;
-			this.MaLuong.Name = "MaLuong";
-			this.MaLuong.Width = 150;
-			// 
-			// LoaiLuong
-			// 
-			this.LoaiLuong.HeaderText = "Loại lương";
-			this.LoaiLuong.MinimumWidth = 8;
-			this.LoaiLuong.Name = "LoaiLuong";
-			this.LoaiLuong.Width = 150;
-			// 
-			// MucLuong
-			// 
-			this.MucLuong.HeaderText = "Mức lương";
-			this.MucLuong.MinimumWidth = 8;
-			this.MucLuong.Name = "MucLuong";
-			this.MucLuong.Width = 150;
+			this.dataGVLuong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGVLuong.Location = new System.Drawing.Point(126, 210);
+			this.dataGVLuong.Name = "dataGVLuong";
+			this.dataGVLuong.RowHeadersWidth = 62;
+			this.dataGVLuong.RowTemplate.Height = 28;
+			this.dataGVLuong.Size = new System.Drawing.Size(728, 558);
+			this.dataGVLuong.TabIndex = 6;
 			// 
 			// groupBox2
 			// 
 			this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.groupBox2.Controls.Add(this.cbbLoaiLuong);
 			this.groupBox2.Controls.Add(this.btnXacNhan);
 			this.groupBox2.Controls.Add(this.btnHuy);
 			this.groupBox2.Controls.Add(this.btnXoa);
@@ -124,7 +96,6 @@
 			this.groupBox2.Controls.Add(this.txtMucLuong);
 			this.groupBox2.Controls.Add(this.label5);
 			this.groupBox2.Controls.Add(this.txtMaLuong);
-			this.groupBox2.Controls.Add(this.txtLoaiLuong);
 			this.groupBox2.Controls.Add(this.label4);
 			this.groupBox2.Controls.Add(this.label3);
 			this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -135,6 +106,22 @@
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Thông tin chi tiết";
 			// 
+			// cbbLoaiLuong
+			// 
+			this.cbbLoaiLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.cbbLoaiLuong.FormattingEnabled = true;
+			this.cbbLoaiLuong.Items.AddRange(new object[] {
+            "GV_A",
+            "GV_B",
+            "GV_C",
+            "NV_QuanLy",
+            "NV_LeTan",
+            "NV_KeToan"});
+			this.cbbLoaiLuong.Location = new System.Drawing.Point(182, 142);
+			this.cbbLoaiLuong.Name = "cbbLoaiLuong";
+			this.cbbLoaiLuong.Size = new System.Drawing.Size(275, 34);
+			this.cbbLoaiLuong.TabIndex = 18;
+			// 
 			// btnXacNhan
 			// 
 			this.btnXacNhan.Location = new System.Drawing.Point(293, 410);
@@ -143,6 +130,7 @@
 			this.btnXacNhan.TabIndex = 17;
 			this.btnXacNhan.Text = "Xác nhận";
 			this.btnXacNhan.UseVisualStyleBackColor = true;
+			this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
 			// 
 			// btnHuy
 			// 
@@ -152,6 +140,7 @@
 			this.btnHuy.TabIndex = 16;
 			this.btnHuy.Text = "Hủy";
 			this.btnHuy.UseVisualStyleBackColor = true;
+			this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
 			// 
 			// btnXoa
 			// 
@@ -161,6 +150,7 @@
 			this.btnXoa.TabIndex = 15;
 			this.btnXoa.Text = "Xóa";
 			this.btnXoa.UseVisualStyleBackColor = true;
+			this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
 			// 
 			// btnSua
 			// 
@@ -170,6 +160,7 @@
 			this.btnSua.TabIndex = 14;
 			this.btnSua.Text = "Sửa";
 			this.btnSua.UseVisualStyleBackColor = true;
+			this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
 			// 
 			// btnThem
 			// 
@@ -179,6 +170,7 @@
 			this.btnThem.TabIndex = 13;
 			this.btnThem.Text = "Thêm";
 			this.btnThem.UseVisualStyleBackColor = true;
+			this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
 			// 
 			// txtMucLuong
 			// 
@@ -204,15 +196,6 @@
 			this.txtMaLuong.Name = "txtMaLuong";
 			this.txtMaLuong.Size = new System.Drawing.Size(275, 32);
 			this.txtMaLuong.TabIndex = 3;
-			this.txtMaLuong.TextChanged += new System.EventHandler(this.txtMaGV_TextChanged);
-			// 
-			// txtLoaiLuong
-			// 
-			this.txtLoaiLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtLoaiLuong.Location = new System.Drawing.Point(182, 139);
-			this.txtLoaiLuong.Name = "txtLoaiLuong";
-			this.txtLoaiLuong.Size = new System.Drawing.Size(275, 32);
-			this.txtLoaiLuong.TabIndex = 2;
 			// 
 			// label4
 			// 
@@ -245,6 +228,7 @@
 			this.btnQuayLai.TabIndex = 16;
 			this.btnQuayLai.Text = "Quay lại";
 			this.btnQuayLai.UseVisualStyleBackColor = true;
+			this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
 			// 
 			// Luong
 			// 
@@ -254,14 +238,14 @@
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.Controls.Add(this.btnQuayLai);
 			this.Controls.Add(this.groupBox2);
-			this.Controls.Add(this.dataGridView1);
+			this.Controls.Add(this.dataGVLuong);
 			this.Controls.Add(this.panel1);
 			this.DoubleBuffered = true;
 			this.Name = "Luong";
 			this.Size = new System.Drawing.Size(1536, 886);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGVLuong)).EndInit();
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
 			this.ResumeLayout(false);
@@ -272,10 +256,7 @@
 
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Label lblLuong;
-		private System.Windows.Forms.DataGridView dataGridView1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn MaLuong;
-		private System.Windows.Forms.DataGridViewTextBoxColumn LoaiLuong;
-		private System.Windows.Forms.DataGridViewTextBoxColumn MucLuong;
+		private System.Windows.Forms.DataGridView dataGVLuong;
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.Button btnXacNhan;
 		private System.Windows.Forms.Button btnHuy;
@@ -285,9 +266,9 @@
 		private System.Windows.Forms.TextBox txtMucLuong;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.TextBox txtMaLuong;
-		private System.Windows.Forms.TextBox txtLoaiLuong;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Button btnQuayLai;
+		private System.Windows.Forms.ComboBox cbbLoaiLuong;
 	}
 }

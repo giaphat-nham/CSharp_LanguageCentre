@@ -44,10 +44,14 @@
     <Compile Include="ChiTietPhanQuyenDAO.cs" />
     <Compile Include="ChucNangDAO.cs" />
     <Compile Include="DataServices.cs" />
+    <Compile Include="GiangVienDAO.cs" />
     <Compile Include="HocVienDAO.cs" />
     <Compile Include="KhoaHocDAO.cs" />
+    <Compile Include="LuongDAO.cs" />
+    <Compile Include="PhongHocDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuyenDAO.cs" />
+    <Compile Include="StaffDAO.cs" />
     <Compile Include="TaiKhoanDAO.cs" />
     <Compile Include="ThoiKhoaBieuDAO.cs" />
     <Compile Include="XepLichDAO.cs" />
