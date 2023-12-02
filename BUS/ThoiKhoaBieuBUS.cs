@@ -25,7 +25,7 @@ namespace BUS
 
         public List<ThoiKhoaBieuDTO> getTKBGV(int maGV)
         {
-            return dao.getTKBHV(maGV);
+            return dao.getTKBGV(maGV);
         }
     }
 }

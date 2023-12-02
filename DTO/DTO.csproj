@@ -48,6 +48,7 @@
     <Compile Include="DangKyKHDTO.cs" />
     <Compile Include="GiangVienDTO.cs" />
     <Compile Include="HoaDonDTO.cs" />
+    <Compile Include="HocPhiDTO.cs" />
     <Compile Include="HocVienDTO.cs" />
     <Compile Include="KhoaHocDTO.cs" />
     <Compile Include="LuongDTO.cs" />

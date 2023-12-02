@@ -32,26 +32,23 @@ namespace CSharp_LanguageCentre.GUI
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblLoginedUser = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnInHP = new System.Windows.Forms.Button();
+            this.btnXuatExcel = new System.Windows.Forms.Button();
             this.btnXemHP = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMaHV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnQuayLai = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.colMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHocPhi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblTotalCourseDisplay = new System.Windows.Forms.Label();
-            this.lblTotalTuitionDisplay = new System.Windows.Forms.Label();
-            this.lblTuitionStatusDisplay = new System.Windows.Forms.Label();
+            this.dgvHocPhi = new System.Windows.Forms.DataGridView();
+            this.txtTongKH = new System.Windows.Forms.TextBox();
+            this.txtTongHP = new System.Windows.Forms.TextBox();
+            this.txtTTHP = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHocPhi)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -79,9 +76,9 @@ namespace CSharp_LanguageCentre.GUI
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnInHP);
+            this.groupBox1.Controls.Add(this.btnXuatExcel);
             this.groupBox1.Controls.Add(this.btnXemHP);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtMaHV);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(16, 107);
@@ -91,14 +88,15 @@ namespace CSharp_LanguageCentre.GUI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin học viên";
             // 
-            // btnInHP
+            // btnXuatExcel
             // 
-            this.btnInHP.Location = new System.Drawing.Point(496, 28);
-            this.btnInHP.Name = "btnInHP";
-            this.btnInHP.Size = new System.Drawing.Size(121, 26);
-            this.btnInHP.TabIndex = 3;
-            this.btnInHP.Text = "In học phí";
-            this.btnInHP.UseVisualStyleBackColor = true;
+            this.btnXuatExcel.Location = new System.Drawing.Point(496, 28);
+            this.btnXuatExcel.Name = "btnXuatExcel";
+            this.btnXuatExcel.Size = new System.Drawing.Size(121, 26);
+            this.btnXuatExcel.TabIndex = 3;
+            this.btnXuatExcel.Text = "Xuất Excel";
+            this.btnXuatExcel.UseVisualStyleBackColor = true;
+            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
             // 
             // btnXemHP
             // 
@@ -108,14 +106,15 @@ namespace CSharp_LanguageCentre.GUI
             this.btnXemHP.TabIndex = 2;
             this.btnXemHP.Text = "Xem học phí";
             this.btnXemHP.UseVisualStyleBackColor = true;
+            this.btnXemHP.Click += new System.EventHandler(this.btnXemHP_Click);
             // 
-            // textBox1
+            // txtMaHV
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(182, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(164, 26);
-            this.textBox1.TabIndex = 1;
+            this.txtMaHV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaHV.Location = new System.Drawing.Point(182, 28);
+            this.txtMaHV.Name = "txtMaHV";
+            this.txtMaHV.Size = new System.Drawing.Size(164, 26);
+            this.txtMaHV.TabIndex = 1;
             // 
             // label1
             // 
@@ -128,9 +127,9 @@ namespace CSharp_LanguageCentre.GUI
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.lblTuitionStatusDisplay);
-            this.groupBox2.Controls.Add(this.lblTotalTuitionDisplay);
-            this.groupBox2.Controls.Add(this.lblTotalCourseDisplay);
+            this.groupBox2.Controls.Add(this.txtTTHP);
+            this.groupBox2.Controls.Add(this.txtTongHP);
+            this.groupBox2.Controls.Add(this.txtTongKH);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
@@ -181,68 +180,39 @@ namespace CSharp_LanguageCentre.GUI
             this.btnQuayLai.TabIndex = 4;
             this.btnQuayLai.Text = "Quay lại";
             this.btnQuayLai.UseVisualStyleBackColor = true;
+            this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
             // 
-            // dataGridView1
+            // dgvHocPhi
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaKH,
-            this.colTenKH,
-            this.colHocPhi});
-            this.dataGridView1.Location = new System.Drawing.Point(16, 199);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(443, 222);
-            this.dataGridView1.TabIndex = 7;
+            this.dgvHocPhi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHocPhi.Location = new System.Drawing.Point(16, 199);
+            this.dgvHocPhi.Name = "dgvHocPhi";
+            this.dgvHocPhi.Size = new System.Drawing.Size(443, 222);
+            this.dgvHocPhi.TabIndex = 7;
             // 
-            // colMaKH
+            // txtTongKH
             // 
-            this.colMaKH.HeaderText = "Mã Khóa Học";
-            this.colMaKH.Name = "colMaKH";
+            this.txtTongKH.Enabled = false;
+            this.txtTongKH.Location = new System.Drawing.Point(335, 34);
+            this.txtTongKH.Name = "txtTongKH";
+            this.txtTongKH.Size = new System.Drawing.Size(100, 26);
+            this.txtTongKH.TabIndex = 3;
             // 
-            // colTenKH
+            // txtTongHP
             // 
-            this.colTenKH.HeaderText = "Tên Khóa Học";
-            this.colTenKH.Name = "colTenKH";
-            this.colTenKH.Width = 150;
+            this.txtTongHP.Enabled = false;
+            this.txtTongHP.Location = new System.Drawing.Point(335, 72);
+            this.txtTongHP.Name = "txtTongHP";
+            this.txtTongHP.Size = new System.Drawing.Size(100, 26);
+            this.txtTongHP.TabIndex = 4;
             // 
-            // colHocPhi
+            // txtTTHP
             // 
-            this.colHocPhi.HeaderText = "Học Phí";
-            this.colHocPhi.Name = "colHocPhi";
-            this.colHocPhi.Width = 150;
-            // 
-            // lblTotalCourseDisplay
-            // 
-            this.lblTotalCourseDisplay.AutoSize = true;
-            this.lblTotalCourseDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalCourseDisplay.Location = new System.Drawing.Point(302, 37);
-            this.lblTotalCourseDisplay.Name = "lblTotalCourseDisplay";
-            this.lblTotalCourseDisplay.Size = new System.Drawing.Size(139, 20);
-            this.lblTotalCourseDisplay.TabIndex = 3;
-            this.lblTotalCourseDisplay.Text = "Tổng số khóa học:";
-            this.lblTotalCourseDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblTotalTuitionDisplay
-            // 
-            this.lblTotalTuitionDisplay.AutoSize = true;
-            this.lblTotalTuitionDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalTuitionDisplay.Location = new System.Drawing.Point(302, 75);
-            this.lblTotalTuitionDisplay.Name = "lblTotalTuitionDisplay";
-            this.lblTotalTuitionDisplay.Size = new System.Drawing.Size(139, 20);
-            this.lblTotalTuitionDisplay.TabIndex = 4;
-            this.lblTotalTuitionDisplay.Text = "Tổng số khóa học:";
-            this.lblTotalTuitionDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblTuitionStatusDisplay
-            // 
-            this.lblTuitionStatusDisplay.AutoSize = true;
-            this.lblTuitionStatusDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTuitionStatusDisplay.Location = new System.Drawing.Point(302, 113);
-            this.lblTuitionStatusDisplay.Name = "lblTuitionStatusDisplay";
-            this.lblTuitionStatusDisplay.Size = new System.Drawing.Size(139, 20);
-            this.lblTuitionStatusDisplay.TabIndex = 5;
-            this.lblTuitionStatusDisplay.Text = "Tổng số khóa học:";
-            this.lblTuitionStatusDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtTTHP.Enabled = false;
+            this.txtTTHP.Location = new System.Drawing.Point(335, 110);
+            this.txtTTHP.Name = "txtTTHP";
+            this.txtTTHP.Size = new System.Drawing.Size(100, 26);
+            this.txtTTHP.TabIndex = 5;
             // 
             // ViewTuition
             // 
@@ -250,7 +220,7 @@ namespace CSharp_LanguageCentre.GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CSharp_LanguageCentre.Properties.Resources.general_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvHocPhi);
             this.Controls.Add(this.btnQuayLai);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -263,7 +233,7 @@ namespace CSharp_LanguageCentre.GUI
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHocPhi)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -273,21 +243,18 @@ namespace CSharp_LanguageCentre.GUI
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblLoginedUser;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMaHV;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnXemHP;
-        private System.Windows.Forms.Button btnInHP;
+        private System.Windows.Forms.Button btnXuatExcel;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnQuayLai;
-        private System.Windows.Forms.Label lblTuitionStatusDisplay;
-        private System.Windows.Forms.Label lblTotalTuitionDisplay;
-        private System.Windows.Forms.Label lblTotalCourseDisplay;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTenKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHocPhi;
+        private System.Windows.Forms.DataGridView dgvHocPhi;
+        private System.Windows.Forms.TextBox txtTTHP;
+        private System.Windows.Forms.TextBox txtTongHP;
+        private System.Windows.Forms.TextBox txtTongKH;
     }
 }

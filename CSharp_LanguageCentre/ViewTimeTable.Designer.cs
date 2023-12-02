@@ -34,13 +34,13 @@ namespace CSharp_LanguageCentre.GUI
             this.timeTableTabs = new System.Windows.Forms.TabControl();
             this.studentPage = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnInTKBHV = new System.Windows.Forms.Button();
+            this.btnXuatExcelHV = new System.Windows.Forms.Button();
             this.btnXemTKBHV = new System.Windows.Forms.Button();
             this.txtMaHV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnInTKBGV = new System.Windows.Forms.Button();
+            this.btnXuatExcelGV = new System.Windows.Forms.Button();
             this.btnXemTKBGV = new System.Windows.Forms.Button();
             this.txtMaGV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -102,7 +102,7 @@ namespace CSharp_LanguageCentre.GUI
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnInTKBHV);
+            this.groupBox1.Controls.Add(this.btnXuatExcelHV);
             this.groupBox1.Controls.Add(this.btnXemTKBHV);
             this.groupBox1.Controls.Add(this.txtMaHV);
             this.groupBox1.Controls.Add(this.label1);
@@ -114,15 +114,16 @@ namespace CSharp_LanguageCentre.GUI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin học viên";
             // 
-            // btnInTKBHV
+            // btnXuatExcelHV
             // 
-            this.btnInTKBHV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInTKBHV.Location = new System.Drawing.Point(464, 28);
-            this.btnInTKBHV.Name = "btnInTKBHV";
-            this.btnInTKBHV.Size = new System.Drawing.Size(105, 26);
-            this.btnInTKBHV.TabIndex = 3;
-            this.btnInTKBHV.Text = "In TKB";
-            this.btnInTKBHV.UseVisualStyleBackColor = true;
+            this.btnXuatExcelHV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuatExcelHV.Location = new System.Drawing.Point(464, 28);
+            this.btnXuatExcelHV.Name = "btnXuatExcelHV";
+            this.btnXuatExcelHV.Size = new System.Drawing.Size(105, 26);
+            this.btnXuatExcelHV.TabIndex = 3;
+            this.btnXuatExcelHV.Text = "Xuất Excel";
+            this.btnXuatExcelHV.UseVisualStyleBackColor = true;
+            this.btnXuatExcelHV.Click += new System.EventHandler(this.btnXuatExcelHV_Click);
             // 
             // btnXemTKBHV
             // 
@@ -166,7 +167,7 @@ namespace CSharp_LanguageCentre.GUI
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnInTKBGV);
+            this.groupBox2.Controls.Add(this.btnXuatExcelGV);
             this.groupBox2.Controls.Add(this.btnXemTKBGV);
             this.groupBox2.Controls.Add(this.txtMaGV);
             this.groupBox2.Controls.Add(this.label2);
@@ -178,15 +179,15 @@ namespace CSharp_LanguageCentre.GUI
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin giảng viên";
             // 
-            // btnInTKBGV
+            // btnXuatExcelGV
             // 
-            this.btnInTKBGV.Location = new System.Drawing.Point(510, 28);
-            this.btnInTKBGV.Name = "btnInTKBGV";
-            this.btnInTKBGV.Size = new System.Drawing.Size(85, 26);
-            this.btnInTKBGV.TabIndex = 3;
-            this.btnInTKBGV.Text = "In TKB";
-            this.btnInTKBGV.UseVisualStyleBackColor = true;
-            this.btnInTKBGV.Click += new System.EventHandler(this.btnInTKBGV_Click);
+            this.btnXuatExcelGV.Location = new System.Drawing.Point(510, 28);
+            this.btnXuatExcelGV.Name = "btnXuatExcelGV";
+            this.btnXuatExcelGV.Size = new System.Drawing.Size(110, 26);
+            this.btnXuatExcelGV.TabIndex = 3;
+            this.btnXuatExcelGV.Text = "Xuất Excel";
+            this.btnXuatExcelGV.UseVisualStyleBackColor = true;
+            this.btnXuatExcelGV.Click += new System.EventHandler(this.btnInTKBGV_Click);
             // 
             // btnXemTKBGV
             // 
@@ -228,6 +229,7 @@ namespace CSharp_LanguageCentre.GUI
             this.btnQuayLai.TabIndex = 4;
             this.btnQuayLai.Text = "Quay lại";
             this.btnQuayLai.UseVisualStyleBackColor = true;
+            this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
             // 
             // dgvTKB
             // 
@@ -274,12 +276,12 @@ namespace CSharp_LanguageCentre.GUI
         private System.Windows.Forms.TextBox txtMaHV;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button btnInTKBHV;
+        private System.Windows.Forms.Button btnXuatExcelHV;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnXemTKBGV;
         private System.Windows.Forms.TextBox txtMaGV;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnInTKBGV;
+        private System.Windows.Forms.Button btnXuatExcelGV;
         private System.Windows.Forms.Button btnQuayLai;
         private System.Windows.Forms.DataGridView dgvTKB;
     }

@@ -45,6 +45,7 @@
     <Compile Include="ChucNangDAO.cs" />
     <Compile Include="DataServices.cs" />
     <Compile Include="GiangVienDAO.cs" />
+    <Compile Include="HocPhiDAO.cs" />
     <Compile Include="HocVienDAO.cs" />
     <Compile Include="KhoaHocDAO.cs" />
     <Compile Include="LuongDAO.cs" />

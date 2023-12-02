@@ -21,11 +21,10 @@ namespace DAO
         public List<ThoiKhoaBieuDTO> getTKBHV(int maHV)
         {
             List<ThoiKhoaBieuDTO> ds = new List<ThoiKhoaBieuDTO>();
-            string sql = "SELECT kh.ma_kh, ten_kh, thu, tiet_bd, so_tiet, ngay_bd, ngay_kt FROM khoa_hoc kh, thoi_khoa_bieu tkb, hoc_vien hv, dang_ky_khoa_hoc dk WHERE " +
+            string sql = "SELECT kh.ma_kh, kh.ten_kh, tkb.thu, tkb.tiet_bd, tkb.so_tiet, kh.ngay_bat_dau, kh.ngay_ket_thuc FROM khoa_hoc kh, thoi_khoa_bieu tkb, dang_ky_khoa_hoc dk WHERE " +
                 "kh.ma_kh = tkb.ma_kh AND " +
-                "tkb.ma_kh = dk.ma_kh AND tkb.nhom_kh = dk.nhom_kh AND" +
-                "dk.ma_hv = hv.ma_hv AND" +
-                $"hv.ma_hv = {maHV}";
+                "tkb.ma_kh = dk.ma_kh AND tkb.nhom_kh = dk.nhom_kh AND " +
+                $"dk.ma_hv = {maHV}";
             if (!dataServices.OpenDB()) return null;
             dt = dataServices.RunQuery(sql);
             ThoiKhoaBieuDTO tkb;
@@ -38,8 +37,8 @@ namespace DAO
                 tkb.Thu = (int)dt.Rows[i]["thu"];
                 tkb.TietBD = (int)dt.Rows[i]["tiet_bd"];
                 tkb.SoTiet = (int)dt.Rows[i]["so_tiet"];
-                tkb.NgayBD = (DateTime)dt.Rows[i]["ngay_bd"];
-                tkb.NgayKT = (DateTime)dt.Rows[i]["ngay_kt"];
+                tkb.NgayBD = (DateTime)dt.Rows[i]["ngay_bat_dau"];
+                tkb.NgayKT = (DateTime)dt.Rows[i]["ngay_ket_thuc"];
                 ds.Add(tkb);
             }
 
@@ -49,7 +48,7 @@ namespace DAO
         public List<ThoiKhoaBieuDTO> getTKBGV(int maGV)
         {
             List<ThoiKhoaBieuDTO> ds = new List<ThoiKhoaBieuDTO>();
-            string sql = "SELECT kh.ma_kh, ten_kh, thu, tiet_bd, so_tiet, ngay_bd, ngay_kt FROM khoa_hoc kh, thoi_khoa_bieu tkb WHERE " +
+            string sql = "SELECT kh.ma_kh, ten_kh, thu, tiet_bd, so_tiet, ngay_bat_dau, ngay_ket_thuc FROM khoa_hoc kh, thoi_khoa_bieu tkb WHERE " +
                 "kh.ma_kh = tkb.ma_kh AND " +
                 $"tkb.ma_gv = {maGV}";
             if (!dataServices.OpenDB()) return null;
@@ -64,8 +63,8 @@ namespace DAO
                 tkb.Thu = (int)dt.Rows[i]["thu"];
                 tkb.TietBD = (int)dt.Rows[i]["tiet_bd"];
                 tkb.SoTiet = (int)dt.Rows[i]["so_tiet"];
-                tkb.NgayBD = (DateTime)dt.Rows[i]["ngay_bd"];
-                tkb.NgayKT = (DateTime)dt.Rows[i]["ngay_kt"];
+                tkb.NgayBD = (DateTime)dt.Rows[i]["ngay_bat_dau"];
+                tkb.NgayKT = (DateTime)dt.Rows[i]["ngay_ket_thuc"];
                 ds.Add(tkb);
             }
 
