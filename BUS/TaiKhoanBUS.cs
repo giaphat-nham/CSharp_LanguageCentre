@@ -58,5 +58,58 @@ namespace BUS
         {
             return dao.TimTaiKhoan(tenTK, matKhau);
         }
+
+        public string Insert(TaiKhoanDTO taiKhoan)
+        {
+            
+            if (dao.Insert(taiKhoan))
+            {
+                danhSach = dao.getAll();
+                return "Thêm thành công!";
+            }
+            return "Đã có lỗi xảy ra!";
+        }
+
+        public string Delete(string tenTK)
+        {
+            if (dao.Delete(tenTK))
+            {
+                danhSach = dao.getAll();
+                return "Xóa thành công!";
+            }
+            return "Đã có lỗi xảy ra";
+        }
+
+        public string Update(TaiKhoanDTO taiKhoan)
+        {
+            if (dao.Update(taiKhoan))
+            {
+                danhSach = dao.getAll();
+                return "Cập nhật thành công!";
+            }
+            return "Đã có lỗi xảy ra!";
+        }
+
+        public bool TrungTenTK(string tenTK)
+        {
+            return dao.TrungTenTK(tenTK);
+        }
+
+        public List<TaiKhoanDTO> Search(string key)
+        {
+            List<TaiKhoanDTO> searchList = new List<TaiKhoanDTO>();
+
+            foreach (TaiKhoanDTO tk in danhSach)
+            {
+                if (tk.TenTK == key)
+                {
+                    searchList.Add(tk);
+                    break;
+                }
+            }
+            return searchList;
+
+        }
+
     }
 }

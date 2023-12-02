@@ -67,6 +67,28 @@ namespace BUS
         {
             List<KhoaHocDTO> searchList = new List<KhoaHocDTO>();
 
+            if (option == 0) //tim bang ma hoc vien
+            {
+                foreach (KhoaHocDTO khoaHoc in danhSach)
+                {
+                    if (khoaHoc.MaKH == Convert.ToInt32(key))
+                    {
+                        searchList.Add(khoaHoc);
+                        break;
+                    }
+                }
+            }
+            else if (option == 1) //tim bang ten khoa hoc
+            {
+                foreach (KhoaHocDTO khoaHoc in danhSach)
+                {
+                    if (khoaHoc.TenKH.ToLower().Contains(key.ToLower()))
+                    {
+                        searchList.Add(khoaHoc);
+                    }
+                }
+            }
+
             return searchList;
             
         }

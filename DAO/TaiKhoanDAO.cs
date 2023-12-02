@@ -50,5 +50,55 @@ namespace DAO
             taiKhoan.MaQuyen = (int)dataTable.Rows[0]["ma_quyen"];
             return taiKhoan;
         }
+
+        public bool Insert(TaiKhoanDTO taiKhoan)
+        {
+            string sql = "SELECT * FROM tai_khoan";
+            dataTable = dataServices.RunQuery(sql);
+            DataRow row = dataTable.NewRow();
+            row["ten_tk"] = taiKhoan.TenTK;
+            row["mat_khau"] = taiKhoan.MatKhau;
+            row["ma_quyen"] = taiKhoan.MaQuyen;
+            dataTable.Rows.Add(row);
+            dataServices.Update(dataTable);
+            return true;
+        }
+
+        public bool Delete(string tenTK)
+        {
+            try
+            {
+                string sql = $"DELETE FROM nhan_vien_quan_ly WHERE ten_tk = '{tenTK}'";
+                dataServices.ExecuteNonQuery(sql);
+                sql = $"DELETE FROM tai_khoan WHERE ten_tk = '{tenTK}'";
+                dataServices.ExecuteNonQuery(sql);
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool Update(TaiKhoanDTO taiKhoan)
+        {
+            string sql = "SELECT * FROM tai_khoan";
+            dataTable = dataServices.RunQuery(sql);
+            dataTable.PrimaryKey = new DataColumn[] { dataTable.Columns["ten_tk"] };
+            DataRow row = dataTable.Rows.Find(taiKhoan.TenTK);
+            row["ten_tk"] = taiKhoan.TenTK;
+            row["mat_khau"] = taiKhoan.MatKhau;
+            row["ma_quyen"] = taiKhoan.MaQuyen;
+            dataServices.Update(dataTable);
+            return true;
+        }
+
+        public bool TrungTenTK(string tenTK)
+        {
+            string sql = $"SELECT * FROM tai_khoan WHERE ten_tk = '{tenTK}'";
+            dataTable = dataServices.RunQuery(sql);
+            if (dataTable.Rows.Count == 0) return false;
+            return true;
+        }
     }
 }

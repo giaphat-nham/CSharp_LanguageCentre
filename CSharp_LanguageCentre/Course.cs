@@ -16,6 +16,7 @@ namespace CSharp_LanguageCentre.GUI
     {
         KhoaHocBUS bus = new KhoaHocBUS();
         List<KhoaHocDTO> listKhoaHoc = new List<KhoaHocDTO>();
+        List<KhoaHocDTO> searchList = new List<KhoaHocDTO>();
         static bool isDeleting = false, isUpdating = false;
         public Course()
         {
@@ -108,6 +109,7 @@ namespace CSharp_LanguageCentre.GUI
             {
                 isDeleting = false;
 
+                btnXoa.ForeColor = Color.Black;
                 btnSua.Enabled = true;
                 btnThem.Enabled = true;
                 btnXoa.Enabled = true;
@@ -126,6 +128,7 @@ namespace CSharp_LanguageCentre.GUI
             {
                 isUpdating = false;
 
+                btnSua.ForeColor = Color.Black;
                 btnSua.Enabled = true;
                 btnThem.Enabled = true;
                 btnXoa.Enabled = true;
@@ -190,7 +193,7 @@ namespace CSharp_LanguageCentre.GUI
         {
             isDeleting = true;
 
-            btnSua.ForeColor = Color.FromArgb(1, 226, 91, 69);
+            btnXoa.ForeColor = Color.FromArgb(1, 226, 91, 69);
             btnSua.Enabled = false;
             btnThem.Enabled = false;
             btnXoa.Enabled = false;
@@ -208,6 +211,48 @@ namespace CSharp_LanguageCentre.GUI
         private void btnXepLich_Click(object sender, EventArgs e)
         {
             Form1.ChangeControlTo(new XepLich());
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string key = txtTimKiem.Text.TrimStart(new char[] { ' ' }).TrimEnd(new char[] { ' ' });
+
+            if (String.IsNullOrWhiteSpace(key))
+            {
+                MessageBox.Show("Vui lòng nhập thông tin tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (cbbTimKiem.SelectedIndex == 0 && !int.TryParse(key, out int result))
+            {
+                MessageBox.Show("Thông tin đã nhập không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                if (cbbTimKiem.SelectedIndex == 0)
+                {
+                    searchList = bus.Search(key, 0);
+                    if (searchList.Count == 0)
+                    {
+                        MessageBox.Show("Không tìm thấy kết quả hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        dgvKhoaHoc.DataSource = searchList;
+                    }
+                }
+                else if (cbbTimKiem.SelectedIndex == 1)
+                {
+                    searchList = bus.Search(key, 1);
+                    if (searchList.Count == 0)
+                    {
+                        MessageBox.Show("Không tìm thấy kết quả hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        dgvKhoaHoc.DataSource = searchList;
+                    }
+                }
+
+            }
         }
 
         private void btnQuayLai_Click(object sender, EventArgs e)

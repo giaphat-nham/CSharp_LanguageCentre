@@ -60,7 +60,7 @@ namespace DAO
         {
             try
             {
-                string sql = $"DELETE FROM phan_cong_giang_day WHERE ma_kh = {maKH}";
+                string sql = $"DELETE FROM thoi_khoa_bieu WHERE ma_kh = {maKH}";
                 dataServices.ExecuteNonQuery(sql);
                 sql = $"DELETE FROM dang_ky_khoa_hoc WHERE ma_kh = {maKH}";
                 dataServices.ExecuteNonQuery(sql);
@@ -102,9 +102,10 @@ namespace DAO
 
         public int NextID()
         {
-            string sql = "SELECT * FROM khoa_hoc ORDER BY ma_kh DESC";
+            string sql = "SELECT MAX(ma_kh) as 'max' FROM khoa_hoc";
             dataTable = dataServices.RunQuery(sql);
-            int curId = (int)dataTable.Rows[0]["ma_kh"];
+            if (dataTable.Rows.Count == 0) return 1;
+            int curId = (int)dataTable.Rows[0]["max"];
             return curId + 1;
         }
     }
