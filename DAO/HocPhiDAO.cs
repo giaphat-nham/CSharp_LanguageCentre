@@ -43,7 +43,7 @@ namespace DAO
             dt = dataServices.RunQuery(sql);
 
             if (dt.Rows.Count != 0)
-                return (bool)dt.Rows[0]["tinh_trang_thanh_toan"];
+                return Convert.ToBoolean(dt.Rows[0]["tinh_trang_thanh_toan"]);
             else
                 return false;
         }

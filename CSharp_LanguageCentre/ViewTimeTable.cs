@@ -17,6 +17,7 @@ namespace CSharp_LanguageCentre.GUI
     {
         ThoiKhoaBieuBUS bus = new ThoiKhoaBieuBUS();
         HocVienBUS busHV = new HocVienBUS();
+        GiangVienBUS busGV = new GiangVienBUS();
         List<ThoiKhoaBieuDTO> dsTKB;
         public ViewTimeTable()
         {
@@ -44,6 +45,10 @@ namespace CSharp_LanguageCentre.GUI
             {
                 MessageBox.Show("Mã giảng viên không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            }
+            else if (busGV.KiemTraMaGV(Convert.ToInt32(txtMaHV.Text)))
+            {
+                MessageBox.Show("Mã giảng viên không tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

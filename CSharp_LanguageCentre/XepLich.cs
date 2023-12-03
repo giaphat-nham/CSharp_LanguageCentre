@@ -16,9 +16,11 @@ namespace CSharp_LanguageCentre.GUI
     public partial class XepLich : UserControl
     {
         KhoaHocBUS busKH = new KhoaHocBUS();
+        GiangVienBUS busGV = new GiangVienBUS();
         XepLichBUS busXL;
         List<KhoaHocDTO> dsKH = new List<KhoaHocDTO>();
         List<XepLichDTO> dsXL = new List<XepLichDTO>();
+        List<GiangVienDTO> dsGV = new List<GiangVienDTO>();
         static bool isDeleting = false, isUpdating = false;
         public XepLich()
         {
@@ -45,7 +47,11 @@ namespace CSharp_LanguageCentre.GUI
 
         private void LoadComboBoxGV()
         {
-
+            dsGV = busGV.getAll();
+            foreach(GiangVienDTO gv in dsGV)
+            {
+                cbbGiangVien.Items.Add(gv.HoTen.ToString().Trim());
+            }
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
