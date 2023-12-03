@@ -125,6 +125,12 @@
     <Compile Include="Teacher.designer.cs">
       <DependentUpon>Teacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThongKe.designer.cs">
+      <DependentUpon>ThongKe.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewTimeTable.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -192,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher.resx">
       <DependentUpon>Teacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongKe.resx">
+      <DependentUpon>ThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewTimeTable.resx">
       <DependentUpon>ViewTimeTable.cs</DependentUpon>

@@ -121,7 +121,7 @@ namespace CSharp_LanguageCentre
 
 				else
 				{
-					LuongDTO luongDTO = new LuongDTO(Convert.ToInt32(luongBUS.AutoID()), cbbLoaiLuong.SelectedItem.ToString(), Convert.ToInt32(txtMucLuong.Text));
+					LuongDTO luongDTO = new LuongDTO(Convert.ToInt32(txtMaLuong.Text), cbbLoaiLuong.SelectedItem.ToString(), Convert.ToInt32(txtMucLuong.Text));
 					MessageBox.Show(luongBUS.UpdateLuong(luongDTO), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					loadLuong();
 					RefreshTxt();
@@ -138,19 +138,22 @@ namespace CSharp_LanguageCentre
 				{
 					MessageBox.Show("Không được để trống Mã lương cần xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
-				else if (!luongBUS.KiemTraMaLuong(Convert.ToInt32(txtMaLuong.Text)))
+				else if (luongBUS.KiemTraMaLuong(Convert.ToInt32(txtMaLuong.Text)))
 				{
 					MessageBox.Show("Không tìm thấy mã nhân viên phải xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
 
 				else
 				{
-					MessageBox.Show(luongBUS.DeleteLuong(Convert.ToInt32(txtMaLuong)), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					MessageBox.Show(luongBUS.DeleteLuong(Convert.ToInt32(txtMaLuong.Text)), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					loadLuong();
 					RefreshTxt();
 					btnThem.Enabled = true;
 					btnSua.Enabled = true;
 					btnXoa.Enabled = true;
+					txtMaLuong.Enabled = true;
+					txtMucLuong.Enabled = true;
+					cbbLoaiLuong.Enabled = true;
 				}
 
 			}
@@ -161,6 +164,7 @@ namespace CSharp_LanguageCentre
 			int id;
 			id = luongBUS.AutoID();
 			txtMaLuong.Text = id.ToString();
+
 			click_Them = true;
 			btnHuy.Enabled = true;
 			btnXacNhan.Enabled = true;
@@ -257,6 +261,15 @@ namespace CSharp_LanguageCentre
 		{
 			Form1.ChangeControlTo(new function_menu(Form1.TKDaDangNhap));
 
+		}
+
+		private void dataGVLuong_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			int i;
+			i = dataGVLuong.CurrentRow.Index;
+			txtMaLuong.Text = dataGVLuong.Rows[i].Cells[0].Value.ToString();
+			cbbLoaiLuong.Text = dataGVLuong.Rows[i].Cells[1].Value.ToString();
+			txtMucLuong.Text = dataGVLuong.Rows[i].Cells[2].Value.ToString();
 		}
 	}
 }

@@ -231,7 +231,7 @@ namespace CSharp_LanguageCentre
 
 				else
 				{
-					PhongHocDTO phongHocDTO = new PhongHocDTO(Convert.ToInt32(phongHocBUS.AddMaPH()), txtTenPH.Text, Convert.ToInt32(txtSucChua.Text));
+					PhongHocDTO phongHocDTO = new PhongHocDTO(Convert.ToInt32(txtMaPH.Text), txtTenPH.Text, Convert.ToInt32(txtSucChua.Text));
 					MessageBox.Show(phongHocBUS.UpdatePH(phongHocDTO), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					LoadPH();
 					RefreshTxt();
@@ -282,6 +282,15 @@ namespace CSharp_LanguageCentre
 		{
 			Form1.ChangeControlTo(new function_menu(Form1.TKDaDangNhap));
 
+		}
+
+		private void dataGVPH_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			int i;
+			i = dataGVPH.CurrentRow.Index;
+			txtMaPH.Text = dataGVPH.Rows[i].Cells[0].Value.ToString();
+			txtTenPH.Text = dataGVPH.Rows[i].Cells[1].Value.ToString();
+			txtSucChua.Text = dataGVPH.Rows[i].Cells[2].Value.ToString();
 		}
 	}
 }

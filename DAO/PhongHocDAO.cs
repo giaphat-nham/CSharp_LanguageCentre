@@ -94,7 +94,7 @@ namespace DAO
 			//Tạo cột khóa chính trong DataTable
 			dataTable.PrimaryKey = new DataColumn[] { dataTable.Columns["ma_ph"] };
 			DataRow new_row = dataTable.Rows.Find(ph.MaPH);
-			new_row["ten_ph"] = ph.MaPH;
+			new_row["ten_ph"] = ph.TenPH;
 			new_row["suc_chua"] = ph.SucChua; ;
 
 			//Cập nhật lại dữ liệu lên database

@@ -55,28 +55,35 @@ namespace DAO
 		//kiem tra tenTK da duoc su dung va co ton tai khong
 		public bool KiemTraTenTK(string tenTK, int maNV)
 		{
-			string queryTK = $"select * from tai_khoan where ten_tk = {tenTK}";
+			/*string queryTK = $"select * from tai_khoan where ten_tk = {tenTK}";
 			dataTable = dataServices.RunQuery(queryTK);
-			if (dataTable == null) return false;
-			if (dataTable.Rows.Count < 0) return false;
-			string queryNV = $"select * from nhan_vien_quan_ly where ten_tk = {tenTK} and ma_nv = {maNV}";
-			dataTable = dataServices.RunQuery(queryNV);
-			if (dataTable.Rows.Count > 0) return true;
-			string query = $"select * from nhan_vien_quan_ly where ten_tk = {tenTK}";
-			dataTable = dataServices.RunQuery(query);
-			if (dataTable.Rows.Count > 0) return false;
+			//if (dataTable == null) return false;
+			if (dataTable.Rows.Count > 0)
+			{
+				string queryNV = $"select * from nhan_vien_quan_ly where ten_tk = {tenTK} and ma_nv = {maNV}";
+				dataTable = dataServices.RunQuery(queryNV);
+				if (dataTable.Rows.Count > 0) return true;
+				return false;
+			}
+			return false;
+			*/
 			return true;
 		}
 
 		public bool KiemTraTenTK_AddNV(string tenTK)
 		{
 			string queryTK = $"select * from tai_khoan where ten_tk = {tenTK}";
-			dataTable = dataServices.RunQuery(queryTK);
-			if (dataTable == null) return false;
-			if (dataTable.Rows.Count < 0) return false;
-			string queryNV = $"select * from nhan_vien_quan_ly where ten_tk = {tenTK}";
-			dataTable = dataServices.RunQuery(queryNV);
-			if (dataTable.Rows.Count > 0) return false;
+			/*dataTable = dataServices.RunQuery(queryTK);
+			//if (dataTable == null) return false;
+			if (dataTable.Rows.Count > 0)
+			{
+				string queryNV = $"select * from nhan_vien_quan_ly where ten_tk = {tenTK}";
+				dataTable = dataServices.RunQuery(queryNV);
+				if (dataTable.Rows.Count == 0) return true;
+				return false;
+			}
+			return false;
+			*/
 			return true;
 		}
 		public int AutoID()

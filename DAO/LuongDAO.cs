@@ -52,8 +52,8 @@ namespace DAO
 			int id = 0;
 			string queryNV = "select max(ma_luong) as max_maluong from luong";
 			dataTable = dataServices.RunQuery(queryNV);
-			if (dataTable.Rows.Count == 0) id = 1;
-			else id = Convert.ToInt32(dataTable.Rows[0]["max_maluong"]) + 1;
+			if (dataTable.Rows.Count == 0) return 1;
+			id = Convert.ToInt32(dataTable.Rows[0]["max_maluong"]) + 1;
 			return id;
 
 		}
@@ -64,7 +64,7 @@ namespace DAO
 			dataTable = dataServices.RunQuery(query);
 			DataRow new_row = dataTable.NewRow();
 			new_row["ma_luong"] = luong.MaLuong;
-			new_row["loai_luong"] = luong.MaLuong;
+			new_row["loai_luong"] = luong.LoaiLuong;
 			new_row["muc_luong"] = luong.MucLuong;
 
 			dataTable.Rows.Add(new_row);

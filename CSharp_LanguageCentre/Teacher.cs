@@ -403,5 +403,18 @@ namespace CSharp_LanguageCentre.GUI
 			}
 
 		}
+
+		private void dataGVgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			int i;
+			i = dataGVgv.CurrentRow.Index;
+			txtMaGV.Text = dataGVgv.Rows[i].Cells[0].Value.ToString();
+			txtTenGV.Text = dataGVgv.Rows[i].Cells[1].Value.ToString();
+			txtSdt.Text = dataGVgv.Rows[i].Cells[2].Value.ToString();
+			cbbTrinhDo.Text = dataGVgv.Rows[i].Cells[3].Value.ToString();
+			cbbChuyenMon.Text = dataGVgv.Rows[i].Cells[4].Value.ToString();
+			cbbMaLuong.Text = dataGVgv.Rows[i].Cells[5].Value.ToString();
+
+		}
 	}
 }

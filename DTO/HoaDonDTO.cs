@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 
 namespace CSharp_LanguageCentre.DTO
 {
-    class HoaDonDTO
+    public class HoaDonDTO
     {
         int maHD;
         DateTime ngayHD;
         int hocPhi;
         bool tinhTrangThanhToan;
         int maHV;
+
+        public HoaDonDTO()
+        {
+
+        }
 
         public HoaDonDTO(int maHD, DateTime ngayHD, int hocPhi, bool tinhTrangThanhToan, int maHV)
         {

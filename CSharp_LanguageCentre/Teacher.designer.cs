@@ -40,6 +40,8 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.dataGVgv = new System.Windows.Forms.DataGridView();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.cbbTrinhDo = new System.Windows.Forms.ComboBox();
+			this.cbbChuyenMon = new System.Windows.Forms.ComboBox();
 			this.btnXacNhan = new System.Windows.Forms.Button();
 			this.btnHuy = new System.Windows.Forms.Button();
 			this.btnXoa = new System.Windows.Forms.Button();
@@ -56,8 +58,6 @@
 			this.label4 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.btnQuayLai = new System.Windows.Forms.Button();
-			this.cbbChuyenMon = new System.Windows.Forms.ComboBox();
-			this.cbbTrinhDo = new System.Windows.Forms.ComboBox();
 			this.panel1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGVgv)).BeginInit();
@@ -180,6 +180,7 @@
 			this.dataGVgv.RowTemplate.Height = 28;
 			this.dataGVgv.Size = new System.Drawing.Size(911, 558);
 			this.dataGVgv.TabIndex = 5;
+			this.dataGVgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGVgv_CellContentClick);
 			// 
 			// groupBox2
 			// 
@@ -208,6 +209,33 @@
 			this.groupBox2.TabIndex = 6;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Thông tin chi tiết";
+			// 
+			// cbbTrinhDo
+			// 
+			this.cbbTrinhDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.cbbTrinhDo.FormattingEnabled = true;
+			this.cbbTrinhDo.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C"});
+			this.cbbTrinhDo.Location = new System.Drawing.Point(182, 242);
+			this.cbbTrinhDo.Name = "cbbTrinhDo";
+			this.cbbTrinhDo.Size = new System.Drawing.Size(275, 34);
+			this.cbbTrinhDo.TabIndex = 19;
+			// 
+			// cbbChuyenMon
+			// 
+			this.cbbChuyenMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.cbbChuyenMon.FormattingEnabled = true;
+			this.cbbChuyenMon.Items.AddRange(new object[] {
+            "Nghe",
+            "Noi",
+            "Doc",
+            "Viet"});
+			this.cbbChuyenMon.Location = new System.Drawing.Point(182, 294);
+			this.cbbChuyenMon.Name = "cbbChuyenMon";
+			this.cbbChuyenMon.Size = new System.Drawing.Size(275, 34);
+			this.cbbChuyenMon.TabIndex = 18;
 			// 
 			// btnXacNhan
 			// 
@@ -360,33 +388,6 @@
 			this.btnQuayLai.Text = "Quay lại";
 			this.btnQuayLai.UseVisualStyleBackColor = true;
 			this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
-			// 
-			// cbbChuyenMon
-			// 
-			this.cbbChuyenMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cbbChuyenMon.FormattingEnabled = true;
-			this.cbbChuyenMon.Items.AddRange(new object[] {
-            "Nghe",
-            "Noi",
-            "Doc",
-            "Viet"});
-			this.cbbChuyenMon.Location = new System.Drawing.Point(182, 294);
-			this.cbbChuyenMon.Name = "cbbChuyenMon";
-			this.cbbChuyenMon.Size = new System.Drawing.Size(275, 34);
-			this.cbbChuyenMon.TabIndex = 18;
-			// 
-			// cbbTrinhDo
-			// 
-			this.cbbTrinhDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.cbbTrinhDo.FormattingEnabled = true;
-			this.cbbTrinhDo.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C"});
-			this.cbbTrinhDo.Location = new System.Drawing.Point(182, 242);
-			this.cbbTrinhDo.Name = "cbbTrinhDo";
-			this.cbbTrinhDo.Size = new System.Drawing.Size(275, 34);
-			this.cbbTrinhDo.TabIndex = 19;
 			// 
 			// Teacher
 			// 

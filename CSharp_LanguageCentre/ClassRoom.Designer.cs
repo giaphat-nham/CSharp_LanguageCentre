@@ -32,6 +32,7 @@
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.lblPhongHoc = new System.Windows.Forms.Label();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.bntLoadDS = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
 			this.btnTimKiem = new System.Windows.Forms.Button();
 			this.txtTimKiem = new System.Windows.Forms.TextBox();
@@ -49,7 +50,6 @@
 			this.label4 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.btnQuayLai = new System.Windows.Forms.Button();
-			this.bntLoadDS = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGVPH)).BeginInit();
@@ -96,6 +96,17 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Thông tin phòng học";
 			// 
+			// bntLoadDS
+			// 
+			this.bntLoadDS.Location = new System.Drawing.Point(816, 44);
+			this.bntLoadDS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.bntLoadDS.Name = "bntLoadDS";
+			this.bntLoadDS.Size = new System.Drawing.Size(95, 41);
+			this.bntLoadDS.TabIndex = 5;
+			this.bntLoadDS.Text = "Tải DS";
+			this.bntLoadDS.UseVisualStyleBackColor = true;
+			this.bntLoadDS.Click += new System.EventHandler(this.bntLoadDS_Click);
+			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
@@ -135,6 +146,7 @@
 			this.dataGVPH.RowTemplate.Height = 28;
 			this.dataGVPH.Size = new System.Drawing.Size(911, 528);
 			this.dataGVPH.TabIndex = 7;
+			this.dataGVPH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGVPH_CellContentClick);
 			// 
 			// groupBox2
 			// 
@@ -273,17 +285,6 @@
 			this.btnQuayLai.Text = "Quay lại";
 			this.btnQuayLai.UseVisualStyleBackColor = true;
 			this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
-			// 
-			// bntLoadDS
-			// 
-			this.bntLoadDS.Location = new System.Drawing.Point(816, 44);
-			this.bntLoadDS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-			this.bntLoadDS.Name = "bntLoadDS";
-			this.bntLoadDS.Size = new System.Drawing.Size(95, 41);
-			this.bntLoadDS.TabIndex = 5;
-			this.bntLoadDS.Text = "Tải DS";
-			this.bntLoadDS.UseVisualStyleBackColor = true;
-			this.bntLoadDS.Click += new System.EventHandler(this.bntLoadDS_Click);
 			// 
 			// ClassRoom
 			// 

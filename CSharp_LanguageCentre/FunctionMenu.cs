@@ -142,5 +142,11 @@ namespace CSharp_LanguageCentre
         {
             Form1.ChangeControlTo(new Account());
         }
-    }
+
+		private void pnlThongKe_Click(object sender, EventArgs e)
+		{
+			Form1.ChangeControlTo(new ThongKe());
+
+		}
+	}
 }

@@ -229,7 +229,11 @@ namespace CSharp_LanguageCentre.GUI
 			if (click_Them)
 			{
 				//Kiểm tra thông tin nhập
-				if (String.IsNullOrWhiteSpace(txtTenNV.Text))
+				if (!staffBUS.KiemTraMaNV(Convert.ToInt32(txtMaNV.Text)))
+				{
+					MessageBox.Show("Nhân viên bị trùng mã!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+				else if (String.IsNullOrWhiteSpace(txtTenNV.Text))
 				{
 					MessageBox.Show("Không được để trống Tên nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
@@ -257,15 +261,10 @@ namespace CSharp_LanguageCentre.GUI
 				{
 					MessageBox.Show("Số điện thoại đã nhập không hợp lệ !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
-				else if (!staffBUS.KiemTraTenTK_Add(txtTenTK.Text))
+				else if (!staffBUS.KiemTraTenTK_Add(txtTenTK.Text.ToString()))
 				{
 					MessageBox.Show("Tên tài khoản đã nhập không hợp lệ (trùng hoặc không tồn tại)!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
-				else if (!staffBUS.KiemTraMaNV(Convert.ToInt32(txtMaNV.Text)))
-				{
-					MessageBox.Show("Nhân viên bị trùng mã!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-				}
-
 
 				else
 				{
@@ -319,6 +318,11 @@ namespace CSharp_LanguageCentre.GUI
 					MessageBox.Show("Không được để trống Số điện thoại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
 
+				if (!staffBUS.KiemTraTenTK(txtTenTK.Text, Convert.ToInt32(txtMaNV.Text)))
+				{
+					MessageBox.Show("Tên tài khoản đã nhập không hợp lệ ( bị trùng hoặc không tồn tại)!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+
 				// Kiemtra sdt và ten tk
 				else if (!KiemTraSDT(txtSdt.Text))
 				{
@@ -326,13 +330,6 @@ namespace CSharp_LanguageCentre.GUI
 				}
 				else
 				{
-					if (!staffBUS.KiemTraTenTK(txtTenTK.Text, Convert.ToInt32(txtMaNV.Text)))
-					{
-						MessageBox.Show("Tên tài khoản đã nhập không hợp lệ(trùng hoặc không tồn tại)!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					}
-
-					else
-					{
 						StaffDTO staffDTO = new StaffDTO(Convert.ToInt32(txtMaNV.Text), txtTenNV.Text, txtSdt.Text, Convert.ToInt32(cbbMaLuong.SelectedItem), txtTenTK.Text);
 						MessageBox.Show(staffBUS.UpdateNV(staffDTO), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						StaffLoad();
@@ -341,7 +338,6 @@ namespace CSharp_LanguageCentre.GUI
 						btnThem.Enabled = true;
 						btnSua.Enabled = true;
 						btnXoa.Enabled = true;
-					}
 				}
 			}
 
@@ -447,6 +443,17 @@ namespace CSharp_LanguageCentre.GUI
 				cbbMaLuong.Enabled = true;
 				txtTenTK.Enabled = true;
 			}
+		}
+
+		private void dataGVStaff_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			int i;
+			i = dataGVStaff.CurrentRow.Index;
+			txtMaNV.Text = dataGVStaff.Rows[i].Cells[0].Value.ToString();
+			txtTenNV.Text = dataGVStaff.Rows[i].Cells[1].Value.ToString();
+			txtSdt.Text = dataGVStaff.Rows[i].Cells[2].Value.ToString();
+			cbbMaLuong.Text = dataGVStaff.Rows[i].Cells[3].Value.ToString();
+			txtTenTK.Text = dataGVStaff.Rows[i].Cells[4].Value.ToString();
 		}
 	}
 }

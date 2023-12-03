@@ -180,6 +180,7 @@
 			this.dataGVStaff.RowTemplate.Height = 28;
 			this.dataGVStaff.Size = new System.Drawing.Size(910, 558);
 			this.dataGVStaff.TabIndex = 7;
+			this.dataGVStaff.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGVStaff_CellContentClick);
 			// 
 			// groupBox2
 			// 
