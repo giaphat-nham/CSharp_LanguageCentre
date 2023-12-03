@@ -43,8 +43,10 @@
   <ItemGroup>
     <Compile Include="ChiTietPhanQuyenDAO.cs" />
     <Compile Include="ChucNangDAO.cs" />
+    <Compile Include="CTHoaDonDAO.cs" />
     <Compile Include="DataServices.cs" />
     <Compile Include="GiangVienDAO.cs" />
+    <Compile Include="HoaDonDAO.cs" />
     <Compile Include="HocPhiDAO.cs" />
     <Compile Include="HocVienDAO.cs" />
     <Compile Include="KhoaHocDAO.cs" />

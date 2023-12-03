@@ -255,6 +255,11 @@ namespace CSharp_LanguageCentre.GUI
             }
         }
 
+        private void btnTaiLai_Click(object sender, EventArgs e)
+        {
+            LoadKhoaHoc();
+        }
+
         private void btnQuayLai_Click(object sender, EventArgs e)
         {
             Form1.ChangeControlTo(new function_menu(Form1.TKDaDangNhap));

@@ -188,6 +188,11 @@ namespace CSharp_LanguageCentre
                 
         }
 
+        private void btnTaiLai_Click(object sender, EventArgs e)
+        {
+            LoadTaiKhoan();
+        }
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrWhiteSpace(txtUsername.Text) || String.IsNullOrWhiteSpace(txtMatKhau.Text) || String.IsNullOrWhiteSpace(cbbMaQuyen.SelectedItem.ToString()))

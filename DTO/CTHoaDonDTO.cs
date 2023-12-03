@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace CSharp_LanguageCentre.DTO
 {
-    class CTHoaDonDTO
+    public class CTHoaDonDTO
     {
         int maHD;
         int maKH;
         int gia;
+
+        public CTHoaDonDTO()
+        {
+        }
 
         public CTHoaDonDTO(int maHD, int maKH, int gia)
         {

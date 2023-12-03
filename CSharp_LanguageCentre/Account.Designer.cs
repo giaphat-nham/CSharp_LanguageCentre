@@ -49,6 +49,7 @@
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblPhongHoc = new System.Windows.Forms.Label();
+            this.btnTaiLai = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -220,6 +221,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnTaiLai);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnTimKiem);
             this.groupBox1.Controls.Add(this.txtTimKiem);
@@ -243,9 +245,9 @@
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(498, 28);
+            this.btnTimKiem.Location = new System.Drawing.Point(381, 30);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(71, 27);
+            this.btnTimKiem.Size = new System.Drawing.Size(93, 27);
             this.btnTimKiem.TabIndex = 3;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
@@ -255,7 +257,7 @@
             // 
             this.txtTimKiem.Location = new System.Drawing.Point(195, 31);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(285, 24);
+            this.txtTimKiem.Size = new System.Drawing.Size(180, 24);
             this.txtTimKiem.TabIndex = 2;
             // 
             // panel1
@@ -279,6 +281,16 @@
             this.lblPhongHoc.Size = new System.Drawing.Size(119, 29);
             this.lblPhongHoc.TabIndex = 0;
             this.lblPhongHoc.Text = "Tài khoản";
+            // 
+            // btnTaiLai
+            // 
+            this.btnTaiLai.Location = new System.Drawing.Point(504, 29);
+            this.btnTaiLai.Name = "btnTaiLai";
+            this.btnTaiLai.Size = new System.Drawing.Size(97, 27);
+            this.btnTaiLai.TabIndex = 5;
+            this.btnTaiLai.Text = "Tải lại";
+            this.btnTaiLai.UseVisualStyleBackColor = true;
+            this.btnTaiLai.Click += new System.EventHandler(this.btnTaiLai_Click);
             // 
             // Account
             // 
@@ -325,5 +337,6 @@
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblPhongHoc;
+        private System.Windows.Forms.Button btnTaiLai;
     }
 }

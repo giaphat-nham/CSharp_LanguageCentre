@@ -44,6 +44,8 @@
     <Compile Include="ChiTietPhanQuyenBUS.cs" />
     <Compile Include="ChucNangBUS.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="CTHoaDonBUS.cs" />
+    <Compile Include="HoaDonBUS.cs" />
     <Compile Include="HocPhiBUS.cs" />
     <Compile Include="GiangVienBUS.cs" />
     <Compile Include="HocVienBUS.cs" />

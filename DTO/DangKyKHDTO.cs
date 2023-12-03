@@ -6,24 +6,22 @@ using System.Threading.Tasks;
 
 namespace CSharp_LanguageCentre.DTO
 {
-    class DangKyKHDTO
+    public class DangKyKHDTO
     {
         int maKH;
+        int nhomKH;
         int maHV;
-        float diemGK;
-        float diemCK;
 
-        public DangKyKHDTO(int maKH, int maHV, float diemGK, float diemCK)
+        public DangKyKHDTO(int maKH, int nhomKH, int maHV)
         {
             this.maKH = maKH;
+            this.nhomKH = nhomKH;
             this.maHV = maHV;
-            this.diemGK = diemGK;
-            this.diemCK = diemCK;
         }
 
-        public int MaKH { get { return MaKH; } set { MaKH = value; } }
+        public int MaKH { get { return maKH; } set { maKH = value; } }
+
+        public int NhomKH { get { return nhomKH; } set { nhomKH = value; } }
         public int MaHV { get { return maHV; } set { maHV = value; } }
-        public float DiemGK { get { return diemGK; } set { diemGK = value; } }
-        public float DiemCK { get { return diemCK; } set { diemCK = value; } }
     }
 }

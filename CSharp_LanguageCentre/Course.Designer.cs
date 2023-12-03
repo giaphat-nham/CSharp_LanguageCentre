@@ -57,6 +57,7 @@ namespace CSharp_LanguageCentre.GUI
             this.dgvKhoaHoc = new System.Windows.Forms.DataGridView();
             this.btnQuayLai = new System.Windows.Forms.Button();
             this.btnXepLich = new System.Windows.Forms.Button();
+            this.btnTaiLai = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -89,6 +90,7 @@ namespace CSharp_LanguageCentre.GUI
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnTaiLai);
             this.groupBox2.Controls.Add(this.btnTimKiem);
             this.groupBox2.Controls.Add(this.cbbTimKiem);
             this.groupBox2.Controls.Add(this.txtTimKiem);
@@ -103,9 +105,9 @@ namespace CSharp_LanguageCentre.GUI
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(673, 34);
+            this.btnTimKiem.Location = new System.Drawing.Point(643, 36);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(148, 28);
+            this.btnTimKiem.Size = new System.Drawing.Size(102, 28);
             this.btnTimKiem.TabIndex = 3;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
@@ -126,7 +128,7 @@ namespace CSharp_LanguageCentre.GUI
             // 
             this.txtTimKiem.Location = new System.Drawing.Point(403, 36);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(264, 26);
+            this.txtTimKiem.Size = new System.Drawing.Size(223, 26);
             this.txtTimKiem.TabIndex = 1;
             // 
             // label1
@@ -360,6 +362,16 @@ namespace CSharp_LanguageCentre.GUI
             this.btnXepLich.UseVisualStyleBackColor = true;
             this.btnXepLich.Click += new System.EventHandler(this.btnXepLich_Click);
             // 
+            // btnTaiLai
+            // 
+            this.btnTaiLai.Location = new System.Drawing.Point(774, 36);
+            this.btnTaiLai.Name = "btnTaiLai";
+            this.btnTaiLai.Size = new System.Drawing.Size(102, 28);
+            this.btnTaiLai.TabIndex = 4;
+            this.btnTaiLai.Text = "Tải lại";
+            this.btnTaiLai.UseVisualStyleBackColor = true;
+            this.btnTaiLai.Click += new System.EventHandler(this.btnTaiLai_Click);
+            // 
             // Course
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -372,7 +384,7 @@ namespace CSharp_LanguageCentre.GUI
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.panel1);
-            this.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.DoubleBuffered = true;
             this.Name = "Course";
             this.Size = new System.Drawing.Size(1024, 576);
@@ -418,5 +430,6 @@ namespace CSharp_LanguageCentre.GUI
         private System.Windows.Forms.Button btnQuayLai;
         private System.Windows.Forms.Button btnXepLich;
         private System.Windows.Forms.ComboBox cbbCapBac;
+        private System.Windows.Forms.Button btnTaiLai;
     }
 }
