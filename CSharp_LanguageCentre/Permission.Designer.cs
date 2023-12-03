@@ -81,9 +81,12 @@ namespace CSharp_LanguageCentre
             // 
             // dgvQuyen
             // 
+            this.dgvQuyen.AllowUserToAddRows = false;
+            this.dgvQuyen.AllowUserToDeleteRows = false;
             this.dgvQuyen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQuyen.Location = new System.Drawing.Point(6, 25);
             this.dgvQuyen.Name = "dgvQuyen";
+            this.dgvQuyen.ReadOnly = true;
             this.dgvQuyen.Size = new System.Drawing.Size(315, 194);
             this.dgvQuyen.TabIndex = 0;
             // 
@@ -112,9 +115,12 @@ namespace CSharp_LanguageCentre
             // 
             // dgvChucNang
             // 
+            this.dgvChucNang.AllowUserToAddRows = false;
+            this.dgvChucNang.AllowUserToDeleteRows = false;
             this.dgvChucNang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChucNang.Location = new System.Drawing.Point(24, 78);
             this.dgvChucNang.Name = "dgvChucNang";
+            this.dgvChucNang.ReadOnly = true;
             this.dgvChucNang.Size = new System.Drawing.Size(335, 141);
             this.dgvChucNang.TabIndex = 0;
             // 

@@ -44,12 +44,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dgvTaiKhoan = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnTaiLai = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblPhongHoc = new System.Windows.Forms.Label();
-            this.btnTaiLai = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -210,10 +210,13 @@
             // 
             // dgvTaiKhoan
             // 
+            this.dgvTaiKhoan.AllowUserToAddRows = false;
+            this.dgvTaiKhoan.AllowUserToDeleteRows = false;
             this.dgvTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTaiKhoan.Location = new System.Drawing.Point(86, 209);
             this.dgvTaiKhoan.Margin = new System.Windows.Forms.Padding(2);
             this.dgvTaiKhoan.Name = "dgvTaiKhoan";
+            this.dgvTaiKhoan.ReadOnly = true;
             this.dgvTaiKhoan.RowHeadersWidth = 62;
             this.dgvTaiKhoan.RowTemplate.Height = 28;
             this.dgvTaiKhoan.Size = new System.Drawing.Size(607, 343);
@@ -232,6 +235,16 @@
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin tài khoản";
+            // 
+            // btnTaiLai
+            // 
+            this.btnTaiLai.Location = new System.Drawing.Point(504, 29);
+            this.btnTaiLai.Name = "btnTaiLai";
+            this.btnTaiLai.Size = new System.Drawing.Size(97, 27);
+            this.btnTaiLai.TabIndex = 5;
+            this.btnTaiLai.Text = "Tải lại";
+            this.btnTaiLai.UseVisualStyleBackColor = true;
+            this.btnTaiLai.Click += new System.EventHandler(this.btnTaiLai_Click);
             // 
             // label2
             // 
@@ -281,16 +294,6 @@
             this.lblPhongHoc.Size = new System.Drawing.Size(119, 29);
             this.lblPhongHoc.TabIndex = 0;
             this.lblPhongHoc.Text = "Tài khoản";
-            // 
-            // btnTaiLai
-            // 
-            this.btnTaiLai.Location = new System.Drawing.Point(504, 29);
-            this.btnTaiLai.Name = "btnTaiLai";
-            this.btnTaiLai.Size = new System.Drawing.Size(97, 27);
-            this.btnTaiLai.TabIndex = 5;
-            this.btnTaiLai.Text = "Tải lại";
-            this.btnTaiLai.UseVisualStyleBackColor = true;
-            this.btnTaiLai.Click += new System.EventHandler(this.btnTaiLai_Click);
             // 
             // Account
             // 

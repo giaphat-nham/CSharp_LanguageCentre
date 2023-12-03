@@ -33,11 +33,13 @@ namespace CSharp_LanguageCentre.GUI
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblLoginedUser = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.cbbTimKiem = new System.Windows.Forms.ComboBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbbTrinhDo = new System.Windows.Forms.ComboBox();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnXacNhan = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
@@ -53,8 +55,6 @@ namespace CSharp_LanguageCentre.GUI
             this.dgvHocVien = new System.Windows.Forms.DataGridView();
             this.btnXepLich = new System.Windows.Forms.Button();
             this.btnQuayLai = new System.Windows.Forms.Button();
-            this.cbbTrinhDo = new System.Windows.Forms.ComboBox();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -101,6 +101,16 @@ namespace CSharp_LanguageCentre.GUI
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin học viên";
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(740, 34);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(100, 28);
+            this.btnRefresh.TabIndex = 4;
+            this.btnRefresh.Text = "Tải lại DS";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnTimKiem
             // 
@@ -163,6 +173,18 @@ namespace CSharp_LanguageCentre.GUI
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin học viên";
+            // 
+            // cbbTrinhDo
+            // 
+            this.cbbTrinhDo.FormattingEnabled = true;
+            this.cbbTrinhDo.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C"});
+            this.cbbTrinhDo.Location = new System.Drawing.Point(101, 189);
+            this.cbbTrinhDo.Name = "cbbTrinhDo";
+            this.cbbTrinhDo.Size = new System.Drawing.Size(204, 28);
+            this.cbbTrinhDo.TabIndex = 13;
             // 
             // btnHuy
             // 
@@ -281,9 +303,12 @@ namespace CSharp_LanguageCentre.GUI
             // 
             // dgvHocVien
             // 
+            this.dgvHocVien.AllowUserToAddRows = false;
+            this.dgvHocVien.AllowUserToDeleteRows = false;
             this.dgvHocVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHocVien.Location = new System.Drawing.Point(75, 199);
             this.dgvHocVien.Name = "dgvHocVien";
+            this.dgvHocVien.ReadOnly = true;
             this.dgvHocVien.Size = new System.Drawing.Size(531, 356);
             this.dgvHocVien.TabIndex = 9;
             // 
@@ -314,28 +339,6 @@ namespace CSharp_LanguageCentre.GUI
             this.btnQuayLai.Text = "Quay lại";
             this.btnQuayLai.UseVisualStyleBackColor = true;
             this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
-            // 
-            // cbbTrinhDo
-            // 
-            this.cbbTrinhDo.FormattingEnabled = true;
-            this.cbbTrinhDo.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C"});
-            this.cbbTrinhDo.Location = new System.Drawing.Point(101, 189);
-            this.cbbTrinhDo.Name = "cbbTrinhDo";
-            this.cbbTrinhDo.Size = new System.Drawing.Size(204, 28);
-            this.cbbTrinhDo.TabIndex = 13;
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(740, 34);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(100, 28);
-            this.btnRefresh.TabIndex = 4;
-            this.btnRefresh.Text = "Tải lại DS";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // Student
             // 

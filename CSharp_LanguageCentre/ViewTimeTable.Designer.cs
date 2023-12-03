@@ -233,9 +233,12 @@ namespace CSharp_LanguageCentre.GUI
             // 
             // dgvTKB
             // 
+            this.dgvTKB.AllowUserToAddRows = false;
+            this.dgvTKB.AllowUserToDeleteRows = false;
             this.dgvTKB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTKB.Location = new System.Drawing.Point(20, 237);
             this.dgvTKB.Name = "dgvTKB";
+            this.dgvTKB.ReadOnly = true;
             this.dgvTKB.Size = new System.Drawing.Size(912, 319);
             this.dgvTKB.TabIndex = 5;
             // 

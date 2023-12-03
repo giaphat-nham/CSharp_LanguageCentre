@@ -32,6 +32,7 @@ namespace CSharp_LanguageCentre.GUI
             this.lblLoginedUser = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnTaiLai = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.cbbTimKiem = new System.Windows.Forms.ComboBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
@@ -57,7 +58,6 @@ namespace CSharp_LanguageCentre.GUI
             this.dgvKhoaHoc = new System.Windows.Forms.DataGridView();
             this.btnQuayLai = new System.Windows.Forms.Button();
             this.btnXepLich = new System.Windows.Forms.Button();
-            this.btnTaiLai = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -102,6 +102,16 @@ namespace CSharp_LanguageCentre.GUI
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin khóa học";
+            // 
+            // btnTaiLai
+            // 
+            this.btnTaiLai.Location = new System.Drawing.Point(774, 36);
+            this.btnTaiLai.Name = "btnTaiLai";
+            this.btnTaiLai.Size = new System.Drawing.Size(102, 28);
+            this.btnTaiLai.TabIndex = 4;
+            this.btnTaiLai.Text = "Tải lại";
+            this.btnTaiLai.UseVisualStyleBackColor = true;
+            this.btnTaiLai.Click += new System.EventHandler(this.btnTaiLai_Click);
             // 
             // btnTimKiem
             // 
@@ -326,9 +336,12 @@ namespace CSharp_LanguageCentre.GUI
             // 
             // dgvKhoaHoc
             // 
+            this.dgvKhoaHoc.AllowUserToAddRows = false;
+            this.dgvKhoaHoc.AllowUserToDeleteRows = false;
             this.dgvKhoaHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKhoaHoc.Location = new System.Drawing.Point(69, 188);
             this.dgvKhoaHoc.Name = "dgvKhoaHoc";
+            this.dgvKhoaHoc.ReadOnly = true;
             this.dgvKhoaHoc.Size = new System.Drawing.Size(528, 356);
             this.dgvKhoaHoc.TabIndex = 11;
             this.dgvKhoaHoc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -361,16 +374,6 @@ namespace CSharp_LanguageCentre.GUI
             this.btnXepLich.Text = "Đến trang Xếp lịch";
             this.btnXepLich.UseVisualStyleBackColor = true;
             this.btnXepLich.Click += new System.EventHandler(this.btnXepLich_Click);
-            // 
-            // btnTaiLai
-            // 
-            this.btnTaiLai.Location = new System.Drawing.Point(774, 36);
-            this.btnTaiLai.Name = "btnTaiLai";
-            this.btnTaiLai.Size = new System.Drawing.Size(102, 28);
-            this.btnTaiLai.TabIndex = 4;
-            this.btnTaiLai.Text = "Tải lại";
-            this.btnTaiLai.UseVisualStyleBackColor = true;
-            this.btnTaiLai.Click += new System.EventHandler(this.btnTaiLai_Click);
             // 
             // Course
             // 

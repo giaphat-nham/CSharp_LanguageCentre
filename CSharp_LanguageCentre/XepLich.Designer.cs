@@ -315,9 +315,12 @@ namespace CSharp_LanguageCentre.GUI
             // 
             // dgvKhoaHoc
             // 
+            this.dgvKhoaHoc.AllowUserToAddRows = false;
+            this.dgvKhoaHoc.AllowUserToDeleteRows = false;
             this.dgvKhoaHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKhoaHoc.Location = new System.Drawing.Point(494, 319);
             this.dgvKhoaHoc.Name = "dgvKhoaHoc";
+            this.dgvKhoaHoc.ReadOnly = true;
             this.dgvKhoaHoc.Size = new System.Drawing.Size(448, 146);
             this.dgvKhoaHoc.TabIndex = 12;
             // 
@@ -337,9 +340,12 @@ namespace CSharp_LanguageCentre.GUI
             // 
             // dgvLichKH
             // 
+            this.dgvLichKH.AllowUserToAddRows = false;
+            this.dgvLichKH.AllowUserToDeleteRows = false;
             this.dgvLichKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLichKH.Location = new System.Drawing.Point(494, 133);
             this.dgvLichKH.Name = "dgvLichKH";
+            this.dgvLichKH.ReadOnly = true;
             this.dgvLichKH.Size = new System.Drawing.Size(448, 150);
             this.dgvLichKH.TabIndex = 17;
             // 

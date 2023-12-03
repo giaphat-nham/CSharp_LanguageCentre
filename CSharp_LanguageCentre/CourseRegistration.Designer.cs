@@ -182,17 +182,23 @@ namespace CSharp_LanguageCentre.GUI
             // 
             // dgvKH
             // 
+            this.dgvKH.AllowUserToAddRows = false;
+            this.dgvKH.AllowUserToDeleteRows = false;
             this.dgvKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKH.Location = new System.Drawing.Point(302, 159);
             this.dgvKH.Name = "dgvKH";
+            this.dgvKH.ReadOnly = true;
             this.dgvKH.Size = new System.Drawing.Size(267, 356);
             this.dgvKH.TabIndex = 22;
             // 
             // dgvHV
             // 
+            this.dgvHV.AllowUserToAddRows = false;
+            this.dgvHV.AllowUserToDeleteRows = false;
             this.dgvHV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHV.Location = new System.Drawing.Point(28, 159);
             this.dgvHV.Name = "dgvHV";
+            this.dgvHV.ReadOnly = true;
             this.dgvHV.Size = new System.Drawing.Size(254, 356);
             this.dgvHV.TabIndex = 12;
             // 

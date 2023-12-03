@@ -35,6 +35,7 @@ namespace CSharp_LanguageCentre
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblPhongHoc = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.btnTaiLai = new System.Windows.Forms.Button();
@@ -59,7 +60,6 @@ namespace CSharp_LanguageCentre
             this.txtMaHD = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -82,10 +82,13 @@ namespace CSharp_LanguageCentre
             // 
             // dgvHoaDon
             // 
+            this.dgvHoaDon.AllowUserToAddRows = false;
+            this.dgvHoaDon.AllowUserToDeleteRows = false;
             this.dgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHoaDon.Location = new System.Drawing.Point(50, 241);
             this.dgvHoaDon.Margin = new System.Windows.Forms.Padding(2);
             this.dgvHoaDon.Name = "dgvHoaDon";
+            this.dgvHoaDon.ReadOnly = true;
             this.dgvHoaDon.RowHeadersWidth = 62;
             this.dgvHoaDon.RowTemplate.Height = 28;
             this.dgvHoaDon.Size = new System.Drawing.Size(607, 325);
@@ -135,6 +138,16 @@ namespace CSharp_LanguageCentre
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin hóa đơn";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(742, 79);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(163, 28);
+            this.btnRefresh.TabIndex = 9;
+            this.btnRefresh.Text = "Refresh bộ lọc";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // dateTimePicker1
             // 
@@ -394,16 +407,6 @@ namespace CSharp_LanguageCentre
             this.label3.Size = new System.Drawing.Size(65, 18);
             this.label3.TabIndex = 0;
             this.label3.Text = "Mã HĐ:";
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(742, 79);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(163, 28);
-            this.btnRefresh.TabIndex = 9;
-            this.btnRefresh.Text = "Refresh bộ lọc";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // Invoice
             // 

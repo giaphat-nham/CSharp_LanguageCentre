@@ -37,14 +37,14 @@ namespace CSharp_LanguageCentre.GUI
             this.txtMaHV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtTTHP = new System.Windows.Forms.TextBox();
+            this.txtTongHP = new System.Windows.Forms.TextBox();
+            this.txtTongKH = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnQuayLai = new System.Windows.Forms.Button();
             this.dgvHocPhi = new System.Windows.Forms.DataGridView();
-            this.txtTongKH = new System.Windows.Forms.TextBox();
-            this.txtTongHP = new System.Windows.Forms.TextBox();
-            this.txtTTHP = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -141,6 +141,30 @@ namespace CSharp_LanguageCentre.GUI
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin học phí";
             // 
+            // txtTTHP
+            // 
+            this.txtTTHP.Enabled = false;
+            this.txtTTHP.Location = new System.Drawing.Point(335, 110);
+            this.txtTTHP.Name = "txtTTHP";
+            this.txtTTHP.Size = new System.Drawing.Size(100, 26);
+            this.txtTTHP.TabIndex = 5;
+            // 
+            // txtTongHP
+            // 
+            this.txtTongHP.Enabled = false;
+            this.txtTongHP.Location = new System.Drawing.Point(335, 72);
+            this.txtTongHP.Name = "txtTongHP";
+            this.txtTongHP.Size = new System.Drawing.Size(100, 26);
+            this.txtTongHP.TabIndex = 4;
+            // 
+            // txtTongKH
+            // 
+            this.txtTongKH.Enabled = false;
+            this.txtTongKH.Location = new System.Drawing.Point(335, 34);
+            this.txtTongKH.Name = "txtTongKH";
+            this.txtTongKH.Size = new System.Drawing.Size(100, 26);
+            this.txtTongKH.TabIndex = 3;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -184,35 +208,14 @@ namespace CSharp_LanguageCentre.GUI
             // 
             // dgvHocPhi
             // 
+            this.dgvHocPhi.AllowUserToAddRows = false;
+            this.dgvHocPhi.AllowUserToDeleteRows = false;
             this.dgvHocPhi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHocPhi.Location = new System.Drawing.Point(16, 199);
             this.dgvHocPhi.Name = "dgvHocPhi";
+            this.dgvHocPhi.ReadOnly = true;
             this.dgvHocPhi.Size = new System.Drawing.Size(443, 222);
             this.dgvHocPhi.TabIndex = 7;
-            // 
-            // txtTongKH
-            // 
-            this.txtTongKH.Enabled = false;
-            this.txtTongKH.Location = new System.Drawing.Point(335, 34);
-            this.txtTongKH.Name = "txtTongKH";
-            this.txtTongKH.Size = new System.Drawing.Size(100, 26);
-            this.txtTongKH.TabIndex = 3;
-            // 
-            // txtTongHP
-            // 
-            this.txtTongHP.Enabled = false;
-            this.txtTongHP.Location = new System.Drawing.Point(335, 72);
-            this.txtTongHP.Name = "txtTongHP";
-            this.txtTongHP.Size = new System.Drawing.Size(100, 26);
-            this.txtTongHP.TabIndex = 4;
-            // 
-            // txtTTHP
-            // 
-            this.txtTTHP.Enabled = false;
-            this.txtTTHP.Location = new System.Drawing.Point(335, 110);
-            this.txtTTHP.Name = "txtTTHP";
-            this.txtTTHP.Size = new System.Drawing.Size(100, 26);
-            this.txtTTHP.TabIndex = 5;
             // 
             // ViewTuition
             // 
