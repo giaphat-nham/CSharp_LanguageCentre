@@ -11,21 +11,40 @@ namespace BUS
 {
 	public class ThongKeBUS
 	{
-		ThongKeDAO thongKeDAO;
-		List<ThongKeDAO> thongKeDAOList;
+		static ThongKeDAO thongKeDAO;
+		static KhoaHocDAO khoaHocDAO;
+		static List<HoaDonDTO> hdList;
+		static List<KhoaHocDTO> khList;
 
 		public ThongKeBUS()
 		{
-			thongKeDAO = new ThongKeDAO();
 		}
 
-		public List<HoaDonDTO> getAllHoaDon(DateTime ngayHD)
+
+		public List<HoaDonDTO> getHoaDon(DateTime ngayHD)
 		{
-			return thongKeDAO.getAllHoaDon(ngayHD);
+			List<HoaDonDTO>  list = new List<HoaDonDTO>();
+			foreach (HoaDonDTO dto in hdList)
+			{
+				if (dto.NgayHD.Month == ngayHD.Month)
+				{
+					list.Add(dto);
+				}
+			}
+			return list;
 		}
 
-		public List<KhoaHocDTO> getAllKhoaHoc(DateTime ngayBD) 
+		public List<KhoaHocDTO> getKhoaHoc(DateTime ngayBD)
 		{
-			return KhoaHocDAO.getAll()
+			List<KhoaHocDTO> list = new List<KhoaHocDTO>();
+			foreach (KhoaHocDTO dto in khList)
+			{
+				if (dto.NgayBD.Month == ngayBD.Month)
+				{
+					list.Add(dto);
+				}
+			}
+			return list;
+		}
 	}
 }

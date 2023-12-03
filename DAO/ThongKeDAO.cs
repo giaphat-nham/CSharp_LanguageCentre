@@ -32,7 +32,7 @@ namespace DAO
 				hoadon.MaHD = (int)dataTable.Rows[i]["ma_hd"];
 				hoadon.NgayHD = (DateTime)dataTable.Rows[i]["ngay"];
 				hoadon.HocPhi = (int)dataTable.Rows[i]["hoc_phi"];
-				hoadon.MaHV = (int)dataTable.Rows[int]["ma_hv"];
+				hoadon.MaHV = (int)dataTable.Rows[i]["ma_hv"];
 				list.Add(hoadon);
 			}
 
