@@ -32,13 +32,13 @@ namespace CSharp_LanguageCentre.GUI
             this.lblLoginedUser = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbbNhom = new System.Windows.Forms.ComboBox();
             this.cbbMaHV = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbbMaKH = new System.Windows.Forms.ComboBox();
             this.btnXacNhan = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.txtNhomKH = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvKH = new System.Windows.Forms.DataGridView();
@@ -75,13 +75,13 @@ namespace CSharp_LanguageCentre.GUI
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbbNhom);
             this.groupBox1.Controls.Add(this.cbbMaHV);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cbbMaKH);
             this.groupBox1.Controls.Add(this.btnXacNhan);
             this.groupBox1.Controls.Add(this.btnHuy);
             this.groupBox1.Controls.Add(this.btnThem);
-            this.groupBox1.Controls.Add(this.txtNhomKH);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -91,6 +91,16 @@ namespace CSharp_LanguageCentre.GUI
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin đăng ký";
+            // 
+            // cbbNhom
+            // 
+            this.cbbNhom.Enabled = false;
+            this.cbbNhom.FormattingEnabled = true;
+            this.cbbNhom.Location = new System.Drawing.Point(118, 138);
+            this.cbbNhom.Name = "cbbNhom";
+            this.cbbNhom.Size = new System.Drawing.Size(187, 28);
+            this.cbbNhom.TabIndex = 22;
+            this.cbbNhom.SelectionChangeCommitted += new System.EventHandler(this.cbbNhom_SelectionChangeCommitted);
             // 
             // cbbMaHV
             // 
@@ -117,6 +127,7 @@ namespace CSharp_LanguageCentre.GUI
             this.cbbMaKH.Size = new System.Drawing.Size(215, 28);
             this.cbbMaKH.TabIndex = 19;
             this.cbbMaKH.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbbMaKH.SelectionChangeCommitted += new System.EventHandler(this.cbbMaKH_SelectionChangeCommitted);
             // 
             // btnXacNhan
             // 
@@ -152,13 +163,6 @@ namespace CSharp_LanguageCentre.GUI
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // txtNhomKH
-            // 
-            this.txtNhomKH.Location = new System.Drawing.Point(103, 135);
-            this.txtNhomKH.Name = "txtNhomKH";
-            this.txtNhomKH.Size = new System.Drawing.Size(202, 26);
-            this.txtNhomKH.TabIndex = 5;
             // 
             // label3
             // 
@@ -248,7 +252,6 @@ namespace CSharp_LanguageCentre.GUI
         private System.Windows.Forms.Button btnXacNhan;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.TextBox txtNhomKH;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbbMaKH;
@@ -257,5 +260,6 @@ namespace CSharp_LanguageCentre.GUI
         private System.Windows.Forms.DataGridView dgvHV;
         private System.Windows.Forms.Button btnQuayLai;
         private System.Windows.Forms.ComboBox cbbMaHV;
+        private System.Windows.Forms.ComboBox cbbNhom;
     }
 }

@@ -311,6 +311,7 @@ namespace CSharp_LanguageCentre.GUI
             this.dgvHocVien.ReadOnly = true;
             this.dgvHocVien.Size = new System.Drawing.Size(531, 356);
             this.dgvHocVien.TabIndex = 9;
+            this.dgvHocVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHocVien_CellContentClick);
             // 
             // btnXepLich
             // 

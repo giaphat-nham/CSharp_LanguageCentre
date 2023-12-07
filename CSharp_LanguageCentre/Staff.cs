@@ -255,6 +255,10 @@ namespace CSharp_LanguageCentre.GUI
 				{
 					MessageBox.Show("Không được để trống Số điện thoại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
+				else if (String.IsNullOrWhiteSpace(txtTenTK.Text))
+				{
+					MessageBox.Show("Không được để trống tên tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
 
 				//kiemtra sdt dung khong, tentk co ton tai va co trung voi nv nao khong
 				else if (!KiemTraSDT(txtSdt.Text))

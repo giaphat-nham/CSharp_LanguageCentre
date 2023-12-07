@@ -193,9 +193,19 @@ namespace CSharp_LanguageCentre
             LoadTaiKhoan();
         }
 
+        private void dgvTaiKhoan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i;
+            i = dgvTaiKhoan.CurrentRow.Index;
+            txtUsername.Text = dgvTaiKhoan.Rows[i].Cells[0].Value.ToString();
+            txtMatKhau.Text = dgvTaiKhoan.Rows[i].Cells[1].Value.ToString();
+            cbbMaQuyen.Text = dgvTaiKhoan.Rows[i].Cells[2].Value.ToString();
+
+        }
+
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(txtUsername.Text) || String.IsNullOrWhiteSpace(txtMatKhau.Text) || String.IsNullOrWhiteSpace(cbbMaQuyen.SelectedItem.ToString()))
+            if (String.IsNullOrWhiteSpace(txtUsername.Text) || String.IsNullOrWhiteSpace(txtMatKhau.Text) || String.IsNullOrWhiteSpace(cbbMaQuyen.Text))
             {
                 MessageBox.Show("Không được để trống thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

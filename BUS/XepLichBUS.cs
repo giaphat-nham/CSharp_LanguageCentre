@@ -10,14 +10,28 @@ namespace BUS
 {
     public class XepLichBUS
     {
-        static XepLichDAO dao;
+        static XepLichDAO dao = new XepLichDAO();
         static List<XepLichDTO> danhSach;
 
+        public XepLichBUS()
+        {
+
+        }
         public XepLichBUS(int maKH)
         {
             dao = new XepLichDAO();
             danhSach = dao.getLichKhoaHoc(maKH);
         }
+
+        public List<XepLichDTO> getAll()
+        {
+            return dao.getAll();
+        }
+        public List<XepLichDTO> getMaKHCoLich()
+        {
+            return dao.getMaKHCoLich();
+        }
+
 
         public List<XepLichDTO> getLichKhoaHoc(int maKH)
         {

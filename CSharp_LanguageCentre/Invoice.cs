@@ -161,7 +161,13 @@ namespace CSharp_LanguageCentre
 
         private void dgvHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            int i;
+            i = dgvHoaDon.CurrentRow.Index;
+            txtMaHD.Text = dgvHoaDon.Rows[i].Cells[0].Value.ToString();
+            date.Text = dgvHoaDon.Rows[i].Cells[1].Value.ToString();
+            txtHocPhi.Text = dgvHoaDon.Rows[i].Cells[2].Value.ToString();
+            cbbState.Text = dgvHoaDon.Rows[i].Cells[3].Value.ToString();
+            txtMaHV.Text = dgvHoaDon.Rows[i].Cells[4].Value.ToString();
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -252,6 +258,7 @@ namespace CSharp_LanguageCentre
             cbbTimKiem.SelectedItem = null;
             cbbState.SelectedItem = null;
             cbbTinhTrang.SelectedItem = null;
+            txtTimKiem.Text = "";
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)

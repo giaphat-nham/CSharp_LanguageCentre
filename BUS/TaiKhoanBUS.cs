@@ -101,7 +101,7 @@ namespace BUS
 
             foreach (TaiKhoanDTO tk in danhSach)
             {
-                if (tk.TenTK == key)
+                if (tk.TenTK.ToLower().Contains(key.ToLower()))
                 {
                     searchList.Add(tk);
                     break;

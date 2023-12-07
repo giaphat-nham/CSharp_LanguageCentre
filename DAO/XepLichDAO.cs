@@ -42,6 +42,52 @@ namespace DAO
             return danhSach;
         }
 
+        public List<XepLichDTO> getAll()
+        {
+            List<XepLichDTO> danhSach = new List<XepLichDTO>();
+            string sql = $"SELECT * FROM thoi_khoa_bieu";
+            if (!dataServices.OpenDB()) return null;
+            dt = dataServices.RunQuery(sql);
+            XepLichDTO xepLich;
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                xepLich = new XepLichDTO();
+                xepLich.MaKH = (int)dt.Rows[i]["ma_kh"];
+                xepLich.NhomKH = (int)dt.Rows[i]["nhom_kh"];
+                xepLich.Thu = (int)dt.Rows[i]["thu"];
+                xepLich.TietBD = (int)dt.Rows[i]["tiet_bd"];
+                xepLich.SoTiet = (int)dt.Rows[i]["so_tiet"];
+                xepLich.MaGV = (int)dt.Rows[i]["ma_gv"];
+                xepLich.MaPH = (int)dt.Rows[i]["ma_ph"];
+                danhSach.Add(xepLich);
+            }
+
+            return danhSach;
+        }
+        public List<XepLichDTO> getMaKHCoLich()
+        {
+            List<XepLichDTO> danhSach = new List<XepLichDTO>();
+            string sql = $"SELECT DISTINCT(ma_kh) as makh, nhom_kh, thu, tiet_bd, so_tiet, ma_gv, ma_ph FROM thoi_khoa_bieu";
+            if (!dataServices.OpenDB()) return null;
+            dt = dataServices.RunQuery(sql);
+            XepLichDTO xepLich;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                xepLich = new XepLichDTO();
+                xepLich.MaKH = (int)dt.Rows[i]["makh"];
+                xepLich.NhomKH = (int)dt.Rows[i]["nhom_kh"];
+                xepLich.Thu = (int)dt.Rows[i]["thu"];
+                xepLich.TietBD = (int)dt.Rows[i]["tiet_bd"];
+                xepLich.SoTiet = (int)dt.Rows[i]["so_tiet"];
+                xepLich.MaGV = (int)dt.Rows[i]["ma_gv"];
+                xepLich.MaPH = (int)dt.Rows[i]["ma_ph"];
+                danhSach.Add(xepLich);
+            }
+
+            return danhSach;
+        }
+
         public bool Insert(XepLichDTO xepLich)
         {
             try

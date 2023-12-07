@@ -37,7 +37,7 @@ namespace DAO
             return list;
         }
 
-        public bool Insert(CTHoaDonDTO cthd)
+        public bool Insert(CTHoaDonDTO cthd, int nhomKH, int maHV)
         {
             string sql = "SELECT * FROM chi_tiet_hoa_don";
             dataTable = dataServices.RunQuery(sql);
@@ -47,6 +47,8 @@ namespace DAO
             row["gia"] = cthd.Gia;
             dataTable.Rows.Add(row);
             dataServices.Update(dataTable);
+            sql = $"INSERT INTO dang_ky_khoa_hoc(ma_kh,nhom_kh,ma_hv) Values({cthd.MaKH},{nhomKH},{maHV})";
+            dataServices.ExecuteNonQuery(sql);
             return true;
         }
 

@@ -57,7 +57,6 @@
     <Compile Include="StaffDAO.cs" />
     <Compile Include="TaiKhoanDAO.cs" />
     <Compile Include="ThoiKhoaBieuDAO.cs" />
-    <Compile Include="ThongKeDAO.cs" />
     <Compile Include="XepLichDAO.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -10,17 +10,19 @@ using System.Windows.Forms;
 
 using BUS;
 using CSharp_LanguageCentre.DTO;
+using DTO;
 namespace CSharp_LanguageCentre.GUI
 {
     public partial class CourseRegistration : UserControl
     {
         KhoaHocBUS busKH = new KhoaHocBUS();
         HocVienBUS busHV = new HocVienBUS();
-        List<KhoaHocDTO> listKH;
+        List<XepLichDTO> listKH;
         List<HocVienDTO> listHV;
         HoaDonBUS busHD = new HoaDonBUS();
         CTHoaDonBUS busCTHD = new CTHoaDonBUS();
-
+        XepLichBUS busLich = new XepLichBUS();
+        List<XepLichDTO> makhCoLich = new List<XepLichDTO>();
         public CourseRegistration()
         {
             InitializeComponent();
@@ -30,13 +32,14 @@ namespace CSharp_LanguageCentre.GUI
 
         private void LoadKH()
         {
-            listKH = busKH.getAll();
+            listKH = busLich.getAll();
             dgvKH.DataSource = listKH;
 
             cbbMaKH.Items.Clear();
-            listKH.ForEach(kh =>
+            makhCoLich = busLich.getMaKHCoLich();
+            makhCoLich.ForEach(kh =>
             {
-                cbbMaKH.Items.Add(kh.MaKH.ToString().Trim());
+                cbbMaKH.Items.Add(kh.MaKH);
             });
         }
 
@@ -68,23 +71,21 @@ namespace CSharp_LanguageCentre.GUI
 
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(cbbMaHV.Text) || String.IsNullOrWhiteSpace(cbbMaKH.Text) || String.IsNullOrWhiteSpace(txtNhomKH.Text))
+            if (String.IsNullOrWhiteSpace(cbbMaHV.Text) || String.IsNullOrWhiteSpace(cbbMaKH.Text) || String.IsNullOrWhiteSpace(cbbNhom.Text))
             {
                 MessageBox.Show("Không được để trống thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            //else if (!busKH.TrungMa(int.Parse(cbbMaKH.SelectedItem.ToString())) || !busHV.TrungMa(int.Parse(cbbMaHV.SelectedItem.ToString())))
-            //{
-            //    MessageBox.Show("Không tìm thấy mã!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
+            
             else
             {
                 CTHoaDonDTO cthd = new CTHoaDonDTO(-1, int.Parse(cbbMaKH.SelectedItem.ToString()), 0);
-                busCTHD.Insert(cthd);
+                busCTHD.Insert(cthd, Convert.ToInt32(cbbNhom.SelectedItem.ToString()), Convert.ToInt32(cbbMaHV.SelectedItem.ToString()));
                 HoaDonDTO hoaDon = new HoaDonDTO(cthd.MaHD, DateTime.Today, cthd.Gia, false, int.Parse(cbbMaHV.SelectedItem.ToString()));
                 MessageBox.Show(busHD.Insert(hoaDon), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
                 LoadKH();
                 LoadHV();
+                cbbNhom.Enabled = false;
             }
         }
 
@@ -111,6 +112,22 @@ namespace CSharp_LanguageCentre.GUI
         {
             Form1.ChangeControlTo(new Student());
 
+        }
+
+        private void cbbNhom_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbbMaKH_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            List<XepLichDTO> nhomKH = new List<XepLichDTO>();
+            cbbNhom.Enabled = true;
+            nhomKH = busLich.getLichKhoaHoc(Convert.ToInt32(cbbMaKH.SelectedItem.ToString()));
+            nhomKH.ForEach(kh =>
+            {
+                cbbNhom.Items.Add(kh.NhomKH);
+            });
         }
     }
 }

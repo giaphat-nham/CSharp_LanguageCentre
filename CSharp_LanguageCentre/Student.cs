@@ -234,6 +234,17 @@ namespace CSharp_LanguageCentre.GUI
             LoadHocVien();
         }
 
+        private void dgvHocVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i;
+            i = dgvHocVien.CurrentRow.Index;
+            txtMaHV.Text = dgvHocVien.Rows[i].Cells[0].Value.ToString();
+            txtTenHV.Text = dgvHocVien.Rows[i].Cells[1].Value.ToString();
+            txtSDT.Text = dgvHocVien.Rows[i].Cells[2].Value.ToString();
+            cbbTrinhDo.Text = dgvHocVien.Rows[i].Cells[3].Value.ToString();
+           
+        }
+
         private void btnXepLich_Click(object sender, EventArgs e)
         {
             Form1.ChangeControlTo(new CourseRegistration());

@@ -50,6 +50,8 @@ namespace DAO
             row["ma_hv"] = hoaDon.MaHV;
             dataTable.Rows.Add(row);
             dataServices.Update(dataTable);
+
+            
             return true;
         }
 

@@ -221,6 +221,7 @@
             this.dgvTaiKhoan.RowTemplate.Height = 28;
             this.dgvTaiKhoan.Size = new System.Drawing.Size(607, 343);
             this.dgvTaiKhoan.TabIndex = 18;
+            this.dgvTaiKhoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaiKhoan_CellContentClick);
             // 
             // groupBox1
             // 

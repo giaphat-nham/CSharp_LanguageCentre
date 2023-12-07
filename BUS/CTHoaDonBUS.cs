@@ -25,11 +25,11 @@ namespace BUS
             return dao.getAll();
         }
 
-        public void Insert(CTHoaDonDTO cthd)
+        public void Insert(CTHoaDonDTO cthd, int nhomKH, int maHV)
         {
             cthd.MaHD = NextID();
             cthd.Gia = GetFee(cthd.MaKH);
-            if (dao.Insert(cthd))
+            if (dao.Insert(cthd, nhomKH, maHV))
             {
                 danhSach = dao.getAll();
             }

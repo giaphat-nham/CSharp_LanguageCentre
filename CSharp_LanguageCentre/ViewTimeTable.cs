@@ -89,7 +89,7 @@ namespace CSharp_LanguageCentre.GUI
                 {
                     xlWorkSheet.Cells[1, i] = dgvTKB.Columns[i - 2].HeaderText;
                 }
-                xlWorkBook.SaveAs($"thoikhoabieu_{newFileName()}.xls", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+                xlWorkBook.SaveAs($"thoikhoabieugv_{newFileName()}.xls", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
             }
             else
             {
@@ -165,7 +165,7 @@ namespace CSharp_LanguageCentre.GUI
                 {
                     xlWorkSheet.Cells[1, i] = dgvTKB.Columns[i - 2].HeaderText;
                 }
-                xlWorkBook.SaveAs($"thoikhoabieu_{newFileName()}.xls", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+                xlWorkBook.SaveAs($"thoikhoabieuhv_{newFileName()}.xls", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
             }
             else
             {

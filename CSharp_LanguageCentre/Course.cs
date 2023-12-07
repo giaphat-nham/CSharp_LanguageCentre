@@ -62,6 +62,14 @@ namespace CSharp_LanguageCentre.GUI
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            int i;
+            i = dgvKhoaHoc.CurrentRow.Index;
+            txtMaKH.Text = dgvKhoaHoc.Rows[i].Cells[0].Value.ToString();
+            txtTenKH.Text = dgvKhoaHoc.Rows[i].Cells[1].Value.ToString();
+            txtGia.Text = dgvKhoaHoc.Rows[i].Cells[2].Value.ToString();
+            cbbCapBac.Text = dgvKhoaHoc.Rows[i].Cells[3].Value.ToString();
+            dateBatDau.Text = dgvKhoaHoc.Rows[i].Cells[4].Value.ToString();
+            dateKetThuc.Text = dgvKhoaHoc.Rows[i].Cells[5].Value.ToString();
 
         }
 
