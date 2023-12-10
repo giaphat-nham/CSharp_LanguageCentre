@@ -21,12 +21,16 @@ namespace CSharp_LanguageCentre.GUI
 		List<StaffDTO> staffList = new List<StaffDTO>();
 		LuongBUS luongBUS = new LuongBUS();
 		List<LuongDTO> listLuong;
+		TaiKhoanBUS taiKhoanBUS = new TaiKhoanBUS();
+		List<TaiKhoanDTO> listTaiKhoan;
+
 
 		public Staff()
 		{
 			InitializeComponent();
 			StaffLoad();
 			LoadCbbMaLuong();
+			LoadCbbTenTK();
 			cbbLocTimKiem.SelectedIndex = 0;
 		}
 
@@ -45,6 +49,18 @@ namespace CSharp_LanguageCentre.GUI
 			listLuong.ForEach(LuongDTO =>
 			{
 				cbbMaLuong.Items.Add(LuongDTO.MaLuong.ToString().Trim());
+			}
+			);
+
+		}
+
+		private void LoadCbbTenTK()
+		{
+			listTaiKhoan = taiKhoanBUS.getAll();
+			cbbTenTK.Items.Clear();
+			listTaiKhoan.ForEach(TaiKhoanDTO =>
+			{
+				cbbTenTK.Items.Add(TaiKhoanDTO.TenTK.ToString().Trim());
 			}
 			);
 
@@ -181,7 +197,7 @@ namespace CSharp_LanguageCentre.GUI
 			txtTenNV.Enabled = true;
 			txtSdt.Enabled = true;
 			cbbMaLuong.Enabled = true;
-			txtTenTK.Enabled = true;
+			cbbTenTK.Enabled = true;
 
 		}
 
@@ -190,11 +206,12 @@ namespace CSharp_LanguageCentre.GUI
 		static bool click_Xoa = false;
 
 
+		
 		private void RefreshTxt()
 		{
 			txtTenNV.Text = "";		
 			txtSdt.Text = "";
-			txtTenTK.Text = "";
+			cbbTenTK.Text = "";
 			cbbMaLuong.Text = string.Empty;
 			txtMaNV.Text = "";
 
@@ -215,7 +232,7 @@ namespace CSharp_LanguageCentre.GUI
 			txtTenNV.Enabled = true;
 			txtSdt.Enabled = true;
 			cbbMaLuong.Enabled = true;
-			txtTenTK.Enabled = true;
+			cbbTenTK.Enabled = true;
 		}
 
 		private void btnQuayLai_Click(object sender, EventArgs e)
@@ -255,7 +272,7 @@ namespace CSharp_LanguageCentre.GUI
 				{
 					MessageBox.Show("Không được để trống Số điện thoại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
-				else if (String.IsNullOrWhiteSpace(txtTenTK.Text))
+				else if (String.IsNullOrWhiteSpace(cbbTenTK.Text.Trim()))
 				{
 					MessageBox.Show("Không được để trống tên tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
@@ -265,14 +282,14 @@ namespace CSharp_LanguageCentre.GUI
 				{
 					MessageBox.Show("Số điện thoại đã nhập không hợp lệ !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
-				else if (!staffBUS.KiemTraTenTK_Add(txtTenTK.Text.ToString()))
+				else if (!staffBUS.KiemTraTenTK_Add(cbbTenTK.Text.ToString()))
 				{
 					MessageBox.Show("Tên tài khoản đã nhập không hợp lệ (trùng hoặc không tồn tại)!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
 
 				else
 				{
-					StaffDTO staffDTO = new StaffDTO(Convert.ToInt32(staffBUS.AddMaNV()), txtTenNV.Text, txtSdt.Text, Convert.ToInt32(cbbMaLuong.SelectedItem), txtTenTK.Text);
+					StaffDTO staffDTO = new StaffDTO(Convert.ToInt32(staffBUS.AddMaNV()), txtTenNV.Text, txtSdt.Text, Convert.ToInt32(cbbMaLuong.SelectedItem), cbbTenTK.SelectedItem.ToString());
 					MessageBox.Show(staffBUS.InsertNV(staffDTO), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					StaffLoad();
 					RefreshTxt();
@@ -284,7 +301,7 @@ namespace CSharp_LanguageCentre.GUI
 					txtTenNV.Enabled = true;
 					txtSdt.Enabled = true;
 					cbbMaLuong.Enabled = true;
-					txtTenTK.Enabled = true;
+					cbbTenTK.Enabled = true;
 				}
 			}
 
@@ -308,7 +325,7 @@ namespace CSharp_LanguageCentre.GUI
 					MessageBox.Show("Tên nhân viên là chữ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 				}
-				else if (String.IsNullOrWhiteSpace(txtTenTK.Text))
+				else if (String.IsNullOrWhiteSpace(cbbTenTK.Text.Trim()))
 				{
 					MessageBox.Show("Không được để trống Tên tài khoản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
@@ -322,7 +339,7 @@ namespace CSharp_LanguageCentre.GUI
 					MessageBox.Show("Không được để trống Số điện thoại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
 
-				if (!staffBUS.KiemTraTenTK(txtTenTK.Text, Convert.ToInt32(txtMaNV.Text)))
+				if (!staffBUS.KiemTraTenTK(cbbTenTK.Text, Convert.ToInt32(txtMaNV.Text)))
 				{
 					MessageBox.Show("Tên tài khoản đã nhập không hợp lệ ( bị trùng hoặc không tồn tại)!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
@@ -334,7 +351,7 @@ namespace CSharp_LanguageCentre.GUI
 				}
 				else
 				{
-						StaffDTO staffDTO = new StaffDTO(Convert.ToInt32(txtMaNV.Text), txtTenNV.Text, txtSdt.Text, Convert.ToInt32(cbbMaLuong.SelectedItem), txtTenTK.Text);
+						StaffDTO staffDTO = new StaffDTO(Convert.ToInt32(txtMaNV.Text), txtTenNV.Text, txtSdt.Text, Convert.ToInt32(cbbMaLuong.SelectedItem), cbbTenTK.SelectedItem.ToString());
 						MessageBox.Show(staffBUS.UpdateNV(staffDTO), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						StaffLoad();
 						RefreshTxt();
@@ -370,7 +387,7 @@ namespace CSharp_LanguageCentre.GUI
 					txtTenNV.Enabled = true;
 					txtSdt.Enabled = true;
 					cbbMaLuong.Enabled = true;
-					txtTenTK.Enabled = true;
+					cbbTenTK.Enabled = true;
 
 				}
 
@@ -391,7 +408,7 @@ namespace CSharp_LanguageCentre.GUI
 			txtTenNV.Enabled = false;
 			txtSdt.Enabled = false;
 			cbbMaLuong.Enabled = false;
-			txtTenTK.Enabled = false;
+			cbbTenTK.Enabled = false;
 		}
 
 		private void btnHuy_Click(object sender, EventArgs e)
@@ -410,7 +427,7 @@ namespace CSharp_LanguageCentre.GUI
 				txtTenNV.Enabled = true;
 				txtSdt.Enabled = true;
 				cbbMaLuong.Enabled = true;
-				txtTenTK.Enabled = true;
+				cbbTenTK.Enabled = true;
 
 			}
 
@@ -428,7 +445,7 @@ namespace CSharp_LanguageCentre.GUI
 				txtTenNV.Enabled = true;
 				txtSdt.Enabled = true;
 				cbbMaLuong.Enabled = true;
-				txtTenTK.Enabled = true;
+				cbbTenTK.Enabled = true;
 			}
 
 			else if (click_Xoa)
@@ -445,7 +462,7 @@ namespace CSharp_LanguageCentre.GUI
 				txtTenNV.Enabled = true;
 				txtSdt.Enabled = true;
 				cbbMaLuong.Enabled = true;
-				txtTenTK.Enabled = true;
+				cbbTenTK.Enabled = true;
 			}
 		}
 
@@ -457,7 +474,7 @@ namespace CSharp_LanguageCentre.GUI
 			txtTenNV.Text = dataGVStaff.Rows[i].Cells[1].Value.ToString();
 			txtSdt.Text = dataGVStaff.Rows[i].Cells[2].Value.ToString();
 			cbbMaLuong.Text = dataGVStaff.Rows[i].Cells[3].Value.ToString();
-			txtTenTK.Text = dataGVStaff.Rows[i].Cells[4].Value.ToString();
+			cbbTenTK.Text = dataGVStaff.Rows[i].Cells[4].Value.ToString();
 		}
 	}
 }

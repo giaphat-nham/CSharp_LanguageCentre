@@ -20,7 +20,7 @@ namespace DAO
 		public List<GiangVienDTO> getAll()
 		{
 			List<GiangVienDTO> list = new List<GiangVienDTO>();
-			string query = "select * from giang_vien";
+			string query = "select * from giang_vien where ma_gv !=0";
 			//Hàm kết nối đến database nếu thất bại false thì trả về null
 			if (!dataServices.OpenDB()) 
 				return null;
@@ -65,14 +65,8 @@ namespace DAO
 		}
 		public bool DeleteGV(int maGV)
 		{
-			/*string query_1 = "select * from phan_cong_giang_day";
-			dataTable = dataServices.RunQuery(query_1);
-			foreach (DataRow row in dataTable.Rows)
-			{
-				if (row["ma_gv"].Equals(maGV)) row.Delete();
-			}
-			dataServices.Update(dataTable);
-			*/
+			string queryTKB = $"update thoi_khoa_bieu set ma_gv = 0 where ma_gv = {maGV}";
+			dataTable = dataServices.RunQuery(queryTKB);
 			string query = "select * from giang_vien";
 			dataTable = dataServices.RunQuery(query);
 			dataTable.PrimaryKey = new DataColumn[] {dataTable.Columns["ma_gv"]};

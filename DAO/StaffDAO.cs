@@ -57,7 +57,6 @@ namespace DAO
 		{
 			string queryTK = $"select * from tai_khoan where ten_tk = '{tenTK}'";
 			dataTable = dataServices.RunQuery(queryTK);
-			//if (dataTable == null) return false;
 			if (dataTable.Rows.Count > 0)
 			{
 				string queryNV = $"select * from nhan_vien_quan_ly where ten_tk = '{tenTK}' and ma_nv = {maNV}";
@@ -72,7 +71,6 @@ namespace DAO
 		{
 			string queryTK = $"select * from tai_khoan where ten_tk = '{tenTK}'";
 			dataTable = dataServices.RunQuery(queryTK);
-			//if (dataTable == null) return false;
 			if (dataTable.Rows.Count > 0)
 			{
 				string queryNV = $"select * from nhan_vien_quan_ly where ten_tk = '{tenTK}'";

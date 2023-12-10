@@ -58,6 +58,7 @@
     <Compile Include="StaffDTO.cs" />
     <Compile Include="TaiKhoanDTO.cs" />
     <Compile Include="ThoiKhoaBieuDTO.cs" />
+    <Compile Include="ThongKeDTO.cs" />
     <Compile Include="XepLichDTO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

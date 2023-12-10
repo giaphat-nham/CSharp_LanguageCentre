@@ -57,6 +57,7 @@
     <Compile Include="StaffBUS.cs" />
     <Compile Include="TaiKhoanBUS.cs" />
     <Compile Include="ThoiKhoaBieuBUS.cs" />
+    <Compile Include="ThongKeBUS.cs" />
     <Compile Include="XepLichBUS.cs" />
   </ItemGroup>
   <ItemGroup>

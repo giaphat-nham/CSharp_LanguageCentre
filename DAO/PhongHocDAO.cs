@@ -20,7 +20,7 @@ namespace DAO
 		public List<PhongHocDTO> getAll()
 		{
 			List<PhongHocDTO> list = new List<PhongHocDTO>();
-			string query = "select * from phong_hoc";
+			string query = "select * from phong_hoc where ma_ph != 0";
 			if (!dataServices.OpenDB()) return null;
 			else dataTable = dataServices.RunQuery(query);
 			PhongHocDTO ph;
@@ -38,9 +38,9 @@ namespace DAO
 		public int AutoID()
 		{
 			int id = 0;
-			string querygv = "select max(ma_gv) as max_magv from giang_vien";
-			dataTable = dataServices.RunQuery(querygv);
-			if (dataTable.Rows.Count > 0) id = Convert.ToInt32(dataTable.Rows[0]["max_magv"]) + 1;
+			string queryph = "select max(ma_ph) as max_maph from phong_hoc";
+			dataTable = dataServices.RunQuery(queryph);
+			if (dataTable.Rows.Count > 0) id = Convert.ToInt32(dataTable.Rows[0]["max_maph"]) + 1;
 			else id = 1;
 			return id;
 
@@ -48,14 +48,8 @@ namespace DAO
 
 		public bool DeletePH(int maPH)
 		{
-			/*string query_1 = "select * from thoi_khoa_bieu";
-			dataTable = dataServices.RunQuery(query_1);
-			foreach (DataRow row in dataTable.Rows)
-			{
-				if (row["ma_ph"].Equals(maPH)) row.Delete();
-			}
-			dataServices.Update(dataTable);
-			*/
+			string queryTKB = $"update thoi_khoa_bieu set ma_ph = 0 where ma_ph = {maPH}";
+			dataTable = dataServices.RunQuery(queryTKB);
 			string query = "select * from phong_hoc";
 			dataTable = dataServices.RunQuery(query);
 			dataTable.PrimaryKey = new DataColumn[] { dataTable.Columns["ma_ph"] };

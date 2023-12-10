@@ -18,6 +18,7 @@ namespace CSharp_LanguageCentre
 
 		LuongBUS luongBUS = new LuongBUS();
 		List<LuongDTO> listLuong = new List<LuongDTO>();
+		
 		public Luong()
 		{
 			InitializeComponent();
@@ -124,7 +125,6 @@ namespace CSharp_LanguageCentre
 					LuongDTO luongDTO = new LuongDTO(Convert.ToInt32(txtMaLuong.Text), cbbLoaiLuong.SelectedItem.ToString(), Convert.ToInt32(txtMucLuong.Text));
 					MessageBox.Show(luongBUS.UpdateLuong(luongDTO), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					loadLuong();
-					RefreshTxt();
 					click_Sua = false;
 					btnThem.Enabled = true;
 					btnSua.Enabled = true;
