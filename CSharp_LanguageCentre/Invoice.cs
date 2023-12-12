@@ -24,12 +24,14 @@ namespace CSharp_LanguageCentre
         {
             InitializeComponent();
             LoadHoaDon();
+            cbbTimKiem.SelectedIndex = 0;
         }
 
         private void LoadHoaDon()
         {
             listHD = bus.getAll();
             dgvHoaDon.DataSource = listHD;
+            txtTimKiem.Enabled = true;
         }
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -53,11 +55,11 @@ namespace CSharp_LanguageCentre
             btnSua.ForeColor = Color.FromArgb(1, 226, 91, 69);
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
-            txtMaHD.Enabled = true;
-            date.Enabled = true;
-            txtHocPhi.Enabled = true;
+            txtMaHD.Enabled = false;
+            date.Enabled = false;
+            txtHocPhi.Enabled = false;
             cbbTinhTrang.Enabled = true;
-            txtMaHV.Enabled = true;
+            txtMaHV.Enabled = false;
 
             btnXacNhan.Enabled = true;
             btnHuy.Enabled = true;
@@ -134,7 +136,7 @@ namespace CSharp_LanguageCentre
                     DialogResult result = MessageBox.Show("Chắc chắn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {
-                        MessageBox.Show(bus.Delete(Convert.ToInt32(txtMaHD.Text)), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(bus.Delete(Convert.ToInt32(txtMaHD.Text), Convert.ToInt32(txtMaHV.Text)), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadHoaDon();
                     }
                 }
@@ -166,7 +168,7 @@ namespace CSharp_LanguageCentre
             txtMaHD.Text = dgvHoaDon.Rows[i].Cells[0].Value.ToString();
             date.Text = dgvHoaDon.Rows[i].Cells[1].Value.ToString();
             txtHocPhi.Text = dgvHoaDon.Rows[i].Cells[2].Value.ToString();
-            cbbState.Text = dgvHoaDon.Rows[i].Cells[3].Value.ToString();
+            cbbTinhTrang.Text = dgvHoaDon.Rows[i].Cells[3].Value.ToString();
             txtMaHV.Text = dgvHoaDon.Rows[i].Cells[4].Value.ToString();
         }
 
@@ -181,54 +183,51 @@ namespace CSharp_LanguageCentre
             {
                 MessageBox.Show("Thông tin đã nhập không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else if(cbbTimKiem.SelectedIndex == 0)
+                {
+
+                if (cbbState.SelectedIndex == 0)
+                {
+                    searchList = bus.Search(key, 0, DateTime.Now, true);
+                }
+                else if (cbbState.SelectedIndex == 1)
+                {
+                    searchList = bus.Search(key, 0, DateTime.Now, false);
+                }
+                else
+                { searchList = bus.SearchStateless(key, 0, DateTime.Now); }
+                    if (searchList.Count == 0)
+                    {
+                        MessageBox.Show("Không tìm thấy kết quả hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        dgvHoaDon.DataSource = searchList;
+                    }
+                }
             else
             {
-                if(cbbTimKiem.SelectedIndex == 0)
+                Console.WriteLine(dateTimePicker1.Value.Date);
+                if (cbbState.SelectedIndex == 0)
                 {
-                    searchList = bus.Search(key, 0, DateTime.Now, 2);
-                    if (cbbState.SelectedIndex == 0)
-                    {
-                        searchList = bus.Search(key, 0, DateTime.Now, 0);
-                    }
-                    else if (cbbState.SelectedIndex == 1)
-                    {
-                        searchList = bus.Search(key, 0, DateTime.Now, 1);
-                    }
-                    
-                    if (searchList.Count == 0)
-                    {
-                        MessageBox.Show("Không tìm thấy kết quả hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        dgvHoaDon.DataSource = searchList;
-                    }
+                    searchList = bus.Search(key, 1, dateTimePicker1.Value, true);
                 }
-                else if (cbbTimKiem.SelectedIndex == 1)
+                else if (cbbState.SelectedIndex == 1)
                 {
-                    searchList = bus.Search(key, 1, dateTimePicker1.Value, 2);
-                    if (cbbState.SelectedIndex == 0)
-                    {
-                        searchList = bus.Search(key, 1, dateTimePicker1.Value, 0);
-                    }
-                    else if (cbbState.SelectedIndex == 1)
-                    {
-                        searchList = bus.Search(key, 1, dateTimePicker1.Value, 1);
-                    }
-                    
+                    searchList = bus.Search(key, 1, dateTimePicker1.Value, false);
+                }
+                else { searchList = bus.SearchStateless(key, 1, dateTimePicker1.Value); }
 
-                    if (searchList.Count == 0)
-                    {
-                        MessageBox.Show("Không tìm thấy kết quả hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        dgvHoaDon.DataSource = searchList;
-                    }
+
+                if (searchList.Count == 0)
+                {
+                    MessageBox.Show("Không tìm thấy kết quả hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    dgvHoaDon.DataSource = searchList;
                 }
             }
-
-
 
         }
 
@@ -243,6 +242,8 @@ namespace CSharp_LanguageCentre
             {
 
                 dateTimePicker1.Enabled = true;
+                txtTimKiem.Text = "";
+                txtTimKiem.Enabled = false;
             }
             else dateTimePicker1.Enabled = false;
 
@@ -255,7 +256,7 @@ namespace CSharp_LanguageCentre
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            cbbTimKiem.SelectedItem = null;
+            cbbTimKiem.SelectedIndex = 0;
             cbbState.SelectedItem = null;
             cbbTinhTrang.SelectedItem = null;
             txtTimKiem.Text = "";

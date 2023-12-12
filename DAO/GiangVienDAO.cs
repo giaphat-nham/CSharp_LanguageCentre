@@ -55,12 +55,13 @@ namespace DAO
 
 		public int AutoID()
 		{
-			int id = 0;
+			int id;
 			string querygv = "select max(ma_gv) as max_magv from giang_vien";
 			dataTable = dataServices.RunQuery(querygv);
-			if (dataTable.Rows.Count > 0) id = Convert.ToInt32(dataTable.Rows[0]["max_magv"]) + 1;
-			else id = 1;
-			return id;
+			int num = -1;
+			if (!int.TryParse(dataTable.Rows[0]["max_magv"].ToString(), out num)) return 1;
+			id = (int)dataTable.Rows[0]["max_magv"];
+			return id + 1;
 
 		}
 		public bool DeleteGV(int maGV)

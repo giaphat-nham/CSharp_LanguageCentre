@@ -85,9 +85,10 @@ namespace DAO
 			int id;
 			string queryNV = "select max(ma_nv) as max_manv from nhan_vien_quan_ly";
 			dataTable = dataServices.RunQuery(queryNV);
-			if (dataTable.Rows.Count == 0 || dataTable.Rows[0]["max_manv"] == DBNull.Value)  id = 1;
-			else id = Convert.ToInt32(dataTable.Rows[0]["max_manv"]) +1;
-			return id;
+			int num = -1;
+			if (!int.TryParse(dataTable.Rows[0]["max_manv"].ToString(), out num)) return 1;
+			id = (int)dataTable.Rows[0]["max_manv"];
+			return id + 1;
 
 		}
 

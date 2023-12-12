@@ -22,7 +22,7 @@ namespace CSharp_LanguageCentre.GUI
         HoaDonBUS busHD = new HoaDonBUS();
         CTHoaDonBUS busCTHD = new CTHoaDonBUS();
         XepLichBUS busLich = new XepLichBUS();
-        List<XepLichDTO> makhCoLich = new List<XepLichDTO>();
+        List<int> makhCoLich = new List<int>();
         public CourseRegistration()
         {
             InitializeComponent();
@@ -39,7 +39,7 @@ namespace CSharp_LanguageCentre.GUI
             makhCoLich = busLich.getMaKHCoLich();
             makhCoLich.ForEach(kh =>
             {
-                cbbMaKH.Items.Add(kh.MaKH);
+                cbbMaKH.Items.Add(kh);
             });
         }
 
@@ -75,7 +75,10 @@ namespace CSharp_LanguageCentre.GUI
             {
                 MessageBox.Show("Không được để trống thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            
+            else if(busHD.TrungMaKH(Convert.ToInt32(cbbMaKH.SelectedItem.ToString()), Convert.ToInt32(cbbMaHV.SelectedItem.ToString())))
+            {
+                MessageBox.Show("Khóa học đã được đăng ký!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             else
             {
                 CTHoaDonDTO cthd = new CTHoaDonDTO(-1, int.Parse(cbbMaKH.SelectedItem.ToString()), 0);
@@ -124,6 +127,7 @@ namespace CSharp_LanguageCentre.GUI
             List<XepLichDTO> nhomKH = new List<XepLichDTO>();
             cbbNhom.Enabled = true;
             nhomKH = busLich.getLichKhoaHoc(Convert.ToInt32(cbbMaKH.SelectedItem.ToString()));
+            cbbNhom.Items.Clear();
             nhomKH.ForEach(kh =>
             {
                 cbbNhom.Items.Add(kh.NhomKH);

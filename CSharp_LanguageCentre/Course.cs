@@ -22,6 +22,7 @@ namespace CSharp_LanguageCentre.GUI
         {
             InitializeComponent();
             LoadKhoaHoc();
+            cbbTimKiem.SelectedIndex = 0;
         }
 
         private void LoadKhoaHoc()
@@ -30,9 +31,9 @@ namespace CSharp_LanguageCentre.GUI
             dgvKhoaHoc.DataSource = listKhoaHoc;
         }
 
-        private bool IsValidDate()
+        private bool IsValidDate(DateTime startDate, DateTime endDate)
         {
-            if (dateBatDau.Value > dateKetThuc.Value) return false;
+            if (startDate > endDate) return false;
             return true;
         }
         private void CourseView_Load(object sender, EventArgs e)
@@ -79,7 +80,7 @@ namespace CSharp_LanguageCentre.GUI
             {
                 MessageBox.Show("Không được để trống thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (!IsValidDate())
+            else if (!IsValidDate(dateBatDau.Value.Date, dateKetThuc.Value.Date))
             {
                 MessageBox.Show("Hãy đảm bảo ngày kết thúc sau ngày bắt đầu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -180,7 +181,7 @@ namespace CSharp_LanguageCentre.GUI
                 {
                     MessageBox.Show("Không được để trống thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else if (!IsValidDate())
+                else if (!IsValidDate(dateBatDau.Value.Date, dateKetThuc.Value.Date))
                 {
                     MessageBox.Show("Hãy đảm bảo ngày kết thúc sau ngày bắt đầu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

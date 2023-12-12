@@ -65,24 +65,15 @@ namespace DAO
 
             return danhSach;
         }
-        public List<XepLichDTO> getMaKHCoLich()
+        public List<int> getMaKHCoLich()
         {
-            List<XepLichDTO> danhSach = new List<XepLichDTO>();
-            string sql = $"SELECT DISTINCT(ma_kh) as makh, nhom_kh, thu, tiet_bd, so_tiet, ma_gv, ma_ph FROM thoi_khoa_bieu";
+            List<int> danhSach = new List<int>();
+            string sql = $"SELECT DISTINCT(ma_kh) as makh FROM thoi_khoa_bieu";
             if (!dataServices.OpenDB()) return null;
             dt = dataServices.RunQuery(sql);
-            XepLichDTO xepLich;
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                xepLich = new XepLichDTO();
-                xepLich.MaKH = (int)dt.Rows[i]["makh"];
-                xepLich.NhomKH = (int)dt.Rows[i]["nhom_kh"];
-                xepLich.Thu = (int)dt.Rows[i]["thu"];
-                xepLich.TietBD = (int)dt.Rows[i]["tiet_bd"];
-                xepLich.SoTiet = (int)dt.Rows[i]["so_tiet"];
-                xepLich.MaGV = (int)dt.Rows[i]["ma_gv"];
-                xepLich.MaPH = (int)dt.Rows[i]["ma_ph"];
-                danhSach.Add(xepLich);
+                danhSach.Add((int)dt.Rows[i]["makh"]);
             }
 
             return danhSach;
@@ -145,14 +136,15 @@ namespace DAO
         {
             string sql = $"SELECT MAX(nhom_kh) as 'max' FROM thoi_khoa_bieu WHERE ma_kh = {maKH}";
             dt = dataServices.RunQuery(sql);
-            if (dt.Rows.Count == 0) return 1;
+            int num = -1;
+            if (!int.TryParse(dt.Rows[0]["max"].ToString(), out num)) return 1;
             int curId = (int)dt.Rows[0]["max"];
             return curId + 1;
         }
 
         public bool TrungLich(XepLichDTO xepLich)
         {
-            string sql = $"SELECT * FROM thoi_khoa_bieu WHERE thu = {xepLich.Thu} AND ma_ph = {xepLich.MaPH} AND (tiet_bd = {xepLich.TietBD} OR tiet_bd < {xepLich.TietBD} AND tiet_bd <= {xepLich.TietBD + xepLich.SoTiet - 1} OR tiet_bd > {xepLich.TietBD} AND tiet_bd + so_tiet - 1 >= {xepLich.TietBD})";
+            string sql = $"SELECT * FROM thoi_khoa_bieu WHERE thu = {xepLich.Thu} AND (ma_ph = {xepLich.MaPH} AND ma_gv = {xepLich.MaGV} OR ma_ph != {xepLich.MaPH} AND ma_gv = {xepLich.MaGV}) AND (tiet_bd = {xepLich.TietBD} OR tiet_bd < {xepLich.TietBD} AND tiet_bd <= {xepLich.TietBD + xepLich.SoTiet - 1} OR tiet_bd > {xepLich.TietBD} AND tiet_bd + so_tiet - 1 >= {xepLich.TietBD})";
             dt = dataServices.RunQuery(sql);
             if (dt.Rows.Count > 0) return true;
             return false;

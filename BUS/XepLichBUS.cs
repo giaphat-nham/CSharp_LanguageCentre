@@ -27,7 +27,7 @@ namespace BUS
         {
             return dao.getAll();
         }
-        public List<XepLichDTO> getMaKHCoLich()
+        public List<int> getMaKHCoLich()
         {
             return dao.getMaKHCoLich();
         }

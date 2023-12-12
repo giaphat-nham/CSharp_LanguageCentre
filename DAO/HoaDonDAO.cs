@@ -55,11 +55,28 @@ namespace DAO
             return true;
         }
 
-        public bool Delete(int maHD)
+        public bool Delete(int maHD, int maHV)
         {
             try
             {
-                string sql = $"DELETE FROM chi_tiet_hoa_don WHERE ma_hd = {maHD}";
+                string sql = $"DELETE FROM thoi_khoa_bieu WHERE ma_hv = {maHV}";
+                dataServices.ExecuteNonQuery(sql);
+                sql = $"SELECT cthd.ma_kh FROM chi_tiet_hoa_don cthd, hoa_don hd WHERE hd.ma_hv = {maHV} and hd.ma_hd = cthd.ma_hd and hd.ma_hd = {maHD}";
+                dataTable = dataServices.RunQuery(sql);
+                List<int> makh = new List<int>();
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    makh.Add((int)dataTable.Rows[i]["ma_kh"]);
+                }
+
+                foreach (int makhoahoc in makh)
+                {
+                    sql = $"DELETE FROM dang_ky_khoa_hoc WHERE ma_kh = {makhoahoc}";
+                    dataServices.ExecuteNonQuery(sql);
+                }
+                
+                dataServices.ExecuteNonQuery(sql);
+                sql = $"DELETE FROM chi_tiet_hoa_don WHERE ma_hd = {maHD}";
                 dataServices.ExecuteNonQuery(sql);
                 sql = $"DELETE FROM hoa_don WHERE ma_hd = {maHD}";
                 dataServices.ExecuteNonQuery(sql);
@@ -103,11 +120,19 @@ namespace DAO
             if (dataTable.Rows.Count == 0) return false;
             return true;
         }
+        public bool TrungMaKH(int maKH, int maHV)
+        {
+            string sql = $"SELECT * FROM dang_ky_khoa_hoc WHERE ma_kh = {maKH} and ma_hv = {maHV}";
+            dataTable = dataServices.RunQuery(sql);
+            if (dataTable.Rows.Count == 0) return false;
+            return true;
+        }
         public int NextID()
         {
             string sql = "SELECT MAX(ma_hd) as 'max' FROM chi_tiet_hoa_don";
             dataTable = dataServices.RunQuery(sql);
-            if (dataTable.Rows.Count == 0) return 1;
+            int num = -1;
+            if (!int.TryParse(dataTable.Rows[0]["max"].ToString(), out num)) return 1;
             int curId = (int)dataTable.Rows[0]["max"];
             return curId + 1;
         }

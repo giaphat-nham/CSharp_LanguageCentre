@@ -104,7 +104,8 @@ namespace DAO
         {
             string sql = "SELECT MAX(ma_kh) as 'max' FROM khoa_hoc";
             dataTable = dataServices.RunQuery(sql);
-            if (dataTable.Rows.Count == 0) return 1;
+            int num = -1;
+            if (!int.TryParse(dataTable.Rows[0]["max"].ToString(), out num)) return 1;
             int curId = (int)dataTable.Rows[0]["max"];
             return curId + 1;
         }

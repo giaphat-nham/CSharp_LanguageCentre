@@ -49,12 +49,13 @@ namespace DAO
 
 		public int AutoID()
 		{
-			int id = 0;
+			int id ;
 			string queryNV = "select max(ma_luong) as max_maluong from luong";
 			dataTable = dataServices.RunQuery(queryNV);
-			if (dataTable.Rows.Count == 0) return 1;
-			id = Convert.ToInt32(dataTable.Rows[0]["max_maluong"]) + 1;
-			return id;
+			int num = -1;
+			if (!int.TryParse(dataTable.Rows[0]["max_maluong"].ToString(), out num)) return 1;
+			id = (int)dataTable.Rows[0]["max_maluong"];
+			return id + 1;
 
 		}
 

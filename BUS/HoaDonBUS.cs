@@ -43,9 +43,9 @@ namespace BUS
             return "Đã có lỗi xảy ra!";
         }
 
-        public string Delete(int maHD)
+        public string Delete(int maHD, int maHV)
         {
-            if (dao.Delete(maHD))
+            if (dao.Delete(maHD, maHV))
             {
                 danhSach = dao.getAll();
                 return "Xóa thành công!";
@@ -68,6 +68,11 @@ namespace BUS
             return dao.TrungMa(maHD);
         }
 
+        public bool TrungMaKH(int maKH, int maHV)
+        {
+            return dao.TrungMaKH(maKH, maHV);
+        }
+        
         //public List<HoaDonDTO> Search(string key, int option, int state)
         //{
         //    List<HoaDonDTO> searchList = new List<HoaDonDTO>();
@@ -118,32 +123,54 @@ namespace BUS
         //    return searchList;
 
         //}
-
-        public List<HoaDonDTO> Search(string key, int option, DateTime date, int state)
+        public List<HoaDonDTO> SearchStateless(String key, int option, DateTime date)
+        {
+            List<HoaDonDTO> searchList = new List<HoaDonDTO>();
+            if(option == 0)
+            {
+                foreach (HoaDonDTO hd in danhSach)
+                {
+                    if (hd.MaHV == Convert.ToInt32(key))
+                    {
+                        searchList.Add(hd);
+                    }
+                }
+            }
+            else
+            {
+                foreach (HoaDonDTO hd in danhSach)
+                {
+                    if (hd.NgayHD.Date.CompareTo(date.Date) == 0)
+                    {
+                        searchList.Add(hd);
+                    }
+                }
+            }
+            return searchList;
+        }
+        public List<HoaDonDTO> Search(string key, int option, DateTime date, bool state)
         {
             List<HoaDonDTO> searchList = new List<HoaDonDTO>();
 
             if (option == 0) //tim bang ma hoa don
             {
-                if(state == 0)
+                if(state == false)
                 {
                     foreach (HoaDonDTO hd in danhSach)
                     {
-                        if (hd.MaHD == Convert.ToInt32(key) || hd.TinhTrangThanhToan == false)
+                        if (hd.MaHV == Convert.ToInt32(key) && hd.TinhTrangThanhToan == false)
                         {
                             searchList.Add(hd);
-                            break;
                         }
                     }
                 }
-                else if (state == 1)
+                else if (state == true)
                 {
                     foreach (HoaDonDTO hd in danhSach)
                     {
-                        if (hd.MaHD == Convert.ToInt32(key) || hd.TinhTrangThanhToan == true)
+                        if (hd.MaHV == Convert.ToInt32(key) && hd.TinhTrangThanhToan == true)
                         {
                             searchList.Add(hd);
-                            break;
                         }
                     }
                 }
@@ -151,31 +178,30 @@ namespace BUS
                 {
                     foreach (HoaDonDTO hd in danhSach)
                     {
-                        if (hd.MaHD == Convert.ToInt32(key))
+                        if (hd.MaHV == Convert.ToInt32(key))
                         {
                             searchList.Add(hd);
-                            break;
                         }
                     }
                 }
             }
-            else if (option == 1) //tim theo ngay
+            else  //tim theo ngay
             {
-                if(state == 0)
+                if(state == false)
                 {
                     foreach (HoaDonDTO hd in danhSach)
                     {
-                        if (hd.NgayHD == date || hd.TinhTrangThanhToan == false)
+                        if (hd.NgayHD.Date.CompareTo(date.Date) == 0 && hd.TinhTrangThanhToan == false)
                         {
                             searchList.Add(hd);
                         }
                     }
                 }
-                else if(state == 1)
+                else if(state == true)
                 {
                     foreach (HoaDonDTO hd in danhSach)
                     {
-                        if (hd.NgayHD == date || hd.TinhTrangThanhToan == true)
+                        if (hd.NgayHD.Date.CompareTo(date.Date) == 0 && hd.TinhTrangThanhToan == true)
                         {
                             searchList.Add(hd);
                         }
@@ -185,7 +211,7 @@ namespace BUS
                 {
                     foreach (HoaDonDTO hd in danhSach)
                     {
-                        if (hd.NgayHD == date)
+                        if (hd.NgayHD.Date.CompareTo(date.Date) == 0)
                         {
                             searchList.Add(hd);
                         }

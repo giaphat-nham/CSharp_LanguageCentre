@@ -17,18 +17,28 @@ namespace CSharp_LanguageCentre.GUI
     {
         KhoaHocBUS busKH = new KhoaHocBUS();
         GiangVienBUS busGV = new GiangVienBUS();
+        PhongHocBUS busPH = new PhongHocBUS();
         XepLichBUS busXL;
         List<KhoaHocDTO> dsKH = new List<KhoaHocDTO>();
         List<XepLichDTO> dsXL = new List<XepLichDTO>();
         List<GiangVienDTO> dsGV = new List<GiangVienDTO>();
+        List<PhongHocDTO> dsPH = new List<PhongHocDTO>();
         static bool isDeleting = false, isUpdating = false;
         public XepLich()
         {
             InitializeComponent();
             LoadKhoaHoc();
             LoadComboBoxGV();
+            LoadCbbPhong();
         }
-
+        private void LoadCbbPhong()
+        {
+            dsPH = busPH.getAll();
+            foreach (PhongHocDTO ph in dsPH)
+            {
+                cbbPhong.Items.Add(ph.MaPH.ToString().Trim());
+            }
+        }
         private void LoadKhoaHoc()
         {
             dsKH = busKH.getAll();
